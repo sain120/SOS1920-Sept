@@ -2789,11 +2789,11 @@ var app = (function () {
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[10] = list[i];
+    	child_ctx[11] = list[i];
     	return child_ctx;
     }
 
-    // (80:7) <Button outline color="primary" on:click={insertECStat}>
+    // (89:7) <Button outline color="primary" on:click={insertECStat}>
     function create_default_slot_2(ctx) {
     	let t;
 
@@ -2813,14 +2813,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_2.name,
     		type: "slot",
-    		source: "(80:7) <Button outline color=\\\"primary\\\" on:click={insertECStat}>",
+    		source: "(89:7) <Button outline color=\\\"primary\\\" on:click={insertECStat}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (91:7) <Button outline color="danger" on:click="{deleteECStat(ecstat.country, ecstat.year)}">
+    // (100:7) <Button outline color="danger" on:click="{deleteECStat(ecstat.country, ecstat.year)}">
     function create_default_slot_1(ctx) {
     	let t;
 
@@ -2840,36 +2840,36 @@ var app = (function () {
     		block,
     		id: create_default_slot_1.name,
     		type: "slot",
-    		source: "(91:7) <Button outline color=\\\"danger\\\" on:click=\\\"{deleteECStat(ecstat.country, ecstat.year)}\\\">",
+    		source: "(100:7) <Button outline color=\\\"danger\\\" on:click=\\\"{deleteECStat(ecstat.country, ecstat.year)}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (83:2) {#each ecstats as ecstat}
+    // (92:2) {#each ecstats as ecstat}
     function create_each_block(ctx) {
     	let tr;
     	let td0;
     	let a;
-    	let t0_value = /*ecstat*/ ctx[10].country + "";
+    	let t0_value = /*ecstat*/ ctx[11].country + "";
     	let t0;
     	let a_href_value;
     	let t1;
     	let td1;
-    	let t2_value = /*ecstat*/ ctx[10].year + "";
+    	let t2_value = /*ecstat*/ ctx[11].year + "";
     	let t2;
     	let t3;
     	let td2;
-    	let t4_value = /*ecstat*/ ctx[10].ecu + "";
+    	let t4_value = /*ecstat*/ ctx[11].ecu + "";
     	let t4;
     	let t5;
     	let td3;
-    	let t6_value = /*ecstat*/ ctx[10].rpc + "";
+    	let t6_value = /*ecstat*/ ctx[11].rpc + "";
     	let t6;
     	let t7;
     	let td4;
-    	let t8_value = /*ecstat*/ ctx[10].cdepc + "";
+    	let t8_value = /*ecstat*/ ctx[11].cdepc + "";
     	let t8;
     	let t9;
     	let td5;
@@ -2888,7 +2888,7 @@ var app = (function () {
     		});
 
     	button.$on("click", function () {
-    		if (is_function(/*deleteECStat*/ ctx[3](/*ecstat*/ ctx[10].country, /*ecstat*/ ctx[10].year))) /*deleteECStat*/ ctx[3](/*ecstat*/ ctx[10].country, /*ecstat*/ ctx[10].year).apply(this, arguments);
+    		if (is_function(/*deleteECStat*/ ctx[3](/*ecstat*/ ctx[11].country, /*ecstat*/ ctx[11].year))) /*deleteECStat*/ ctx[3](/*ecstat*/ ctx[11].country, /*ecstat*/ ctx[11].year).apply(this, arguments);
     	});
 
     	const block = {
@@ -2913,15 +2913,15 @@ var app = (function () {
     			td5 = element("td");
     			create_component(button.$$.fragment);
     			t10 = space();
-    			attr_dev(a, "href", a_href_value = "#/ec-stat/" + /*ecstat*/ ctx[10].country + "/" + /*ecstat*/ ctx[10].year);
-    			add_location(a, file$3, 85, 7, 1883);
-    			add_location(td0, file$3, 85, 3, 1879);
-    			add_location(td1, file$3, 86, 3, 1963);
-    			add_location(td2, file$3, 87, 3, 1989);
-    			add_location(td3, file$3, 88, 3, 2014);
-    			add_location(td4, file$3, 89, 3, 2039);
-    			add_location(td5, file$3, 90, 3, 2066);
-    			add_location(tr, file$3, 83, 2, 1836);
+    			attr_dev(a, "href", a_href_value = "#/ec-stat/" + /*ecstat*/ ctx[11].country + "/" + /*ecstat*/ ctx[11].year);
+    			add_location(a, file$3, 94, 7, 2083);
+    			add_location(td0, file$3, 94, 3, 2079);
+    			add_location(td1, file$3, 95, 3, 2163);
+    			add_location(td2, file$3, 96, 3, 2189);
+    			add_location(td3, file$3, 97, 3, 2214);
+    			add_location(td4, file$3, 98, 3, 2239);
+    			add_location(td5, file$3, 99, 3, 2266);
+    			add_location(tr, file$3, 92, 2, 2036);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -2948,19 +2948,19 @@ var app = (function () {
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if ((!current || dirty & /*ecstats*/ 1) && t0_value !== (t0_value = /*ecstat*/ ctx[10].country + "")) set_data_dev(t0, t0_value);
+    			if ((!current || dirty & /*ecstats*/ 1) && t0_value !== (t0_value = /*ecstat*/ ctx[11].country + "")) set_data_dev(t0, t0_value);
 
-    			if (!current || dirty & /*ecstats*/ 1 && a_href_value !== (a_href_value = "#/ec-stat/" + /*ecstat*/ ctx[10].country + "/" + /*ecstat*/ ctx[10].year)) {
+    			if (!current || dirty & /*ecstats*/ 1 && a_href_value !== (a_href_value = "#/ec-stat/" + /*ecstat*/ ctx[11].country + "/" + /*ecstat*/ ctx[11].year)) {
     				attr_dev(a, "href", a_href_value);
     			}
 
-    			if ((!current || dirty & /*ecstats*/ 1) && t2_value !== (t2_value = /*ecstat*/ ctx[10].year + "")) set_data_dev(t2, t2_value);
-    			if ((!current || dirty & /*ecstats*/ 1) && t4_value !== (t4_value = /*ecstat*/ ctx[10].ecu + "")) set_data_dev(t4, t4_value);
-    			if ((!current || dirty & /*ecstats*/ 1) && t6_value !== (t6_value = /*ecstat*/ ctx[10].rpc + "")) set_data_dev(t6, t6_value);
-    			if ((!current || dirty & /*ecstats*/ 1) && t8_value !== (t8_value = /*ecstat*/ ctx[10].cdepc + "")) set_data_dev(t8, t8_value);
+    			if ((!current || dirty & /*ecstats*/ 1) && t2_value !== (t2_value = /*ecstat*/ ctx[11].year + "")) set_data_dev(t2, t2_value);
+    			if ((!current || dirty & /*ecstats*/ 1) && t4_value !== (t4_value = /*ecstat*/ ctx[11].ecu + "")) set_data_dev(t4, t4_value);
+    			if ((!current || dirty & /*ecstats*/ 1) && t6_value !== (t6_value = /*ecstat*/ ctx[11].rpc + "")) set_data_dev(t6, t6_value);
+    			if ((!current || dirty & /*ecstats*/ 1) && t8_value !== (t8_value = /*ecstat*/ ctx[11].cdepc + "")) set_data_dev(t8, t8_value);
     			const button_changes = {};
 
-    			if (dirty & /*$$scope*/ 8192) {
+    			if (dirty & /*$$scope*/ 16384) {
     				button_changes.$$scope = { dirty, ctx };
     			}
 
@@ -2985,14 +2985,14 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(83:2) {#each ecstats as ecstat}",
+    		source: "(92:2) {#each ecstats as ecstat}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (60:1) <Table bordered>
+    // (69:1) <Table bordered>
     function create_default_slot(ctx) {
     	let thead;
     	let tr0;
@@ -3102,27 +3102,27 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(th0, file$3, 63, 4, 1237);
-    			add_location(th1, file$3, 64, 4, 1258);
-    			add_location(th2, file$3, 65, 4, 1276);
-    			add_location(th3, file$3, 66, 4, 1307);
-    			add_location(th4, file$3, 67, 4, 1336);
-    			add_location(th5, file$3, 68, 4, 1373);
-    			add_location(tr0, file$3, 61, 3, 1203);
-    			add_location(thead, file$3, 60, 2, 1192);
-    			add_location(input0, file$3, 74, 7, 1468);
-    			add_location(td0, file$3, 74, 3, 1464);
-    			add_location(input1, file$3, 75, 7, 1521);
-    			add_location(td1, file$3, 75, 3, 1517);
-    			add_location(input2, file$3, 76, 7, 1571);
-    			add_location(td2, file$3, 76, 3, 1567);
-    			add_location(input3, file$3, 77, 7, 1620);
-    			add_location(td3, file$3, 77, 3, 1616);
-    			add_location(input4, file$3, 78, 7, 1669);
-    			add_location(td4, file$3, 78, 3, 1665);
-    			add_location(td5, file$3, 79, 3, 1716);
-    			add_location(tr1, file$3, 72, 2, 1421);
-    			add_location(tbody, file$3, 71, 1, 1411);
+    			add_location(th0, file$3, 72, 4, 1437);
+    			add_location(th1, file$3, 73, 4, 1458);
+    			add_location(th2, file$3, 74, 4, 1476);
+    			add_location(th3, file$3, 75, 4, 1507);
+    			add_location(th4, file$3, 76, 4, 1536);
+    			add_location(th5, file$3, 77, 4, 1573);
+    			add_location(tr0, file$3, 70, 3, 1403);
+    			add_location(thead, file$3, 69, 2, 1392);
+    			add_location(input0, file$3, 83, 7, 1668);
+    			add_location(td0, file$3, 83, 3, 1664);
+    			add_location(input1, file$3, 84, 7, 1721);
+    			add_location(td1, file$3, 84, 3, 1717);
+    			add_location(input2, file$3, 85, 7, 1771);
+    			add_location(td2, file$3, 85, 3, 1767);
+    			add_location(input3, file$3, 86, 7, 1820);
+    			add_location(td3, file$3, 86, 3, 1816);
+    			add_location(input4, file$3, 87, 7, 1869);
+    			add_location(td4, file$3, 87, 3, 1865);
+    			add_location(td5, file$3, 88, 3, 1916);
+    			add_location(tr1, file$3, 81, 2, 1621);
+    			add_location(tbody, file$3, 80, 1, 1611);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, thead, anchor);
@@ -3206,7 +3206,7 @@ var app = (function () {
 
     			const button_changes = {};
 
-    			if (dirty & /*$$scope*/ 8192) {
+    			if (dirty & /*$$scope*/ 16384) {
     				button_changes.$$scope = { dirty, ctx };
     			}
 
@@ -3275,7 +3275,7 @@ var app = (function () {
     		block,
     		id: create_default_slot.name,
     		type: "slot",
-    		source: "(60:1) <Table bordered>",
+    		source: "(69:1) <Table bordered>",
     		ctx
     	});
 
@@ -3285,6 +3285,8 @@ var app = (function () {
     function create_fragment$4(ctx) {
     	let main;
     	let table;
+    	let t;
+    	let div;
     	let current;
 
     	table = new Table({
@@ -3300,7 +3302,10 @@ var app = (function () {
     		c: function create() {
     			main = element("main");
     			create_component(table.$$.fragment);
-    			add_location(main, file$3, 58, 0, 1165);
+    			t = space();
+    			div = element("div");
+    			add_location(div, file$3, 104, 1, 2416);
+    			add_location(main, file$3, 67, 0, 1365);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -3308,12 +3313,14 @@ var app = (function () {
     		m: function mount(target, anchor) {
     			insert_dev(target, main, anchor);
     			mount_component(table, main, null);
+    			append_dev(main, t);
+    			append_dev(main, div);
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
     			const table_changes = {};
 
-    			if (dirty & /*$$scope, ecstats, newECStat*/ 8195) {
+    			if (dirty & /*$$scope, ecstats, newECStat*/ 16387) {
     				table_changes.$$scope = { dirty, ctx };
     			}
 
@@ -3395,6 +3402,14 @@ var app = (function () {
     		});
     	}
 
+    	async function deleteAllECStats() {
+    		console.log("Deleting All ECStats...");
+
+    		const res = await fetch("/api/v1/ec-stats/", { method: "DELETE" }).then(function (res) {
+    			getECStats();
+    		});
+    	}
+
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
@@ -3436,7 +3451,8 @@ var app = (function () {
     		newECStat,
     		getECStats,
     		insertECStat,
-    		deleteECStat
+    		deleteECStat,
+    		deleteAllECStats
     	});
 
     	$$self.$inject_state = $$props => {
@@ -4167,8 +4183,6 @@ var app = (function () {
     	let main;
     	let h1;
     	let t1;
-    	let h2;
-    	let t3;
     	let router;
     	let current;
 
@@ -4183,12 +4197,8 @@ var app = (function () {
     			h1 = element("h1");
     			h1.textContent = "EC-Stats Manager";
     			t1 = space();
-    			h2 = element("h2");
-    			h2.textContent = "Probando";
-    			t3 = space();
     			create_component(router.$$.fragment);
     			add_location(h1, file$5, 15, 1, 309);
-    			add_location(h2, file$5, 16, 1, 336);
     			add_location(main, file$5, 14, 0, 301);
     		},
     		l: function claim(nodes) {
@@ -4198,8 +4208,6 @@ var app = (function () {
     			insert_dev(target, main, anchor);
     			append_dev(main, h1);
     			append_dev(main, t1);
-    			append_dev(main, h2);
-    			append_dev(main, t3);
     			mount_component(router, main, null);
     			current = true;
     		},

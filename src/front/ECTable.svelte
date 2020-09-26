@@ -54,6 +54,15 @@
 		});
 	}
 
+	async function deleteAllECStats(){
+		console.log("Deleting All ECStats...");
+		const res = await fetch("/api/v1/ec-stats/", {
+			method: "DELETE"
+		}).then(function(res) {
+			getECStats();
+		});
+	}
+
 </script>
 
 <main>
@@ -93,4 +102,7 @@
 		{/each}
 	</tbody>
 	</Table>
+	<div>
+		<!-- <Button outline color="danger" on:click="{deleteAllECStats()}">Delete All Data</Button> -->
+	</div>
 </main>

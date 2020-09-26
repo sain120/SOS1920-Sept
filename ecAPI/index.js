@@ -206,4 +206,20 @@ module.exports = function(app, db2) {
 			}
 		});
 	});
+
+	//PARTES DE LA V2
+	app.get(BASE_API_URL + '/ec-stats/deleteAllData', (req, res) => {
+		console.log('Removing all data');
+		db2.remove({}, { multi: true }, function(err, numRemoved) {});
+		res.sendStatus(200);
+		console.log('All Data Removed');
+	});
+
+	app.delete(BASE_API_URL + '/ec-stats/', (req, res) => {
+		console.log('Removing all data');
+		db2.remove({}, { multi: true }, function(err, numRemoved) {});
+		res.sendStatus(200);
+		console.log('All Data Removed');
+	});
+
 };

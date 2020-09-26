@@ -14,7 +14,6 @@
 
 <main>
 	<h1>EC-Stats Manager</h1>
-	<h2>Probando</h2>
 	 <Router {routes} />
 	<!-- <ContactsTable /> -->
 </main>
