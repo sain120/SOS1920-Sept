@@ -11,11 +11,42 @@
 		cdepc: ""
 	};
 
+	let searchECStat = {
+		country: "",
+		year: "",
+		ecu: "",
+		rpc: "",
+		cdepc: ""
+	};
+
 	//onMount(getContacts);
 
 	async function getECStats(){
 		console.log("Fetching Stats...");
-		const res = await fetch("/api/v1/ec-stats");
+
+		let searches = "";
+
+		if(searchECStat.country != ""){
+			searches = searches + "country=" + searchECStat.country + "&";
+		}
+
+		if(searchECStat.year != ""){
+			searches = searches + "year=" + searchECStat.year + "&";
+		}
+
+		if(searchECStat.ecu != ""){
+			searches = searches + "ecu=" + searchECStat.ecu + "&";
+		}
+
+		if(searchECStat.rpc != ""){
+			searches = searches + "rpc=" + searchECStat.rpc + "&";
+		}
+
+		if(searchECStat.cdepc != ""){
+			searches = searches + "cdepc=" + searchECStat.cdepc;
+		}
+
+		const res = await fetch("/api/v1/ec-stats?" + searches);
 
 		if (res.ok){
 			console.log("Ok");
@@ -63,6 +94,15 @@
 		});
 	}
 
+	async function loadInitialData(){
+		console.log("Loading Initial Data...");
+		const res = await fetch("/api/v1/ec-stats/loadInitialData", {
+			method: "GET"
+		}).then(function(res) {
+			getECStats();
+		});
+	}
+
 </script>
 
 <main>
@@ -79,6 +119,16 @@
 			</tr>
 		</thead>
 	<tbody>
+		<tr>
+			<!-- <td>{contact._id}</td> -->
+			<td><input bind:value="{searchECStat.country}"></td>
+			<td><input bind:value="{searchECStat.year}"></td>
+			<td><input bind:value="{searchECStat.ecu}"></td>
+			<td><input bind:value="{searchECStat.rpc}"></td>
+			<td><input bind:value="{searchECStat.cdepc}"></td>
+			<td><Button outline color="info" on:click={getECStats}>Search</Button></td>
+		</tr>
+
 		<tr>
 			<!-- <td>{contact._id}</td> -->
 			<td><input bind:value="{newECStat.country}"></td>
@@ -103,6 +153,7 @@
 	</tbody>
 	</Table>
 	<div>
-		<!-- <Button outline color="danger" on:click="{deleteAllECStats()}">Delete All Data</Button> -->
+		<Button outline color="danger" on:click="{deleteAllECStats}">Delete All Data</Button>
+		<Button outline color="success" on:click="{loadInitialData}">Load Initial Data</Button>
 	</div>
 </main>
