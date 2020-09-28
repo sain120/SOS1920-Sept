@@ -19,6 +19,8 @@
 		cdepc: ""
 	};
 
+	let page = 1;
+
 	//onMount(getContacts);
 
 	async function getECStats(){
@@ -43,10 +45,10 @@
 		}
 
 		if(searchECStat.cdepc != ""){
-			searches = searches + "cdepc=" + searchECStat.cdepc;
+			searches = searches + "cdepc=" + searchECStat.cdepc + "&";
 		}
 
-		const res = await fetch("/api/v1/ec-stats?" + searches);
+		const res = await fetch("/api/v1/ec-stats?" + searches /*+ "limit=2&offset=" + 10*(page-1)*/);
 
 		if (res.ok){
 			console.log("Ok");
@@ -103,9 +105,16 @@
 		});
 	}
 
+	async function nextPage(){
+		page = page + 1;
+		console.log("Loading next page...");
+		getECStats();
+	}
+
 </script>
 
 <main>
+	<h4>Page {page} of {(Math.floor(ecstats.length/10) + 1)}</h4>
 	<Table bordered>
 		<thead>
 			<tr>
@@ -155,5 +164,7 @@
 	<div>
 		<Button outline color="danger" on:click="{deleteAllECStats}">Delete All Data</Button>
 		<Button outline color="success" on:click="{loadInitialData}">Load Initial Data</Button>
+		<!-- <Button outline on:click="{page--}">Previuos Page</Button> -->
+		<Button outline on:click="{nextPage}">Next Page</Button>
 	</div>
 </main>
