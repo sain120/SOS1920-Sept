@@ -21,7 +21,7 @@
 	let page = 1;
 	const statsPerPage = 2;
 	let ecstatsLen = 0;
-	let maxPages = 0;
+	let lastPage = false;
 
 	//onMount(getContacts);
 
@@ -58,7 +58,7 @@
 			const json = await res.json();
 			ecstats = json;
 			ecstatsLen = ecstats.length;
-			maxPages = Math.floor(ecstatsLen/statsPerPage) + 1;
+			lastPage = ecstats[ecstatsLen - 1] == null;
 			console.log("Stats Received: " + ecstatsLen); 
 		} else {
 			console.log("ERROR");
@@ -125,7 +125,7 @@
 </script>
 
 <main>
-	<h4>Page {page} of {maxPages} (Total EC-Stats: {ecstatsLen})</h4>
+	<h4>Page {page}</h4>
 	<Table bordered>
 		<thead>
 			<tr>
@@ -160,6 +160,7 @@
 		</tr>
 
 		{#each ecstats as ecstat}
+		{#if ecstat != null}
 		<tr>
 			<!-- <td>{contact._id}</td> -->
 			<td><a href="#/ec-stat/{ecstat.country}/{ecstat.year}">{ecstat.country}</a></td>
@@ -169,6 +170,7 @@
 			<td>{ecstat.cdepc}</td>
 			<td><Button outline color="danger" on:click="{deleteECStat(ecstat.country, ecstat.year)}">Delete</Button></td>
 		</tr>
+		{/if}
 		{/each}
 	</tbody>
 	</Table>
@@ -178,6 +180,8 @@
 		{#if page > 1}
 		<Button outline on:click="{previousPage}">Previuos Page</Button>
 		{/if}
+		{#if !lastPage}
 		<Button outline on:click="{nextPage}">Next Page</Button>
+		{/if}
 	</div>
 </main>
