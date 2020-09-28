@@ -4,7 +4,6 @@
 
 	let ecstats = [];
 	let newECStat = {
-		country: "",
 		year: "",
 		ecu: "",
 		rpc: "",
@@ -20,6 +19,9 @@
 	};
 
 	let page = 1;
+	const statsPerPage = 2;
+	let ecstatsLen = 0;
+	let maxPages = 0;
 
 	//onMount(getContacts);
 
@@ -48,13 +50,16 @@
 			searches = searches + "cdepc=" + searchECStat.cdepc + "&";
 		}
 
-		const res = await fetch("/api/v1/ec-stats?" + searches /*+ "limit=2&offset=" + 10*(page-1)*/);
+		const res = await fetch("/api/v1/ec-stats?" + searches + "limit=" + statsPerPage
+			+  "&offset=" + statsPerPage*(page-1));
 
 		if (res.ok){
 			console.log("Ok");
 			const json = await res.json();
 			ecstats = json;
-			console.log("Stats Received: " +ecstats.length); 
+			ecstatsLen = ecstats.length;
+			maxPages = Math.floor(ecstatsLen/statsPerPage) + 1;
+			console.log("Stats Received: " + ecstatsLen); 
 		} else {
 			console.log("ERROR");
 		}
@@ -111,10 +116,16 @@
 		getECStats();
 	}
 
+	async function previousPage(){
+		page = page - 1;
+		console.log("Loading next page...");
+		getECStats();
+	}
+
 </script>
 
 <main>
-	<h4>Page {page} of {(Math.floor(ecstats.length/10) + 1)}</h4>
+	<h4>Page {page} of {maxPages} (Total EC-Stats: {ecstatsLen})</h4>
 	<Table bordered>
 		<thead>
 			<tr>
@@ -164,7 +175,9 @@
 	<div>
 		<Button outline color="danger" on:click="{deleteAllECStats}">Delete All Data</Button>
 		<Button outline color="success" on:click="{loadInitialData}">Load Initial Data</Button>
-		<!-- <Button outline on:click="{page--}">Previuos Page</Button> -->
+		{#if page > 1}
+		<Button outline on:click="{previousPage}">Previuos Page</Button>
+		{/if}
 		<Button outline on:click="{nextPage}">Next Page</Button>
 	</div>
 </main>
