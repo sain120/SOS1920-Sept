@@ -13,6 +13,8 @@
 	let updatedCdepc = "15.1";
 
 	let errorMessage
+	let errorMessageFromCode = "";
+	let statusMessage = "";
 
 async function getECStat(){
 	console.log("Fetching ECStat...");
@@ -31,7 +33,10 @@ async function getECStat(){
 
 		console.log("Received ECStat"); 
 	} else {
-		errorMessage = res.status + ":" + res.statusText;
+		if(res.status == 404){
+			errorMessageFromCode = "There is no data with country " +  params.ECStatCountry + " and year " + params.ECStatYear;
+		}
+		errorMessage = "Error " + res.status + " (" + res.statusText + "): " + errorMessageFromCode;
 		console.log("ERROR");
 	}
 } 
@@ -54,7 +59,8 @@ async function updateECStat(){
 					"Content-Type": "application/json"
 				}
 		}).then(function(res) {
-			window.location.replace("/");
+			//window.location.replace("/");
+			statusMessage = "Data updated succesfully"
 		});
 	}
 
@@ -65,13 +71,15 @@ getECStat();
 
 
 <main>
-
-		Edit ECStat <strong>Country: {params.ECStatCountry}, Year: {params.ECStatYear}</strong>
-		
 		{#await ecstat}
         Loading ecstat...
 		{:then ecstat}
 
+		{#if errorMessage}
+		<p style="color: red"><strong>{errorMessage}</strong></p>
+		{:else}
+		Edit ECStat <strong>Country: {params.ECStatCountry}, Year: {params.ECStatYear}</strong>
+		<p style="color: green"><strong>{statusMessage}</strong></p>
 		<Table bordered>
 			<thead>
 				<tr>
@@ -96,9 +104,10 @@ getECStat();
 				</tr>
 			</tbody>
 		</Table>
-		{/await}
-    
-		{#if errorMessage}
-		<p style="color: red">Error: {errorMessage}</p>
 		{/if}
+		{/await}
+
+		<form method="get" action="/">
+			<button type="submit">Go back to view all stats</button>
+		</form>
 </main>

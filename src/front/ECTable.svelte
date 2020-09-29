@@ -23,6 +23,8 @@
 	let ecstatsLen = 0;
 	let lastPage = false;
 
+	let statusMessage = "";
+
 	//onMount(getContacts);
 
 	async function getECStats(){
@@ -75,6 +77,7 @@
 				}
 		}).then(function(res) {
 			getECStats();
+			statusMessage = "New data inserted: Country " + newECStat.country + " and year " + newECStat.year;
 		});
 
 	}
@@ -88,6 +91,7 @@
 		const res = await fetch("/api/v1/ec-stats/" + country + "/" + year, {
 			method: "DELETE"
 		}).then(function(res) {
+			statusMessage = "Data of country " + country + " and year " + year + " deleted succesfully";
 			getECStats();
 		});
 	}
@@ -97,6 +101,7 @@
 		const res = await fetch("/api/v1/ec-stats/", {
 			method: "DELETE"
 		}).then(function(res) {
+			statusMessage = "All data deleted succesfully";
 			getECStats();
 		});
 	}
@@ -106,6 +111,7 @@
 		const res = await fetch("/api/v1/ec-stats/loadInitialData", {
 			method: "GET"
 		}).then(function(res) {
+			statusMessage = "Initial data of EC-Stats loaded succesfully";
 			getECStats();
 		});
 	}
@@ -126,6 +132,7 @@
 
 <main>
 	<h4>Page {page}</h4>
+	<p style="color: green"><strong>{statusMessage}</strong></p>
 	<Table bordered>
 		<thead>
 			<tr>
