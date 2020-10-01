@@ -1,67 +1,32 @@
 <script>
+
+    let ecstats = [];
+    //let MyData = []
 async function loadGraph(){
 
 let MyData = [];
 
 const resData = await fetch("/data");
+const resECStats = await fetch("/api/v1/ec-stats");
+ecstats = await resECStats.json();
 MyData = await resData.json();
 
-/*
-
-    Highcharts.chart("container", {
-        title: {
-    text: 'Solar Employment Growth by Sector, 2010-2016'
-},
-
-subtitle: {
-    text: 'Source: thesolarfoundation.com'
-},
-
-yAxis: {
-    title: {
-        text: 'Number of Employees'
-    }
-},
-
-xAxis: {
-    accessibility: {
-        rangeDescription: 'Range: 2010 to 2017'
-    }
-},
-
-legend: {
-    layout: 'vertical',
-    align: 'right',
-    verticalAlign: 'middle'
-},
-
-plotOptions: {
-    series: {
-        label: {
-            connectorAllowed: false
-        },
-        pointStart: 2010
-    }
-},
-
-series: MyData,
-
-responsive: {
-    rules: [{
-        condition: {
-            maxWidth: 500
-        },
-        chartOptions: {
-            legend: {
-                layout: 'horizontal',
-                align: 'center',
-                verticalAlign: 'bottom'
-            }
-        }
-    }]
-}
-})
-*/
+const MyData2 =
+	[{
+        name: 'EEUU',
+        color: 'rgba(223, 83, 83, .5)',
+        data: [[0.66, 14.65]]
+	},
+	{
+        name: 'China',
+        color: 'rgba(83, 223, 83, .5)',
+        data: [[0.84, 6.51]]
+	},
+	{
+        name: 'France',
+        color: 'rgba(83, 83, 223, .5)',
+        data: [[1.2, 4.72]]
+    }];
 
 Highcharts.chart('container', {
     chart: {
@@ -143,5 +108,8 @@ Highcharts.chart('container', {
         <p class="highcharts-description">
             Scatter plot showing the relationship between the use of electric cars and the emisions of CO2 per country
         </p>
+        {#each ecstats as ecstat}
+        <p>{ecstat.country}</p>
+        {/each}
     </figure>
 </main>

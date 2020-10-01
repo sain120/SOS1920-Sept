@@ -14,6 +14,7 @@ app.use(bodyParser.json());
 app.use("/", express.static("./public"));
 
 app.get("/data", (req, res) => {
+
     var data =
 	[{
         name: 'EEUU',
@@ -22,12 +23,12 @@ app.get("/data", (req, res) => {
 	},
 	{
         name: 'China',
-        color: 'rgba(223, 83, 83, .5)',
+        color: 'rgba(83, 223, 83, .5)',
         data: [[0.84, 6.51]]
 	},
 	{
         name: 'France',
-        color: 'rgba(223, 83, 83, .5)',
+        color: 'rgba(83, 83, 223, .5)',
         data: [[1.2, 4.72]]
     }];
     res.send(data)
