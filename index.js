@@ -16,14 +16,19 @@ app.use("/", express.static("./public"));
 app.get("/data", (req, res) => {
     var data =
 	[{
-        name: 'Female',
+        name: 'EEUU',
         color: 'rgba(223, 83, 83, .5)',
-        data: [[183.2, 51.6], [167.5, 59.0], [159.5, 49.2]]
-
-    }, {
-        name: 'Male',
-        color: 'rgba(119, 152, 191, .5)',
-        data: [[174.0, 65.6], [175.3, 71.8], [193.5, 80.7]]
+        data: [[0.66, 14.65]]
+	},
+	{
+        name: 'China',
+        color: 'rgba(223, 83, 83, .5)',
+        data: [[0.84, 6.51]]
+	},
+	{
+        name: 'France',
+        color: 'rgba(223, 83, 83, .5)',
+        data: [[1.2, 4.72]]
     }];
     res.send(data)
 });
