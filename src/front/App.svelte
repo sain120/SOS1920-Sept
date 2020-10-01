@@ -5,9 +5,12 @@
 	import ECTable from './ECTable.svelte';
 	import EditECStat from './EditECStat.svelte';
 
+	import MyGraph from "./MyGraph.svelte";
+
 	const routes = {
 		"/" : ECTable,
 		"/ec-stat/:ECStatCountry/:ECStatYear": EditECStat,
+		"/graph": MyGraph,
 		"*": NotFound
 	}
 </script>
