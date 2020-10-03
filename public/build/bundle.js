@@ -4984,47 +4984,6 @@ var app = (function () {
 
     const file$5 = "src\\front\\MyGraph.svelte";
 
-    function get_each_context$1(ctx, list, i) {
-    	const child_ctx = ctx.slice();
-    	child_ctx[2] = list[i];
-    	return child_ctx;
-    }
-
-    // (111:8) {#each ecstats as ecstat}
-    function create_each_block$1(ctx) {
-    	let p;
-    	let t_value = /*ecstat*/ ctx[2].country + "";
-    	let t;
-
-    	const block = {
-    		c: function create() {
-    			p = element("p");
-    			t = text(t_value);
-    			add_location(p, file$5, 111, 8, 2916);
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, p, anchor);
-    			append_dev(p, t);
-    		},
-    		p: function update(ctx, dirty) {
-    			if (dirty & /*ecstats*/ 1 && t_value !== (t_value = /*ecstat*/ ctx[2].country + "")) set_data_dev(t, t_value);
-    		},
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(p);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_each_block$1.name,
-    		type: "each",
-    		source: "(111:8) {#each ecstats as ecstat}",
-    		ctx
-    	});
-
-    	return block;
-    }
-
     function create_fragment$6(ctx) {
     	let script0;
     	let script0_src_value;
@@ -5044,16 +5003,8 @@ var app = (function () {
     	let div;
     	let t3;
     	let p;
-    	let t5;
     	let mounted;
     	let dispose;
-    	let each_value = /*ecstats*/ ctx[0];
-    	validate_each_argument(each_value);
-    	let each_blocks = [];
-
-    	for (let i = 0; i < each_value.length; i += 1) {
-    		each_blocks[i] = create_each_block$1(get_each_context$1(ctx, each_value, i));
-    	}
 
     	const block = {
     		c: function create() {
@@ -5072,30 +5023,24 @@ var app = (function () {
     			t3 = space();
     			p = element("p");
     			p.textContent = "Scatter plot showing the relationship between the use of electric cars and the emisions of CO2 per country";
-    			t5 = space();
-
-    			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].c();
-    			}
-
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$5, 96, 4, 2147);
+    			add_location(script0, file$5, 91, 4, 2232);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/series-label.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$5, 97, 1, 2215);
+    			add_location(script1, file$5, 92, 1, 2300);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$5, 98, 1, 2293);
+    			add_location(script2, file$5, 93, 1, 2378);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$5, 99, 1, 2368);
+    			add_location(script3, file$5, 94, 1, 2453);
     			if (script4.src !== (script4_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script4, "src", script4_src_value);
-    			add_location(script4, file$5, 100, 1, 2445);
-    			add_location(h2, file$5, 104, 4, 2575);
+    			add_location(script4, file$5, 95, 1, 2530);
+    			add_location(h2, file$5, 99, 4, 2660);
     			attr_dev(div, "id", "container");
-    			add_location(div, file$5, 106, 8, 2667);
+    			add_location(div, file$5, 101, 8, 2752);
     			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$5, 107, 8, 2703);
+    			add_location(p, file$5, 102, 8, 2788);
     			attr_dev(figure, "class", "highcharts-figure");
-    			add_location(figure, file$5, 105, 4, 2623);
-    			add_location(main, file$5, 103, 0, 2563);
+    			add_location(figure, file$5, 100, 4, 2708);
+    			add_location(main, file$5, 98, 0, 2648);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -5114,42 +5059,13 @@ var app = (function () {
     			append_dev(figure, div);
     			append_dev(figure, t3);
     			append_dev(figure, p);
-    			append_dev(figure, t5);
-
-    			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].m(figure, null);
-    			}
 
     			if (!mounted) {
-    				dispose = listen_dev(script4, "load", /*loadGraph*/ ctx[1], false, false, false);
+    				dispose = listen_dev(script4, "load", /*loadGraph*/ ctx[0], false, false, false);
     				mounted = true;
     			}
     		},
-    		p: function update(ctx, [dirty]) {
-    			if (dirty & /*ecstats*/ 1) {
-    				each_value = /*ecstats*/ ctx[0];
-    				validate_each_argument(each_value);
-    				let i;
-
-    				for (i = 0; i < each_value.length; i += 1) {
-    					const child_ctx = get_each_context$1(ctx, each_value, i);
-
-    					if (each_blocks[i]) {
-    						each_blocks[i].p(child_ctx, dirty);
-    					} else {
-    						each_blocks[i] = create_each_block$1(child_ctx);
-    						each_blocks[i].c();
-    						each_blocks[i].m(figure, null);
-    					}
-    				}
-
-    				for (; i < each_blocks.length; i += 1) {
-    					each_blocks[i].d(1);
-    				}
-
-    				each_blocks.length = each_value.length;
-    			}
-    		},
+    		p: noop,
     		i: noop,
     		o: noop,
     		d: function destroy(detaching) {
@@ -5160,7 +5076,6 @@ var app = (function () {
     			detach_dev(script4);
     			if (detaching) detach_dev(t0);
     			if (detaching) detach_dev(main);
-    			destroy_each(each_blocks, detaching);
     			mounted = false;
     			dispose();
     		}
@@ -5182,11 +5097,31 @@ var app = (function () {
 
     	//let MyData = []
     	async function loadGraph() {
-    		let MyData = [];
-    		const resData = await fetch("/data");
     		const resECStats = await fetch("/api/v1/ec-stats");
-    		$$invalidate(0, ecstats = await resECStats.json());
-    		MyData = await resData.json();
+    		ecstats = await resECStats.json();
+    		var MyData3 = [];
+
+    		const colors = [
+    			"rgba(83, 83, 223, .7)",
+    			"rgba(83, 223, 83, .7)",
+    			"rgba(223, 83, 83, .7)",
+    			"rgba(42, 83, 223, .7)",
+    			"rgba(150, 42, 223, .7)",
+    			"rgba(83, 150, 42, .7)",
+    			"rgba(10, 223, 223, .7)"
+    		];
+
+    		var ncolor = 0;
+
+    		ecstats.forEach(ecstat => {
+    			MyData3.push({
+    				name: ecstat.country,
+    				color: colors[ncolor % ncolor.length],
+    				data: [[parseFloat(ecstat.ecu), parseFloat(ecstat.cdepc)]]
+    			});
+
+    			ncolor++;
+    		});
 
     		Highcharts.chart("container", {
     			chart: { type: "scatter", zoomType: "xy" },
@@ -5234,7 +5169,7 @@ var app = (function () {
     					}
     				}
     			},
-    			series: MyData
+    			series: MyData3
     		});
     	}
 
@@ -5249,14 +5184,14 @@ var app = (function () {
     	$$self.$capture_state = () => ({ ecstats, loadGraph });
 
     	$$self.$inject_state = $$props => {
-    		if ("ecstats" in $$props) $$invalidate(0, ecstats = $$props.ecstats);
+    		if ("ecstats" in $$props) ecstats = $$props.ecstats;
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [ecstats, loadGraph];
+    	return [loadGraph];
     }
 
     class MyGraph extends SvelteComponentDev {

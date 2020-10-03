@@ -4,29 +4,24 @@
     //let MyData = []
 async function loadGraph(){
 
-let MyData = [];
-
-const resData = await fetch("/data");
 const resECStats = await fetch("/api/v1/ec-stats");
 ecstats = await resECStats.json();
-MyData = await resData.json();
+var MyData3 = [];
 
-const MyData2 =
-	[{
-        name: 'EEUU',
-        color: 'rgba(223, 83, 83, .5)',
-        data: [[0.66, 14.65]]
-	},
-	{
-        name: 'China',
-        color: 'rgba(83, 223, 83, .5)',
-        data: [[0.84, 6.51]]
-	},
-	{
-        name: 'France',
-        color: 'rgba(83, 83, 223, .5)',
-        data: [[1.2, 4.72]]
-    }];
+    const colors = ['rgba(83, 83, 223, .7)','rgba(83, 223, 83, .7)',
+    'rgba(223, 83, 83, .7)','rgba(42, 83, 223, .7)',
+    'rgba(150, 42, 223, .7)','rgba(83, 150, 42, .7)',
+    'rgba(10, 223, 223, .7)'];
+    var ncolor = 0;
+
+    ecstats.forEach(ecstat => {
+        MyData3.push({
+            name: ecstat.country,
+            color: colors[ncolor%(ncolor.length)],
+            data: [[parseFloat(ecstat.ecu), parseFloat(ecstat.cdepc)]]
+        })
+        ncolor++;
+    });
 
 Highcharts.chart('container', {
     chart: {
@@ -87,7 +82,7 @@ Highcharts.chart('container', {
             }
         }
     },
-    series: MyData
+    series: MyData3
 });
 
 }
@@ -108,8 +103,5 @@ Highcharts.chart('container', {
         <p class="highcharts-description">
             Scatter plot showing the relationship between the use of electric cars and the emisions of CO2 per country
         </p>
-        {#each ecstats as ecstat}
-        <p>{ecstat.country}</p>
-        {/each}
     </figure>
 </main>
