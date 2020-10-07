@@ -1,7 +1,7 @@
 <script>
 
-    let ecstats = [];
-    //let MyData = []
+let ecstats = [];
+
 async function loadGraph(){
 
 const resECStats = await fetch("/api/v1/ec-stats");

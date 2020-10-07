@@ -5024,23 +5024,23 @@ var app = (function () {
     			p = element("p");
     			p.textContent = "Scatter plot showing the relationship between the use of electric cars and the emisions of CO2 per country";
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$5, 91, 4, 2232);
+    			add_location(script0, file$5, 91, 4, 2207);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/series-label.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$5, 92, 1, 2300);
+    			add_location(script1, file$5, 92, 1, 2275);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$5, 93, 1, 2378);
+    			add_location(script2, file$5, 93, 1, 2353);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$5, 94, 1, 2453);
+    			add_location(script3, file$5, 94, 1, 2428);
     			if (script4.src !== (script4_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script4, "src", script4_src_value);
-    			add_location(script4, file$5, 95, 1, 2530);
-    			add_location(h2, file$5, 99, 4, 2660);
+    			add_location(script4, file$5, 95, 1, 2505);
+    			add_location(h2, file$5, 99, 4, 2635);
     			attr_dev(div, "id", "container");
-    			add_location(div, file$5, 101, 8, 2752);
+    			add_location(div, file$5, 101, 8, 2727);
     			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$5, 102, 8, 2788);
+    			add_location(p, file$5, 102, 8, 2763);
     			attr_dev(figure, "class", "highcharts-figure");
-    			add_location(figure, file$5, 100, 4, 2708);
-    			add_location(main, file$5, 98, 0, 2648);
+    			add_location(figure, file$5, 100, 4, 2683);
+    			add_location(main, file$5, 98, 0, 2623);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -5095,7 +5095,6 @@ var app = (function () {
     function instance$6($$self, $$props, $$invalidate) {
     	let ecstats = [];
 
-    	//let MyData = []
     	async function loadGraph() {
     		const resECStats = await fetch("/api/v1/ec-stats");
     		ecstats = await resECStats.json();
