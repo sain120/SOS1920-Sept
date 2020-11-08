@@ -7,12 +7,15 @@
 
 	import MyGraph from "./MyGraph.svelte";
 	import MyGraph2 from './MyGraph2.svelte'
+	import MyGraph3 from './MyGraph3.svelte'
+
 
 	const routes = {
 		"/" : ECTable,
 		"/ec-stat/:ECStatCountry/:ECStatYear": EditECStat,
 		"/graph": MyGraph,
 		"/graph2": MyGraph2,
+		"/graph3": MyGraph3,
 		"*": NotFound
 	}
 </script>

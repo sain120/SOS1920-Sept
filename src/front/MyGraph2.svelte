@@ -1,17 +1,24 @@
 <script>
-
-  import Button from "sveltestrap/src/Button.svelte";
-  import  {pop} from "svelte-spa-router";
   import bb from "billboard.js/dist/billboard.pkgd";
 
-  const URL_BASE = "api/v1/mercados";
-  
+  let ecstats = [];
+
   async function loadGraph(){
+
+const resECStats = await fetch("/api/v1/ec-stats");
+ecstats = await resECStats.json();
+var MyData = ["Electric Cars Use (%)"];
+let countries = [];
+
+ecstats.forEach(ecstat => {
+        MyData.push(ecstat.ecu);
+        countries.push(ecstat.country);
+    });
+
     var chart = bb.generate({
 data: {
   columns: [
-["data1", 30, 200, 100, 400, 150, 250],
-["data2", 130, 100, 140, 200, 150, 50]
+    MyData
   ],
   type: "bar", // for ESM specify as: bar()
 },
@@ -20,6 +27,12 @@ bar: {
     ratio: 0.5
   }
 },
+axis: {
+    x: {
+      type: "category",
+      categories: countries
+    }
+  },
 bindto: "#barChart"
 });
 
@@ -38,6 +51,6 @@ bindto: "#barChart"
 </head>
 
 <main>
-  <h2>Gráfica 2</h2>
+  <h2>Electric cars use per country</h2>
       <div id="barChart"></div>
 </main>
