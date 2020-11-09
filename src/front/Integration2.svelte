@@ -1,26 +1,24 @@
 <script>
 
 let ecstats = [];
+let rstats = [];
 
 async function loadGraph(){
 
 const resECStats = await fetch("/api/v1/ec-stats");
+const resRLNStats = await fetch("https://sos1920-sep-rnl.herokuapp.com/api/v1/mercados"); 
 ecstats = await resECStats.json();
-var MyData3 = [];
+rstats = await resRLNStats.json();
 
-    const colors = ['rgba(83, 83, 223, .7)','rgba(83, 223, 83, .7)',
-    'rgba(223, 83, 83, .7)','rgba(42, 83, 223, .7)',
-    'rgba(150, 42, 223, .7)','rgba(83, 150, 42, .7)',
-    'rgba(10, 223, 223, .7)'];
-    var ncolor = 0;
+var MyData3 = [];
 
     ecstats.forEach(ecstat => {
         MyData3.push({
-            name: ecstat.country + " " + ecstat.year,
-            color: colors[ncolor%(ncolor.length)],
-            data: [[parseFloat(ecstat.ecu), parseFloat(ecstat.cdepc)]]
+            x: 95,
+            y: ecstat.rpc,
+            z: ecstat.ecu, 
+            country: ecstat.country
         })
-        ncolor++;
     });
 
     Highcharts.chart('container', {
@@ -36,27 +34,28 @@ legend: {
 },
 
 title: {
-    text: 'Sugar and fat intake per country'
+    text: 'Población, renta per cápita y uso de coches eléctricos por país'
 },
 
 subtitle: {
-    text: 'Source: <a href="http://www.euromonitor.com/">Euromonitor</a> and <a href="https://data.oecd.org/">OECD</a>'
+    text: 'Fuente: <a href="http://www.wikipedia.com/">Wikipedia</a>'
 },
 
 accessibility: {
     point: {
-        valueDescriptionFormat: '{index}. {point.name}, fat: {point.x}g, sugar: {point.y}g, obesity: {point.z}%.'
+        valueDescriptionFormat: '{index}. {point.name}, Poblacion: {point.x}M, Renta per cápita: {point.y}m$, Uso coches eléctricos: {point.z}%.'
     }
 },
 
 xAxis: {
     gridLineWidth: 1,
     title: {
-        text: 'Daily fat intake'
+        text: 'Población'
     },
     labels: {
-        format: '{value} gr'
+        format: '{value} Millones'
     },
+    /*
     plotLines: [{
         color: 'black',
         dashStyle: 'dot',
@@ -72,8 +71,9 @@ xAxis: {
         },
         zIndex: 3
     }],
+    */
     accessibility: {
-        rangeDescription: 'Range: 60 to 100 grams.'
+        rangeDescription: ''
     }
 },
 
@@ -81,12 +81,13 @@ yAxis: {
     startOnTick: false,
     endOnTick: false,
     title: {
-        text: 'Daily sugar intake'
+        text: 'Renta per cápita'
     },
     labels: {
-        format: '{value} gr'
+        format: '{value} Mil $'
     },
     maxPadding: 0.2,
+    /*
     plotLines: [{
         color: 'black',
         dashStyle: 'dot',
@@ -102,8 +103,9 @@ yAxis: {
         },
         zIndex: 3
     }],
+    */
     accessibility: {
-        rangeDescription: 'Range: 0 to 160 grams.'
+        rangeDescription: ''
     }
 },
 
@@ -128,23 +130,7 @@ plotOptions: {
 },
 
 series: [{
-    data: [
-        { x: 95, y: 95, z: 13.8, name: 'BE', country: 'Belgium' },
-        { x: 86.5, y: 102.9, z: 14.7, name: 'DE', country: 'Germany' },
-        { x: 80.8, y: 91.5, z: 15.8, name: 'FI', country: 'Finland' },
-        { x: 80.4, y: 102.5, z: 12, name: 'NL', country: 'Netherlands' },
-        { x: 80.3, y: 86.1, z: 11.8, name: 'SE', country: 'Sweden' },
-        { x: 78.4, y: 70.1, z: 16.6, name: 'ES', country: 'Spain' },
-        { x: 74.2, y: 68.5, z: 14.5, name: 'FR', country: 'France' },
-        { x: 73.5, y: 83.1, z: 10, name: 'NO', country: 'Norway' },
-        { x: 71, y: 93.2, z: 24.7, name: 'UK', country: 'United Kingdom' },
-        { x: 69.2, y: 57.6, z: 10.4, name: 'IT', country: 'Italy' },
-        { x: 68.6, y: 20, z: 16, name: 'RU', country: 'Russia' },
-        { x: 65.5, y: 126.4, z: 35.3, name: 'US', country: 'United States' },
-        { x: 65.4, y: 50.8, z: 28.5, name: 'HU', country: 'Hungary' },
-        { x: 63.4, y: 51.8, z: 15.4, name: 'PT', country: 'Portugal' },
-        { x: 64, y: 82.9, z: 31.3, name: 'NZ', country: 'New Zealand' }
-    ]
+    data: MyData3
 }]
 
 });
@@ -161,11 +147,17 @@ series: [{
 </svelte:head>
 
 <main>
-    <h2>Electric cars use vs CO2 emisions</h2>
+    <h2>Uso de coches eléctricos vs Población vs Renta per capita</h2>
     <figure class="highcharts-figure">
         <div id="container"></div>
         <p class="highcharts-description">
-            Scatter plot showing the relationship between the use of electric cars and the emisions of CO2 per country
+            Nube de puntos mostrando la correlación entre el numero de habitantes de un país y su renta per cápita.
+             El tamaño del punto se corresponde con el uso de coches electricos (%).
         </p>
+        {#each rstats as rstat}
+            <p>
+                {rstat.Country}
+            </p>
+        {/each}
     </figure>
 </main>
