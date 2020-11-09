@@ -16,7 +16,7 @@ var MyData3 = [];
 
     ecstats.forEach(ecstat => {
         MyData3.push({
-            name: ecstat.country,
+            name: ecstat.country + " " + ecstat.year,
             color: colors[ncolor%(ncolor.length)],
             data: [[parseFloat(ecstat.ecu), parseFloat(ecstat.cdepc)]]
         })

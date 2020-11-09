@@ -8,6 +8,8 @@
 	import MyGraph from "./MyGraph.svelte";
 	import MyGraph2 from './MyGraph2.svelte'
 	import MyGraph3 from './MyGraph3.svelte'
+	import Integration from './integration.svelte'
+	import Integration2 from './integration2.svelte'
 
 
 	const routes = {
@@ -16,6 +18,8 @@
 		"/graph": MyGraph,
 		"/graph2": MyGraph2,
 		"/graph3": MyGraph3,
+		"/integration": Integration,
+		"/integration2": Integration2,
 		"*": NotFound
 	}
 </script>

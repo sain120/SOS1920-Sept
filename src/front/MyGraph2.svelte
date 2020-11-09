@@ -12,7 +12,7 @@ let countries = [];
 
 ecstats.forEach(ecstat => {
         MyData.push(ecstat.ecu);
-        countries.push(ecstat.country);
+        countries.push(ecstat.country + " " + ecstat.year);
     });
 
     var chart = bb.generate({
