@@ -3,7 +3,7 @@ module.exports = function(app, db2) {
 
 	var initialData = [
 		{
-			country: 'EEUU',
+			country: 'United_States',
 			year: 2015,
 			ecu: 0.66,
 			rpc: 59.532,

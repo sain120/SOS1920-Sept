@@ -158,5 +158,10 @@ series: [{
             Nube de puntos mostrando la correlación entre el numero de habitantes de un país y su renta per cápita.
              El tamaño del punto se corresponde con el uso de coches electricos (%).
         </p>
+        {#each rstats as rstat}
+            <p>
+                {rstat.Country}
+            </p>
+        {/each}
     </figure>
 </main>

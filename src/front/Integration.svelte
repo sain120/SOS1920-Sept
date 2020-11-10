@@ -1,92 +1,74 @@
 <script>
 
 let ecstats = [];
+let fstats = [];
 
 async function loadGraph(){
 
 const resECStats = await fetch("/api/v1/ec-stats");
-ecstats = await resECStats.json();
-var MyData3 = [];
+const resFCOstats = await fetch("https://sos1920-sep-fco.herokuapp.com/api/v1/cbp");
 
-    const colors = ['rgba(83, 83, 223, .7)','rgba(83, 223, 83, .7)',
-    'rgba(223, 83, 83, .7)','rgba(42, 83, 223, .7)',
-    'rgba(150, 42, 223, .7)','rgba(83, 150, 42, .7)',
-    'rgba(10, 223, 223, .7)'];
-    var ncolor = 0;
+ecstats = await resECStats.json();
+fstats = await resFCOstats.json();
+
+var MyData1 = [];
+var MyData2 = [];
+var Countries = [];
 
     ecstats.forEach(ecstat => {
-        MyData3.push({
-            name: ecstat.country + " " + ecstat.year,
-            color: colors[ncolor%(ncolor.length)],
-            data: [[parseFloat(ecstat.ecu), parseFloat(ecstat.cdepc)]]
-        })
-        ncolor++;
+        fstats.forEach(fstat => {
+            if(ecstat.country == fstat.country || ecstat.country == "United_States" && fstat.country == "U.S"){
+                MyData1.push(ecstat.rpc);
+                MyData2.push(fstat.yfed);
+                Countries.push(ecstat.country);
+            }
+        });
     });
 
     Highcharts.chart('container', {
+
+chart: {
+    type: 'column',
+    styledMode: true
+},
+
+title: {
+    text: 'Renta per cápita y años por duplicar población'
+},
+
+xAxis: [{
+        categories: Countries,
+        crosshair: true
+}],
+
+yAxis: [{
+    className: 'highcharts-color-0',
     title: {
-        text: 'Combination chart'
+        text: 'Renta per cápita (Miles de $)'
     },
-    xAxis: {
-        categories: ['Apples', 'Oranges', 'Pears', 'Bananas', 'Plums']
-    },
-    labels: {
-        items: [{
-            html: 'Total fruit consumption',
-            style: {
-                left: '50px',
-                top: '18px',
-                color: ( // theme
-                    Highcharts.defaultOptions.title.style &&
-                    Highcharts.defaultOptions.title.style.color
-                ) || 'black'
-            }
-        }]
-    },
-    series: [{
-        type: 'column',
-        name: 'Jane',
-        data: [3, 2, 1, 3, 4]
-    }, {
-        type: 'column',
-        name: 'John',
-        data: [2, 3, 5, 7, 6]
-    }, {
-        type: 'column',
-        name: 'Joe',
-        data: [4, 3, 3, 9, 0]
-    }, {
-        type: 'spline',
-        name: 'Average',
-        data: [3, 2.67, 3, 6.33, 3.33],
-        marker: {
-            lineWidth: 2,
-            lineColor: Highcharts.getOptions().colors[3],
-            fillColor: 'white'
-        }
-    }, {
-        type: 'pie',
-        name: 'Total consumption',
-        data: [{
-            name: 'Jane',
-            y: 13,
-            color: Highcharts.getOptions().colors[0] // Jane's color
-        }, {
-            name: 'John',
-            y: 23,
-            color: Highcharts.getOptions().colors[1] // John's color
-        }, {
-            name: 'Joe',
-            y: 19,
-            color: Highcharts.getOptions().colors[2] // Joe's color
-        }],
-        center: [100, 80],
-        size: 100,
-        showInLegend: false,
-        dataLabels: {
-            enabled: false
-        }
-    }]
+}, {
+    className: 'highcharts-color-1',
+    opposite: true,
+    title: {
+        text: 'Años en duplicar población'
+    }
+}],
+
+plotOptions: {
+    column: {
+        borderRadius: 5
+    }
+},
+
+series: [{
+    name: 'Renta per cápita',
+    data: MyData1
+}, {
+    name: 'Años en x2 pob',
+    data: MyData2,
+    yAxis: 1
+}]
+
 });
 
 }
@@ -94,18 +76,83 @@ var MyData3 = [];
 
 <svelte:head>
     <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/highcharts-more.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
     <script src="https://code.highcharts.com/modules/accessibility.js" on:load="{loadGraph}"></script>
 </svelte:head>
 
 <main>
-    <h2>Electric cars use vs CO2 emisions</h2>
+    <h2>Integración 1: API de Fernando</h2>
     <figure class="highcharts-figure">
         <div id="container"></div>
         <p class="highcharts-description">
-            Scatter plot showing the relationship between the use of electric cars and the emisions of CO2 per country
+            Gráfico de barras con la renta per cápita por país y sus años estimados en duplicar la población actual.
         </p>
     </figure>
 </main>
+
+<style>
+@import 'https://code.highcharts.com/css/highcharts.css';
+
+    .highcharts-figure, .highcharts-data-table table {
+        min-width: 310px; 
+        max-width: 800px;
+        margin: 1em auto;
+    }
+    
+    .highcharts-data-table table {
+        font-family: Verdana, sans-serif;
+        border-collapse: collapse;
+        border: 1px solid #EBEBEB;
+        margin: 10px auto;
+        text-align: center;
+        width: 100%;
+        max-width: 500px;
+    }
+    .highcharts-data-table caption {
+        padding: 1em 0;
+        font-size: 1.2em;
+        color: #555;
+    }
+    .highcharts-data-table th {
+        font-weight: 600;
+        padding: 0.5em;
+    }
+    .highcharts-data-table td, .highcharts-data-table th, .highcharts-data-table caption {
+        padding: 0.5em;
+    }
+    .highcharts-data-table thead tr, .highcharts-data-table tr:nth-child(even) {
+        background: #f8f8f8;
+    }
+    .highcharts-data-table tr:hover {
+        background: #f1f7ff;
+    }
+    
+    
+    /* Link the series colors to axis colors */
+    .highcharts-color-0 {
+        fill: #7cb5ec;
+        stroke: #7cb5ec;
+    }
+    .highcharts-axis.highcharts-color-0 .highcharts-axis-line {
+        stroke: #7cb5ec;
+    }
+    .highcharts-axis.highcharts-color-0 text {
+        fill: #7cb5ec;
+    }
+    .highcharts-color-1 {
+        fill: #90ed7d;
+        stroke: #90ed7d;
+    }
+    .highcharts-axis.highcharts-color-1 .highcharts-axis-line {
+        stroke: #90ed7d;
+    }
+    .highcharts-axis.highcharts-color-1 text {
+        fill: #90ed7d;
+    }
+    
+    
+    .highcharts-yaxis .highcharts-axis-line {
+        stroke-width: 2px;
+    }
+</style>

@@ -42605,6 +42605,194 @@ var app = (function () {
     	let script2_src_value;
     	let script3;
     	let script3_src_value;
+    	let t0;
+    	let main;
+    	let h2;
+    	let t2;
+    	let figure;
+    	let div;
+    	let t3;
+    	let p;
+    	let dispose;
+
+    	const block = {
+    		c: function create() {
+    			script0 = element("script");
+    			script1 = element("script");
+    			script2 = element("script");
+    			script3 = element("script");
+    			t0 = space();
+    			main = element("main");
+    			h2 = element("h2");
+    			h2.textContent = "Integración 1: API de Fernando";
+    			t2 = space();
+    			figure = element("figure");
+    			div = element("div");
+    			t3 = space();
+    			p = element("p");
+    			p.textContent = "Gráfico de barras con la renta per cápita por país y sus años estimados en duplicar la población actual.";
+    			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
+    			add_location(script0, file$8, 77, 4, 1465);
+    			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script1, "src", script1_src_value);
+    			add_location(script1, file$8, 78, 4, 1536);
+    			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script2, "src", script2_src_value);
+    			add_location(script2, file$8, 79, 4, 1614);
+    			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script3, "src", script3_src_value);
+    			add_location(script3, file$8, 80, 4, 1694);
+    			add_location(h2, file$8, 84, 4, 1824);
+    			attr_dev(div, "id", "container");
+    			add_location(div, file$8, 86, 8, 1913);
+    			attr_dev(p, "class", "highcharts-description");
+    			add_location(p, file$8, 87, 8, 1949);
+    			attr_dev(figure, "class", "highcharts-figure svelte-8363wh");
+    			add_location(figure, file$8, 85, 4, 1869);
+    			add_location(main, file$8, 83, 0, 1812);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor, remount) {
+    			append_dev(document.head, script0);
+    			append_dev(document.head, script1);
+    			append_dev(document.head, script2);
+    			append_dev(document.head, script3);
+    			insert_dev(target, t0, anchor);
+    			insert_dev(target, main, anchor);
+    			append_dev(main, h2);
+    			append_dev(main, t2);
+    			append_dev(main, figure);
+    			append_dev(figure, div);
+    			append_dev(figure, t3);
+    			append_dev(figure, p);
+    			if (remount) dispose();
+    			dispose = listen_dev(script3, "load", /*loadGraph*/ ctx[0], false, false, false);
+    		},
+    		p: noop,
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			detach_dev(script0);
+    			detach_dev(script1);
+    			detach_dev(script2);
+    			detach_dev(script3);
+    			if (detaching) detach_dev(t0);
+    			if (detaching) detach_dev(main);
+    			dispose();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$9.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance$9($$self, $$props, $$invalidate) {
+    	let ecstats = [];
+    	let fstats = [];
+
+    	async function loadGraph() {
+    		const resECStats = await fetch("/api/v1/ec-stats");
+    		const resFCOstats = await fetch("https://sos1920-sep-fco.herokuapp.com/api/v1/cbp");
+    		ecstats = await resECStats.json();
+    		fstats = await resFCOstats.json();
+    		var MyData1 = [];
+    		var MyData2 = [];
+    		var Countries = [];
+
+    		ecstats.forEach(ecstat => {
+    			fstats.forEach(fstat => {
+    				if (ecstat.country == fstat.country || ecstat.country == "United_States" && fstat.country == "U.S") {
+    					MyData1.push(ecstat.rpc);
+    					MyData2.push(fstat.yfed);
+    					Countries.push(ecstat.country);
+    				}
+    			});
+    		});
+
+    		Highcharts.chart("container", {
+    			chart: { type: "column", styledMode: true },
+    			title: {
+    				text: "Renta per cápita y años por duplicar población"
+    			},
+    			xAxis: [{ categories: Countries, crosshair: true }],
+    			yAxis: [
+    				{
+    					className: "highcharts-color-0",
+    					title: { text: "Renta per cápita (Miles de $)" }
+    				},
+    				{
+    					className: "highcharts-color-1",
+    					opposite: true,
+    					title: { text: "Años en duplicar población" }
+    				}
+    			],
+    			plotOptions: { column: { borderRadius: 5 } },
+    			series: [
+    				{ name: "Renta per cápita", data: MyData1 },
+    				{
+    					name: "Años en x2 pob",
+    					data: MyData2,
+    					yAxis: 1
+    				}
+    			]
+    		});
+    	}
+
+    	const writable_props = [];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<Integration> was created with unknown prop '${key}'`);
+    	});
+
+    	let { $$slots = {}, $$scope } = $$props;
+    	validate_slots("Integration", $$slots, []);
+    	$$self.$capture_state = () => ({ ecstats, fstats, loadGraph });
+
+    	$$self.$inject_state = $$props => {
+    		if ("ecstats" in $$props) ecstats = $$props.ecstats;
+    		if ("fstats" in $$props) fstats = $$props.fstats;
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	return [loadGraph];
+    }
+
+    class Integration extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$9, create_fragment$9, safe_not_equal, {});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "Integration",
+    			options,
+    			id: create_fragment$9.name
+    		});
+    	}
+    }
+
+    /* src\front\integration2.svelte generated by Svelte v3.20.1 */
+
+    const file$9 = "src\\front\\integration2.svelte";
+
+    function create_fragment$a(ctx) {
+    	let script0;
+    	let script0_src_value;
+    	let script1;
+    	let script1_src_value;
+    	let script2;
+    	let script2_src_value;
+    	let script3;
+    	let script3_src_value;
     	let script4;
     	let script4_src_value;
     	let t0;
@@ -42627,31 +42815,31 @@ var app = (function () {
     			t0 = space();
     			main = element("main");
     			h2 = element("h2");
-    			h2.textContent = "Electric cars use vs CO2 emisions";
+    			h2.textContent = "Uso de coches eléctricos vs Población vs Renta per capita";
     			t2 = space();
     			figure = element("figure");
     			div = element("div");
     			t3 = space();
     			p = element("p");
-    			p.textContent = "Scatter plot showing the relationship between the use of electric cars and the emisions of CO2 per country";
+    			p.textContent = "Nube de puntos mostrando la correlación entre el numero de habitantes de un país y su renta per cápita.\r\n             El tamaño del punto se corresponde con el uso de coches electricos (%).";
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$8, 95, 4, 2452);
+    			add_location(script0, file$9, 145, 4, 3013);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/highcharts-more.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$8, 96, 4, 2523);
+    			add_location(script1, file$9, 146, 4, 3084);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$8, 97, 4, 2599);
+    			add_location(script2, file$9, 147, 4, 3160);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$8, 98, 4, 2677);
+    			add_location(script3, file$9, 148, 4, 3238);
     			if (script4.src !== (script4_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script4, "src", script4_src_value);
-    			add_location(script4, file$8, 99, 4, 2757);
-    			add_location(h2, file$8, 103, 4, 2887);
+    			add_location(script4, file$9, 149, 4, 3318);
+    			add_location(h2, file$9, 153, 4, 3448);
     			attr_dev(div, "id", "container");
-    			add_location(div, file$8, 105, 8, 2979);
+    			add_location(div, file$9, 155, 8, 3564);
     			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$8, 106, 8, 3015);
+    			add_location(p, file$9, 156, 8, 3600);
     			attr_dev(figure, "class", "highcharts-figure");
-    			add_location(figure, file$8, 104, 4, 2935);
-    			add_location(main, file$8, 102, 0, 2875);
+    			add_location(figure, file$9, 154, 4, 3520);
+    			add_location(main, file$9, 152, 0, 3436);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -42690,343 +42878,6 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$9.name,
-    		type: "component",
-    		source: "",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    function instance$9($$self, $$props, $$invalidate) {
-    	let ecstats = [];
-
-    	async function loadGraph() {
-    		const resECStats = await fetch("/api/v1/ec-stats");
-    		ecstats = await resECStats.json();
-    		var MyData3 = [];
-
-    		const colors = [
-    			"rgba(83, 83, 223, .7)",
-    			"rgba(83, 223, 83, .7)",
-    			"rgba(223, 83, 83, .7)",
-    			"rgba(42, 83, 223, .7)",
-    			"rgba(150, 42, 223, .7)",
-    			"rgba(83, 150, 42, .7)",
-    			"rgba(10, 223, 223, .7)"
-    		];
-
-    		var ncolor = 0;
-
-    		ecstats.forEach(ecstat => {
-    			MyData3.push({
-    				name: ecstat.country + " " + ecstat.year,
-    				color: colors[ncolor % ncolor.length],
-    				data: [[parseFloat(ecstat.ecu), parseFloat(ecstat.cdepc)]]
-    			});
-
-    			ncolor++;
-    		});
-
-    		Highcharts.chart("container", {
-    			title: { text: "Combination chart" },
-    			xAxis: {
-    				categories: ["Apples", "Oranges", "Pears", "Bananas", "Plums"]
-    			},
-    			labels: {
-    				items: [
-    					{
-    						html: "Total fruit consumption",
-    						style: {
-    							left: "50px",
-    							top: "18px",
-    							color: // theme
-    							Highcharts.defaultOptions.title.style && Highcharts.defaultOptions.title.style.color || "black"
-    						}
-    					}
-    				]
-    			},
-    			series: [
-    				{
-    					type: "column",
-    					name: "Jane",
-    					data: [3, 2, 1, 3, 4]
-    				},
-    				{
-    					type: "column",
-    					name: "John",
-    					data: [2, 3, 5, 7, 6]
-    				},
-    				{
-    					type: "column",
-    					name: "Joe",
-    					data: [4, 3, 3, 9, 0]
-    				},
-    				{
-    					type: "spline",
-    					name: "Average",
-    					data: [3, 2.67, 3, 6.33, 3.33],
-    					marker: {
-    						lineWidth: 2,
-    						lineColor: Highcharts.getOptions().colors[3],
-    						fillColor: "white"
-    					}
-    				},
-    				{
-    					type: "pie",
-    					name: "Total consumption",
-    					data: [
-    						{
-    							name: "Jane",
-    							y: 13,
-    							color: Highcharts.getOptions().colors[0], // Jane's color
-    							
-    						},
-    						{
-    							name: "John",
-    							y: 23,
-    							color: Highcharts.getOptions().colors[1], // John's color
-    							
-    						},
-    						{
-    							name: "Joe",
-    							y: 19,
-    							color: Highcharts.getOptions().colors[2], // Joe's color
-    							
-    						}
-    					],
-    					center: [100, 80],
-    					size: 100,
-    					showInLegend: false,
-    					dataLabels: { enabled: false }
-    				}
-    			]
-    		});
-    	}
-
-    	const writable_props = [];
-
-    	Object.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<Integration> was created with unknown prop '${key}'`);
-    	});
-
-    	let { $$slots = {}, $$scope } = $$props;
-    	validate_slots("Integration", $$slots, []);
-    	$$self.$capture_state = () => ({ ecstats, loadGraph });
-
-    	$$self.$inject_state = $$props => {
-    		if ("ecstats" in $$props) ecstats = $$props.ecstats;
-    	};
-
-    	if ($$props && "$$inject" in $$props) {
-    		$$self.$inject_state($$props.$$inject);
-    	}
-
-    	return [loadGraph];
-    }
-
-    class Integration extends SvelteComponentDev {
-    	constructor(options) {
-    		super(options);
-    		init(this, options, instance$9, create_fragment$9, safe_not_equal, {});
-
-    		dispatch_dev("SvelteRegisterComponent", {
-    			component: this,
-    			tagName: "Integration",
-    			options,
-    			id: create_fragment$9.name
-    		});
-    	}
-    }
-
-    /* src\front\integration2.svelte generated by Svelte v3.20.1 */
-
-    const file$9 = "src\\front\\integration2.svelte";
-
-    function get_each_context$1(ctx, list, i) {
-    	const child_ctx = ctx.slice();
-    	child_ctx[3] = list[i];
-    	return child_ctx;
-    }
-
-    // (157:8) {#each rstats as rstat}
-    function create_each_block$1(ctx) {
-    	let p;
-    	let t0_value = /*rstat*/ ctx[3].Country + "";
-    	let t0;
-    	let t1;
-
-    	const block = {
-    		c: function create() {
-    			p = element("p");
-    			t0 = text(t0_value);
-    			t1 = space();
-    			add_location(p, file$9, 157, 12, 3718);
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, p, anchor);
-    			append_dev(p, t0);
-    			append_dev(p, t1);
-    		},
-    		p: function update(ctx, dirty) {
-    			if (dirty & /*rstats*/ 1 && t0_value !== (t0_value = /*rstat*/ ctx[3].Country + "")) set_data_dev(t0, t0_value);
-    		},
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(p);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_each_block$1.name,
-    		type: "each",
-    		source: "(157:8) {#each rstats as rstat}",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    function create_fragment$a(ctx) {
-    	let script0;
-    	let script0_src_value;
-    	let script1;
-    	let script1_src_value;
-    	let script2;
-    	let script2_src_value;
-    	let script3;
-    	let script3_src_value;
-    	let script4;
-    	let script4_src_value;
-    	let t0;
-    	let main;
-    	let h2;
-    	let t2;
-    	let figure;
-    	let div;
-    	let t3;
-    	let p;
-    	let t5;
-    	let dispose;
-    	let each_value = /*rstats*/ ctx[0];
-    	validate_each_argument(each_value);
-    	let each_blocks = [];
-
-    	for (let i = 0; i < each_value.length; i += 1) {
-    		each_blocks[i] = create_each_block$1(get_each_context$1(ctx, each_value, i));
-    	}
-
-    	const block = {
-    		c: function create() {
-    			script0 = element("script");
-    			script1 = element("script");
-    			script2 = element("script");
-    			script3 = element("script");
-    			script4 = element("script");
-    			t0 = space();
-    			main = element("main");
-    			h2 = element("h2");
-    			h2.textContent = "Uso de coches eléctricos vs Población vs Renta per capita";
-    			t2 = space();
-    			figure = element("figure");
-    			div = element("div");
-    			t3 = space();
-    			p = element("p");
-    			p.textContent = "Nube de puntos mostrando la correlación entre el numero de habitantes de un país y su renta per cápita.\r\n             El tamaño del punto se corresponde con el uso de coches electricos (%).";
-    			t5 = space();
-
-    			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].c();
-    			}
-
-    			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$9, 141, 4, 2833);
-    			if (script1.src !== (script1_src_value = "https://code.highcharts.com/highcharts-more.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$9, 142, 4, 2904);
-    			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$9, 143, 4, 2980);
-    			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$9, 144, 4, 3058);
-    			if (script4.src !== (script4_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script4, "src", script4_src_value);
-    			add_location(script4, file$9, 145, 4, 3138);
-    			add_location(h2, file$9, 149, 4, 3268);
-    			attr_dev(div, "id", "container");
-    			add_location(div, file$9, 151, 8, 3384);
-    			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$9, 152, 8, 3420);
-    			attr_dev(figure, "class", "highcharts-figure");
-    			add_location(figure, file$9, 150, 4, 3340);
-    			add_location(main, file$9, 148, 0, 3256);
-    		},
-    		l: function claim(nodes) {
-    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
-    		},
-    		m: function mount(target, anchor, remount) {
-    			append_dev(document.head, script0);
-    			append_dev(document.head, script1);
-    			append_dev(document.head, script2);
-    			append_dev(document.head, script3);
-    			append_dev(document.head, script4);
-    			insert_dev(target, t0, anchor);
-    			insert_dev(target, main, anchor);
-    			append_dev(main, h2);
-    			append_dev(main, t2);
-    			append_dev(main, figure);
-    			append_dev(figure, div);
-    			append_dev(figure, t3);
-    			append_dev(figure, p);
-    			append_dev(figure, t5);
-
-    			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].m(figure, null);
-    			}
-
-    			if (remount) dispose();
-    			dispose = listen_dev(script4, "load", /*loadGraph*/ ctx[1], false, false, false);
-    		},
-    		p: function update(ctx, [dirty]) {
-    			if (dirty & /*rstats*/ 1) {
-    				each_value = /*rstats*/ ctx[0];
-    				validate_each_argument(each_value);
-    				let i;
-
-    				for (i = 0; i < each_value.length; i += 1) {
-    					const child_ctx = get_each_context$1(ctx, each_value, i);
-
-    					if (each_blocks[i]) {
-    						each_blocks[i].p(child_ctx, dirty);
-    					} else {
-    						each_blocks[i] = create_each_block$1(child_ctx);
-    						each_blocks[i].c();
-    						each_blocks[i].m(figure, null);
-    					}
-    				}
-
-    				for (; i < each_blocks.length; i += 1) {
-    					each_blocks[i].d(1);
-    				}
-
-    				each_blocks.length = each_value.length;
-    			}
-    		},
-    		i: noop,
-    		o: noop,
-    		d: function destroy(detaching) {
-    			detach_dev(script0);
-    			detach_dev(script1);
-    			detach_dev(script2);
-    			detach_dev(script3);
-    			detach_dev(script4);
-    			if (detaching) detach_dev(t0);
-    			if (detaching) detach_dev(main);
-    			destroy_each(each_blocks, detaching);
-    			dispose();
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
     		id: create_fragment$a.name,
     		type: "component",
     		source: "",
@@ -43044,15 +42895,19 @@ var app = (function () {
     		const resECStats = await fetch("/api/v1/ec-stats");
     		const resRLNStats = await fetch("https://sos1920-sep-rnl.herokuapp.com/api/v1/mercados");
     		ecstats = await resECStats.json();
-    		$$invalidate(0, rstats = await resRLNStats.json());
+    		rstats = await resRLNStats.json();
     		var MyData3 = [];
 
     		ecstats.forEach(ecstat => {
-    			MyData3.push({
-    				x: 95,
-    				y: ecstat.rpc,
-    				z: ecstat.ecu,
-    				country: ecstat.country
+    			rstats.forEach(rstat => {
+    				if (ecstat.country == rstat.Country) {
+    					MyData3.push({
+    						x: rstat.Population,
+    						y: ecstat.rpc,
+    						z: ecstat.ecu,
+    						country: ecstat.country
+    					});
+    				}
     			});
     		});
 
@@ -43125,7 +42980,7 @@ var app = (function () {
     			tooltip: {
     				useHTML: true,
     				headerFormat: "<table>",
-    				pointFormat: "<tr><th colspan=\"2\"><h3>{point.country}</h3></th></tr>" + "<tr><th>Fat intake:</th><td>{point.x}g</td></tr>" + "<tr><th>Sugar intake:</th><td>{point.y}g</td></tr>" + "<tr><th>Obesity (adults):</th><td>{point.z}%</td></tr>",
+    				pointFormat: "<tr><th colspan=\"2\"><h3>{point.country}</h3></th></tr>" + "<tr><th>Población:</th><td>{point.x} Millones </td></tr>" + "<tr><th>Renta per cápita:</th><td>{point.y} Mil $</td></tr>" + "<tr><th>Uso de coches eléctricos:</th><td>{point.z}%</td></tr>",
     				footerFormat: "</table>",
     				followPointer: true
     			},
@@ -43150,14 +43005,14 @@ var app = (function () {
 
     	$$self.$inject_state = $$props => {
     		if ("ecstats" in $$props) ecstats = $$props.ecstats;
-    		if ("rstats" in $$props) $$invalidate(0, rstats = $$props.rstats);
+    		if ("rstats" in $$props) rstats = $$props.rstats;
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [rstats, loadGraph];
+    	return [loadGraph];
     }
 
     class Integration2 extends SvelteComponentDev {

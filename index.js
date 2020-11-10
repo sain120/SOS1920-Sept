@@ -13,6 +13,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use("/", express.static("./public"));
 
+/*
 app.get("/data", (req, res) => {
 
     var data =
@@ -33,6 +34,7 @@ app.get("/data", (req, res) => {
     }];
     res.send(data)
 });
+*/
 
 const db2 = new dataStore({
 		filename: dbFileName2,
