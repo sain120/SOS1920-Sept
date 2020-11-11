@@ -1,12 +1,15 @@
 <script>
 
 let ecstats = [];
+let clnstats = [];
 
 async function loadGraph(){
 
 const resECStats = await fetch("/api/v1/ec-stats");
+const resCLNStats = await fetch("https://corona.lmao.ninja/v2/countries");
 
 ecstats = await resECStats.json();
+clnstats = await resCLNStats.json();
 
 var MyData3 = [];
 
@@ -16,6 +19,7 @@ var MyData3 = [];
     'rgba(10, 223, 223, .7)'];
     var ncolor = 0;
 
+    /*
     ecstats.forEach(ecstat => {
         MyData3.push({
             name: ecstat.country + " " + ecstat.year,
@@ -24,6 +28,20 @@ var MyData3 = [];
         })
         ncolor++;
     });
+    */
+
+    ecstats.forEach(ecstat => {
+        clnstats.forEach(clnstat => {
+            if(ecstat.country == clnstat.country || ecstat.country == "United_States" && clnstat.country == "USA"){
+                MyData3.push({
+                name: ecstat.country + " " + ecstat.year,
+                color: colors[ncolor%(ncolor.length)],
+                data: [[parseFloat(clnstat.population), parseFloat(ecstat.cdepc)]]
+        })
+        ncolor++;
+            }
+        });
+    });
 
 Highcharts.chart('container', {
     chart: {
@@ -31,7 +49,7 @@ Highcharts.chart('container', {
         zoomType: 'xy'
     },
     title: {
-        text: 'Uso de coches electricos vs Emisiones de CO2 por país'
+        text: 'Paises por población y emisiones per cápita'
     },
     subtitle: {
         text: 'Fuente: Wikipedia'
@@ -39,7 +57,7 @@ Highcharts.chart('container', {
     xAxis: {
         title: {
             enabled: true,
-            text: 'Uso de coches eléctricos (%)'
+            text: 'Población'
         },
         startOnTick: true,
         endOnTick: true,
@@ -47,7 +65,7 @@ Highcharts.chart('container', {
     },
     yAxis: {
         title: {
-            text: 'Emisiones de C02 per cápita (tons)'
+            text: 'Emisiones de CO2 per cápita (tons)'
         }
     },
     legend: {
@@ -80,7 +98,7 @@ Highcharts.chart('container', {
             },
             tooltip: {
                 headerFormat: '<b>{series.name}</b><br>',
-                pointFormat: '{point.x} %, {point.y} tons'
+                pointFormat: '{point.x}, {point.y} tons'
             }
         }
     },
@@ -99,10 +117,11 @@ Highcharts.chart('container', {
 </svelte:head>
 
 <main>
-    <h2>Uso de coches electricos y emisiones de CO2</h2>
+    <h2>Integración Externa 2: Población y emisiones de CO2 Per cápita</h2>
     <figure class="highcharts-figure">
         <div id="container"></div>
         <p class="highcharts-description">
-            Nube de puntos mostrando la relación entre el uso de coches eléctricos y las emisiones de CO2 per cápita
+            Integración externa 2: Gráfico mostando la correlación entre población y emisiones de CO2 per cápita.
+        </p>
     </figure>
 </main>

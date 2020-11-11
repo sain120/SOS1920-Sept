@@ -11,6 +11,7 @@
 	import Integration from './integration.svelte'
 	import Integration2 from './integration2.svelte'
 	import ExtIntegration from './ExtIntegration.svelte'
+	import ExtIntegration2 from './ExtIntegration2.svelte'
 
 
 	const routes = {
@@ -22,6 +23,7 @@
 		"/integration": Integration,
 		"/integration2": Integration2,
 		"/extintegration": ExtIntegration,
+		"/extintegration2": ExtIntegration2,
 		"*": NotFound
 	}
 </script>
