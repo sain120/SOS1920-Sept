@@ -42634,21 +42634,21 @@ var app = (function () {
     			p = element("p");
     			p.textContent = "Gráfico de barras con la renta per cápita por país y sus años estimados en duplicar la población actual.";
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$8, 77, 4, 1465);
+    			add_location(script0, file$8, 77, 4, 1428);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$8, 78, 4, 1536);
+    			add_location(script1, file$8, 78, 4, 1499);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$8, 79, 4, 1614);
+    			add_location(script2, file$8, 79, 4, 1577);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$8, 80, 4, 1694);
-    			add_location(h2, file$8, 84, 4, 1824);
+    			add_location(script3, file$8, 80, 4, 1657);
+    			add_location(h2, file$8, 84, 4, 1787);
     			attr_dev(div, "id", "container");
-    			add_location(div, file$8, 86, 8, 1913);
+    			add_location(div, file$8, 86, 8, 1876);
     			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$8, 87, 8, 1949);
+    			add_location(p, file$8, 87, 8, 1912);
     			attr_dev(figure, "class", "highcharts-figure svelte-8363wh");
-    			add_location(figure, file$8, 85, 4, 1869);
-    			add_location(main, file$8, 83, 0, 1812);
+    			add_location(figure, file$8, 85, 4, 1832);
+    			add_location(main, file$8, 83, 0, 1775);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -42700,7 +42700,7 @@ var app = (function () {
 
     	async function loadGraph() {
     		const resECStats = await fetch("/api/v1/ec-stats");
-    		const resFCOstats = await fetch("https://sos1920-sep-fco.herokuapp.com/api/v1/cbp");
+    		const resFCOstats = await fetch("/api/v1/cbp");
     		ecstats = await resECStats.json();
     		fstats = await resFCOstats.json();
     		var MyData1 = [];
@@ -42825,23 +42825,23 @@ var app = (function () {
     			p = element("p");
     			p.textContent = "Nube de puntos mostrando la correlación entre el numero de habitantes de un país y su renta per cápita.\r\n             El tamaño del punto se corresponde con el uso de coches electricos (%).";
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$9, 145, 4, 3013);
+    			add_location(script0, file$9, 145, 4, 2976);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/highcharts-more.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$9, 146, 4, 3084);
+    			add_location(script1, file$9, 146, 4, 3047);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$9, 147, 4, 3160);
+    			add_location(script2, file$9, 147, 4, 3123);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$9, 148, 4, 3238);
+    			add_location(script3, file$9, 148, 4, 3201);
     			if (script4.src !== (script4_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script4, "src", script4_src_value);
-    			add_location(script4, file$9, 149, 4, 3318);
-    			add_location(h2, file$9, 153, 4, 3448);
+    			add_location(script4, file$9, 149, 4, 3281);
+    			add_location(h2, file$9, 153, 4, 3411);
     			attr_dev(div, "id", "container");
-    			add_location(div, file$9, 155, 8, 3564);
+    			add_location(div, file$9, 155, 8, 3527);
     			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$9, 156, 8, 3600);
+    			add_location(p, file$9, 156, 8, 3563);
     			attr_dev(figure, "class", "highcharts-figure");
-    			add_location(figure, file$9, 154, 4, 3520);
-    			add_location(main, file$9, 152, 0, 3436);
+    			add_location(figure, file$9, 154, 4, 3483);
+    			add_location(main, file$9, 152, 0, 3399);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -42895,7 +42895,7 @@ var app = (function () {
 
     	async function loadGraph() {
     		const resECStats = await fetch("/api/v1/ec-stats");
-    		const resRLNStats = await fetch("https://sos1920-sep-rnl.herokuapp.com/api/v1/mercados");
+    		const resRLNStats = await fetch("/api/v1/mercados");
     		ecstats = await resECStats.json();
     		rstats = await resRLNStats.json();
     		var MyData3 = [];
@@ -43238,23 +43238,23 @@ var app = (function () {
     			p = element("p");
     			p.textContent = "Integración externa 2: Gráfico mostando la correlación entre población y emisiones de CO2 per cápita.";
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$b, 111, 4, 2860);
+    			add_location(script0, file$b, 100, 4, 2566);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/series-label.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$b, 112, 1, 2928);
+    			add_location(script1, file$b, 101, 1, 2634);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$b, 113, 1, 3006);
+    			add_location(script2, file$b, 102, 1, 2712);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$b, 114, 1, 3081);
+    			add_location(script3, file$b, 103, 1, 2787);
     			if (script4.src !== (script4_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script4, "src", script4_src_value);
-    			add_location(script4, file$b, 115, 1, 3158);
-    			add_location(h2, file$b, 119, 4, 3288);
+    			add_location(script4, file$b, 104, 1, 2864);
+    			add_location(h2, file$b, 108, 4, 2994);
     			attr_dev(div, "id", "container");
-    			add_location(div, file$b, 121, 8, 3409);
+    			add_location(div, file$b, 110, 8, 3115);
     			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$b, 122, 8, 3445);
+    			add_location(p, file$b, 111, 8, 3151);
     			attr_dev(figure, "class", "highcharts-figure");
-    			add_location(figure, file$b, 120, 4, 3365);
-    			add_location(main, file$b, 118, 0, 3276);
+    			add_location(figure, file$b, 109, 4, 3071);
+    			add_location(main, file$b, 107, 0, 2982);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -43325,16 +43325,6 @@ var app = (function () {
 
     		var ncolor = 0;
 
-    		/*
-    ecstats.forEach(ecstat => {
-        MyData3.push({
-            name: ecstat.country + " " + ecstat.year,
-            color: colors[ncolor%(ncolor.length)],
-            data: [[parseFloat(ecstat.ecu), parseFloat(ecstat.cdepc)]]
-        })
-        ncolor++;
-    });
-    */
     		ecstats.forEach(ecstat => {
     			clnstats.forEach(clnstat => {
     				if (ecstat.country == clnstat.country || ecstat.country == "United_States" && clnstat.country == "USA") {

@@ -19,17 +19,6 @@ var MyData3 = [];
     'rgba(10, 223, 223, .7)'];
     var ncolor = 0;
 
-    /*
-    ecstats.forEach(ecstat => {
-        MyData3.push({
-            name: ecstat.country + " " + ecstat.year,
-            color: colors[ncolor%(ncolor.length)],
-            data: [[parseFloat(ecstat.ecu), parseFloat(ecstat.cdepc)]]
-        })
-        ncolor++;
-    });
-    */
-
     ecstats.forEach(ecstat => {
         clnstats.forEach(clnstat => {
             if(ecstat.country == clnstat.country || ecstat.country == "United_States" && clnstat.country == "USA"){

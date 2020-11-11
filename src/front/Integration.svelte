@@ -6,7 +6,7 @@ let fstats = [];
 async function loadGraph(){
 
 const resECStats = await fetch("/api/v1/ec-stats");
-const resFCOstats = await fetch("https://sos1920-sep-fco.herokuapp.com/api/v1/cbp");
+const resFCOstats = await fetch("/api/v1/cbp");
 
 ecstats = await resECStats.json();
 fstats = await resFCOstats.json();

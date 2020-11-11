@@ -1,6 +1,8 @@
 module.exports = function(app, db2) {
 	console.log('Registering EC API');
 
+	const request = require('request');
+
 	var initialData = [
 		{
 			country: 'United_States',
@@ -40,6 +42,43 @@ module.exports = function(app, db2) {
 	];
 
 	const BASE_API_URL = '/api/v1';
+
+	//INTEGRACIONES
+		//API de Fernando: Integracion1
+	app.use("/api/v1/cbp", function (req, res) {
+		var url = "http://sos1920-sep-fco.herokuapp.com" + req.baseUrl + req.url;
+		console.log("Get Api Externa");
+		console.log("URL Api Externa: " + url);
+		console.log('piped: ' + req.baseUrl + req.url);
+		req.pipe(request(url)).pipe(res);
+	});
+
+		//API de Ruben: Integracion2
+	app.use("/api/v1/mercados", function (req, res) {
+		var url = "https://sos1920-sep-rnl.herokuapp.com" + req.baseUrl + req.url;
+		console.log("Get Api Externa");
+		console.log("URL Api Externa: " + url);
+		console.log('piped: ' + req.baseUrl + req.url);
+		req.pipe(request(url)).pipe(res);
+	});
+
+	/*
+	app.use("/api/v1/cbp", function (req, res) {
+		var url = "http://sos1920-sep-fco.herokuapp.com" + req.baseUrl + req.url;
+		console.log("Get Api Externa");
+		console.log("URL Api Externa: " + url);
+		console.log('piped: ' + req.baseUrl + req.url);
+		req.pipe(request(url)).pipe(res);
+	});
+
+	app.use("/api/v1/cbp", function (req, res) {
+		var url = "http://sos1920-sep-fco.herokuapp.com" + req.baseUrl + req.url;
+		console.log("Get Api Externa");
+		console.log("URL Api Externa: " + url);
+		console.log('piped: ' + req.baseUrl + req.url);
+		req.pipe(request(url)).pipe(res);
+	});
+	*/
 
 	function checkJSON(data) {
 		return (
