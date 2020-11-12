@@ -13,29 +13,6 @@ const app = express();
 app.use(bodyParser.json());
 app.use("/", express.static("./public"));
 
-/*
-app.get("/data", (req, res) => {
-
-    var data =
-	[{
-        name: 'EEUU',
-        color: 'rgba(223, 83, 83, .5)',
-        data: [[0.66, 14.65]]
-	},
-	{
-        name: 'China',
-        color: 'rgba(83, 223, 83, .5)',
-        data: [[0.84, 6.51]]
-	},
-	{
-        name: 'France',
-        color: 'rgba(83, 83, 223, .5)',
-        data: [[1.2, 4.72]]
-    }];
-    res.send(data)
-});
-*/
-
 const db2 = new dataStore({
 		filename: dbFileName2,
 		autoload: true

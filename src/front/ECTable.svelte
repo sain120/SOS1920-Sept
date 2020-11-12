@@ -131,18 +131,17 @@
 </script>
 
 <main>
-	<h4>Page {page}</h4>
 	<p style="color: green"><strong>{statusMessage}</strong></p>
 	<Table bordered>
 		<thead>
 			<tr>
 				<!-- <td>ID</td> -->
-				<th>Country</th>
-				<th>Year</th>
-				<th>Electric Cars Use</th>
-				<th>Rent Per Capita</th>
-				<th>CO2 Emisions Per Capita</th>
-				<th>Actions</th>
+				<th>País</th>
+				<th>Año</th>
+				<th>Uso de cocohes eléctricos</th>
+				<th>Renta per cápita</th>
+				<th>Emisiones CO2 per cápita</th>
+				<th>Acciones</th>
 			</tr>
 		</thead>
 	<tbody>
@@ -153,7 +152,7 @@
 			<td><input bind:value="{searchECStat.ecu}"></td>
 			<td><input bind:value="{searchECStat.rpc}"></td>
 			<td><input bind:value="{searchECStat.cdepc}"></td>
-			<td><Button outline color="info" on:click={getECStats}>Search</Button></td>
+			<td><Button outline color="info" on:click={getECStats}>Buscar</Button></td>
 		</tr>
 
 		<tr>
@@ -163,7 +162,7 @@
 			<td><input bind:value="{newECStat.ecu}"></td>
 			<td><input bind:value="{newECStat.rpc}"></td>
 			<td><input bind:value="{newECStat.cdepc}"></td>
-			<td><Button outline color="primary" on:click={insertECStat}>Insert</Button></td>
+			<td><Button outline color="primary" on:click={insertECStat}>Insertar</Button></td>
 		</tr>
 
 		{#each ecstats as ecstat}
@@ -175,20 +174,21 @@
 			<td>{ecstat.ecu}</td>
 			<td>{ecstat.rpc}</td>
 			<td>{ecstat.cdepc}</td>
-			<td><Button outline color="danger" on:click="{deleteECStat(ecstat.country, ecstat.year)}">Delete</Button></td>
+			<td><Button outline color="danger" on:click="{deleteECStat(ecstat.country, ecstat.year)}">Eliminar</Button></td>
 		</tr>
 		{/if}
 		{/each}
 	</tbody>
 	</Table>
 	<div>
-		<Button outline color="danger" on:click="{deleteAllECStats}">Delete All Data</Button>
-		<Button outline color="success" on:click="{loadInitialData}">Load Initial Data</Button>
+		<Button outline color="danger" on:click="{deleteAllECStats}">Borrar todos los datos</Button>
+		<Button outline color="success" on:click="{loadInitialData}">Cargar datos iniciales</Button>
 		{#if page > 1}
-		<Button outline on:click="{previousPage}">Previuos Page</Button>
+		<Button outline on:click="{previousPage}">Página anterior</Button>
 		{/if}
 		{#if !lastPage}
-		<Button outline on:click="{nextPage}">Next Page</Button>
+		<Button outline on:click="{nextPage}">Página siguiente</Button>
 		{/if}
 	</div>
+	<h5>Página {page}</h5>
 </main>

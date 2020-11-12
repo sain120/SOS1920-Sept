@@ -72,24 +72,24 @@ getECStat();
 
 <main>
 		{#await ecstat}
-        Loading ecstat...
+        Cargando ecstat...
 		{:then ecstat}
 
 		{#if errorMessage}
 		<p style="color: red"><strong>{errorMessage}</strong></p>
 		{:else}
-		Edit ECStat <strong>Country: {params.ECStatCountry}, Year: {params.ECStatYear}</strong>
+		Editar Dato <strong>País: {params.ECStatCountry}, Año: {params.ECStatYear}</strong>
 		<p style="color: green"><strong>{statusMessage}</strong></p>
 		<Table bordered>
 			<thead>
 				<tr>
 					<!-- <td>ID</td> -->
-					<th>Country</th>
-					<th>Year</th>
-					<th>Electric Cars Use</th>
-					<th>Rent Per Capita</th>
-					<th>CO2 Emisions Per Capita</th>
-					<th>Actions</th>
+					<th>País</th>
+					<th>Año</th>
+					<th>Uso de coches eléctricos</th>
+					<th>Renta per cápita</th>
+					<th>Emisiones CO2 per cápita</th>
+					<th>Acciones</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -100,14 +100,14 @@ getECStat();
 					<td><input bind:value="{updatedEcu}"></td>
 					<td><input bind:value="{updatedRpc}"></td>
 					<td><input bind:value="{updatedCdepc}"></td>
-					<td><Button outline color="primary" on:click={updateECStat}>Update</Button></td>
+					<td><Button outline color="primary" on:click={updateECStat}>Actualizar</Button></td>
 				</tr>
 			</tbody>
 		</Table>
 		{/if}
 		{/await}
 
-		<form method="get" action="/">
-			<button type="submit">Go back to view all stats</button>
+		<form method="get" action="/#/table">
+			<button type="submit">Atrás</button>
 		</form>
 </main>
