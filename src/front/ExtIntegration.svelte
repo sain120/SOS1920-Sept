@@ -7,7 +7,7 @@
   async function loadGraph(){
 
 const resECStats = await fetch("/api/v1/ec-stats");
-const resCOUStats = await fetch("https://restcountries.eu/rest/v2/all");
+const resCOUStats = await fetch("/rest/v2/all");
 
 ecstats = await resECStats.json();
 costats = await resCOUStats.json();

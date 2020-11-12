@@ -62,23 +62,32 @@ module.exports = function(app, db2) {
 		req.pipe(request(url)).pipe(res);
 	});
 
-	/*
-	app.use("/api/v1/cbp", function (req, res) {
-		var url = "http://sos1920-sep-fco.herokuapp.com" + req.baseUrl + req.url;
+			//API de Ruben: Integracion2
+	app.use("/api/v1/mercados", function (req, res) {
+		var url = "https://sos1920-sep-rnl.herokuapp.com" + req.baseUrl + req.url;
 		console.log("Get Api Externa");
 		console.log("URL Api Externa: " + url);
 		console.log('piped: ' + req.baseUrl + req.url);
 		req.pipe(request(url)).pipe(res);
 	});
 
-	app.use("/api/v1/cbp", function (req, res) {
-		var url = "http://sos1920-sep-fco.herokuapp.com" + req.baseUrl + req.url;
+		//API Countries REST: Integracion Externa 1
+	app.use("/rest/v2/all", function (req, res) {
+		var url = "https://restcountries.eu" + req.baseUrl + req.url;
 		console.log("Get Api Externa");
 		console.log("URL Api Externa: " + url);
 		console.log('piped: ' + req.baseUrl + req.url);
 		req.pipe(request(url)).pipe(res);
 	});
-	*/
+
+		//API Countries REST: Integracion Externa 2
+	app.use("/v2/countries", function (req, res) {
+		var url = "https://corona.lmao.ninja" + req.baseUrl + req.url;
+		console.log("Get Api Externa");
+		console.log("URL Api Externa: " + url);
+		console.log('piped: ' + req.baseUrl + req.url);
+		req.pipe(request(url)).pipe(res);
+	});
 
 	function checkJSON(data) {
 		return (

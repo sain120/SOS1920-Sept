@@ -6,7 +6,7 @@ let clnstats = [];
 async function loadGraph(){
 
 const resECStats = await fetch("/api/v1/ec-stats");
-const resCLNStats = await fetch("https://corona.lmao.ninja/v2/countries");
+const resCLNStats = await fetch("/v2/countries");
 
 ecstats = await resECStats.json();
 clnstats = await resCLNStats.json();

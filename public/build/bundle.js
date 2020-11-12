@@ -43069,18 +43069,18 @@ var app = (function () {
     			p = element("p");
     			p.textContent = "Integración externa con la API \"REST Countries\". Relación entre el uso de coches eléctricos y el tamaño del país.";
     			if (script0.src !== (script0_src_value = "https://d3js.org/d3.v5.min.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$a, 60, 2, 1127);
+    			add_location(script0, file$a, 60, 2, 1103);
     			if (script1.src !== (script1_src_value = "libraries/billboard.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$a, 61, 2, 1183);
+    			add_location(script1, file$a, 61, 2, 1159);
     			attr_dev(link, "rel", "stylesheet");
     			attr_dev(link, "href", "css/billboard.css");
-    			add_location(link, file$a, 62, 2, 1232);
-    			add_location(head, file$a, 58, 0, 1117);
-    			add_location(h2, file$a, 67, 2, 1302);
+    			add_location(link, file$a, 62, 2, 1208);
+    			add_location(head, file$a, 58, 0, 1093);
+    			add_location(h2, file$a, 67, 2, 1278);
     			attr_dev(div, "id", "barChart");
-    			add_location(div, file$a, 68, 6, 1365);
-    			add_location(p, file$a, 69, 6, 1397);
-    			add_location(main, file$a, 66, 0, 1293);
+    			add_location(div, file$a, 68, 6, 1341);
+    			add_location(p, file$a, 69, 6, 1373);
+    			add_location(main, file$a, 66, 0, 1269);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -43127,7 +43127,7 @@ var app = (function () {
 
     	async function loadGraph() {
     		const resECStats = await fetch("/api/v1/ec-stats");
-    		const resCOUStats = await fetch("https://restcountries.eu/rest/v2/all");
+    		const resCOUStats = await fetch("/rest/v2/all");
     		ecstats = await resECStats.json();
     		costats = await resCOUStats.json();
     		var MyData1 = ["Electric_Cars_Use"];
@@ -43238,23 +43238,23 @@ var app = (function () {
     			p = element("p");
     			p.textContent = "Integración externa 2: Gráfico mostando la correlación entre población y emisiones de CO2 per cápita.";
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$b, 100, 4, 2566);
+    			add_location(script0, file$b, 100, 4, 2541);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/series-label.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$b, 101, 1, 2634);
+    			add_location(script1, file$b, 101, 1, 2609);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$b, 102, 1, 2712);
+    			add_location(script2, file$b, 102, 1, 2687);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$b, 103, 1, 2787);
+    			add_location(script3, file$b, 103, 1, 2762);
     			if (script4.src !== (script4_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script4, "src", script4_src_value);
-    			add_location(script4, file$b, 104, 1, 2864);
-    			add_location(h2, file$b, 108, 4, 2994);
+    			add_location(script4, file$b, 104, 1, 2839);
+    			add_location(h2, file$b, 108, 4, 2969);
     			attr_dev(div, "id", "container");
-    			add_location(div, file$b, 110, 8, 3115);
+    			add_location(div, file$b, 110, 8, 3090);
     			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$b, 111, 8, 3151);
+    			add_location(p, file$b, 111, 8, 3126);
     			attr_dev(figure, "class", "highcharts-figure");
-    			add_location(figure, file$b, 109, 4, 3071);
-    			add_location(main, file$b, 107, 0, 2982);
+    			add_location(figure, file$b, 109, 4, 3046);
+    			add_location(main, file$b, 107, 0, 2957);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -43308,7 +43308,7 @@ var app = (function () {
 
     	async function loadGraph() {
     		const resECStats = await fetch("/api/v1/ec-stats");
-    		const resCLNStats = await fetch("https://corona.lmao.ninja/v2/countries");
+    		const resCLNStats = await fetch("/v2/countries");
     		ecstats = await resECStats.json();
     		clnstats = await resCLNStats.json();
     		var MyData3 = [];
