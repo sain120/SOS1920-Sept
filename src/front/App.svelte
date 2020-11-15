@@ -10,7 +10,7 @@
 	import MyGraph from "./MyGraph.svelte";
 	import MyGraph2 from './MyGraph2.svelte';
 	import MyGraph3 from './MyGraph3.svelte';
-	import Integration from './integration.svelte';
+	/*import Integration from './integration.svelte';*/
 	import Integration2 from './integration2.svelte';
 	import ExtIntegration from './ExtIntegration.svelte';
 	import ExtIntegration2 from './ExtIntegration2.svelte';
@@ -26,7 +26,7 @@
 		"/graph": MyGraph,
 		"/graph2": MyGraph2,
 		"/graph3": MyGraph3,
-		"/integration": Integration,
+		/*"/integration": Integration,*/
 		"/integration2": Integration2,
 		"/extintegration": ExtIntegration,
 		"/extintegration2": ExtIntegration2,
@@ -37,7 +37,7 @@
 </script>
 
 <main>
-	<h1 class="titulo2">Coches Eléctricos</h1>
+	<h1 class="titulo2"><a href="/">Coches Eléctricos</a></h1>
 	 <Router {routes} />
 </main>
 
@@ -48,4 +48,10 @@
 		padding-top: 5px;
 		padding-bottom: 5px;
 	}
+
+	a:link, a:visited, a:active, a:hover {
+    text-decoration:none;
+	color: #141414;
+	}
+
 </style>

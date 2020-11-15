@@ -13,6 +13,9 @@
     <button type="button" class="btn btn-light" onclick="window.location.href='#/extintegration2'">
         Integración API Externa 2</button>
     </div>
+    <form method="get" action="/">
+        <button type="submit">Atrás</button>
+  </form>
 </main>
 
 <style>
