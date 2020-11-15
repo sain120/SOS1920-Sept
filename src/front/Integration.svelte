@@ -6,7 +6,7 @@ let fstats = [];
 async function loadGraph(){
 
 const resECStats = await fetch("/api/v1/ec-stats");
-const resFCOstats = await fetch("/api/v1/cbp");
+const resFCOstats = await fetch("/api/v1/cbp/");
 
 ecstats = await resECStats.json();
 fstats = await resFCOstats.json();
@@ -28,8 +28,7 @@ var Countries = [];
     Highcharts.chart('container', {
 
 chart: {
-    type: 'column',
-    styledMode: true
+    type: 'column'
 },
 
 title: {
@@ -54,6 +53,7 @@ yAxis: [{
     }
 }],
 
+
 plotOptions: {
     column: {
         borderRadius: 5
@@ -62,7 +62,7 @@ plotOptions: {
 
 series: [{
     name: 'Renta per cápita',
-    data: MyData1
+    data: MyData1,
 }, {
     name: 'Años en x2 pob',
     data: MyData2,
@@ -89,70 +89,7 @@ series: [{
             Gráfico de barras con la renta per cápita por país y sus años estimados en duplicar la población actual.
         </p>
     </figure>
+    <form method="get" action="/#/integrations">
+        <button type="submit">Atrás</button>
+    </form>
 </main>
-
-<style>
-@import 'https://code.highcharts.com/css/highcharts.css';
-
-    .highcharts-figure, .highcharts-data-table table {
-        min-width: 310px; 
-        max-width: 800px;
-        margin: 1em auto;
-    }
-    
-    .highcharts-data-table table {
-        font-family: Verdana, sans-serif;
-        border-collapse: collapse;
-        border: 1px solid #EBEBEB;
-        margin: 10px auto;
-        text-align: center;
-        width: 100%;
-        max-width: 500px;
-    }
-    .highcharts-data-table caption {
-        padding: 1em 0;
-        font-size: 1.2em;
-        color: #555;
-    }
-    .highcharts-data-table th {
-        font-weight: 600;
-        padding: 0.5em;
-    }
-    .highcharts-data-table td, .highcharts-data-table th, .highcharts-data-table caption {
-        padding: 0.5em;
-    }
-    .highcharts-data-table thead tr, .highcharts-data-table tr:nth-child(even) {
-        background: #f8f8f8;
-    }
-    .highcharts-data-table tr:hover {
-        background: #f1f7ff;
-    }
-    
-    
-    /* Link the series colors to axis colors */
-    .highcharts-color-0 {
-        fill: #7cb5ec;
-        stroke: #7cb5ec;
-    }
-    .highcharts-axis.highcharts-color-0 .highcharts-axis-line {
-        stroke: #7cb5ec;
-    }
-    .highcharts-axis.highcharts-color-0 text {
-        fill: #7cb5ec;
-    }
-    .highcharts-color-1 {
-        fill: #90ed7d;
-        stroke: #90ed7d;
-    }
-    .highcharts-axis.highcharts-color-1 .highcharts-axis-line {
-        stroke: #90ed7d;
-    }
-    .highcharts-axis.highcharts-color-1 text {
-        fill: #90ed7d;
-    }
-    
-    
-    .highcharts-yaxis .highcharts-axis-line {
-        stroke-width: 2px;
-    }
-</style>

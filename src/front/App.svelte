@@ -37,31 +37,15 @@
 </script>
 
 <main>
-	<h1>EC-Stats Manager</h1>
+	<h1 class="titulo2">Coches Eléctricos</h1>
 	 <Router {routes} />
-	<!-- <ContactsTable /> -->
 </main>
 
-<!--
 <style>
-	main {
+	.titulo2{
 		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
-
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
+		background-color: lightskyblue;
+		padding-top: 5px;
+		padding-bottom: 5px;
 	}
 </style>
--->

@@ -180,7 +180,7 @@
 		{/each}
 	</tbody>
 	</Table>
-	<div>
+	<div class="botonesTabla">
 		<Button outline color="danger" on:click="{deleteAllECStats}">Borrar todos los datos</Button>
 		<Button outline color="success" on:click="{loadInitialData}">Cargar datos iniciales</Button>
 		{#if page > 1}
@@ -190,5 +190,23 @@
 		<Button outline on:click="{nextPage}">Página siguiente</Button>
 		{/if}
 	</div>
-	<h5>Página {page}</h5>
+	<p class="numpag">Página {page}</p>
+	<form class="botonAtrasTabla" method="get" action="/">
+        <button type="submit">Atrás</button>
+  	</form>
 </main>
+
+<style>
+	.numpag{
+		float: right;
+	}
+
+	.botonesTabla{
+		float: left;
+	}
+
+	.botonAtrasTabla{
+		padding-top: 10px;
+		clear: both;
+	}
+</style>

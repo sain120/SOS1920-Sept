@@ -105,4 +105,7 @@ Highcharts.chart('container', {
         <p class="highcharts-description">
             Nube de puntos mostrando la relación entre el uso de coches eléctricos y las emisiones de CO2 per cápita
     </figure>
+    <form method="get" action="/">
+        <button type="submit">Atrás</button>
+    </form>
 </main>

@@ -51,6 +51,10 @@ bindto: "#barChart"
 </head>
 
 <main>
-  <h2>Electric cars use per country</h2>
-      <div id="barChart"></div>
+  <h2>Uso de coches eléctricos por país</h2>
+  <div id="barChart"></div>
+  <p>Porcentaje de población que usa coches eléctricos en cada país</p>
+  <form method="get" action="/">
+        <button type="submit">Atrás</button>
+  </form>
 </main>

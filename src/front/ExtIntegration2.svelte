@@ -112,5 +112,8 @@ Highcharts.chart('container', {
         <p class="highcharts-description">
             Integración externa 2: Gráfico mostando la correlación entre población y emisiones de CO2 per cápita.
         </p>
+        <form method="get" action="/#/integrations">
+            <button type="submit">Atrás</button>
+        </form>
     </figure>
 </main>

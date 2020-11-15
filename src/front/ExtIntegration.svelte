@@ -70,4 +70,7 @@ var chart = bb.generate({
       <p>
         Integración externa con la API "REST Countries". Relación entre el uso de coches eléctricos y el tamaño del país.
       </p>
+      <form method="get" action="/#/integrations">
+        <button type="submit">Atrás</button>
+    </form>
 </main>

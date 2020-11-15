@@ -159,4 +159,7 @@ series: [{
              El tamaño del punto se corresponde con el uso de coches electricos (%).
         </p>
     </figure>
+    <form method="get" action="/#/integrations">
+        <button type="submit">Atrás</button>
+    </form>
 </main>
