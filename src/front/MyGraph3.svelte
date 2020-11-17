@@ -1,84 +1,159 @@
 <script>
-  import bb from "billboard.js/dist/billboard.pkgd";
-  ///import bb, {bubble} from "billboard.js";
-  //import bb from "billboard.js";
 
   let ecstats = [];
-
-  async function loadGraph(){
-
-const resECStats = await fetch("/api/v1/ec-stats");
-ecstats = await resECStats.json();
-var MyData = ["Electric Cars Use (%)"];
-let countries = [];
-
-ecstats.forEach(ecstat => {
-        MyData.push(ecstat.ecu);
-        countries.push(ecstat.country);
-    });
-
-    var chart = bb.generate({
-  data: {
-    type: "bubble", // for ESM specify as: bubble()
-    xs: {
-      "Country-A": "x0",
-      "Country-B": "x1",
-      "Country-C": "x2",
-      "Country-D": "x3",
-      "Country-E": "x4"
-    },
-    columns: [
-	["x0", 30],
-	["x1", 515],
-	["x2", 319],
-	["x3", 337],
-	["x4", 164],
-	["Country-A", {y:9631418, z:295734134}],
-	["Country-B", {y:100210, z:51635256}],
-	["Country-C", {y:547030, z:67022000}],
-	["Country-D", {y:377835, z:127417244}],
-	["Country-E", {y:464, z:76177}]
-    ]
-  },
-  axis: {
-    x: {
-      padding: {
-        left: 100,
-        right: 20
-      }
-    },
-    y: {
-      padding: {
-        top: 150,
-        bottom: 100
-      }
-    }
-  },
-  tooltip: {
-    format: {
-      value: function(x) {
-	  return x.toLocaleString();
-      }
-    }
-  },
-  bindto: "#bubbleCompare"
-});
-
-  }
-
-  loadGraph();
-
-</script>
-
-<head>
-
-  <script src="https://d3js.org/d3.v5.min.js"></script>
-  <script src="libraries/billboard.js"></script>
-  <link rel="stylesheet" href="css/billboard.css">
   
-</head>
+  async function loadGraph(){
+  
+  const resECStats = await fetch("/api/v1/ec-stats");
 
-<main>
-  <h2>Electric cars use per country</h2>
-  <div id="bubbleCompare"></div>
-</main>
+  ecstats = await resECStats.json();
+
+  var MyData3 = [];
+  
+      ecstats.forEach(ecstat => {
+                  MyData3.push({
+                  x: ecstat.rpc,
+                  y: ecstat.cdepc,
+                  z: ecstat.ecu, 
+                  country: ecstat.country + " " + ecstat.year
+              })
+          });
+  
+      Highcharts.chart('container', {
+  
+  chart: {
+      type: 'bubble',
+      plotBorderWidth: 1,
+      zoomType: 'xy'
+  },
+  
+  legend: {
+      enabled: false
+  },
+  
+  title: {
+      text: 'Uso de coches eléctricos, renta per cápita y emisiones per cápita'
+  },
+  
+  subtitle: {
+      text: 'Fuente: <a href="http://www.wikipedia.com/">Wikipedia</a>'
+  },
+  
+  accessibility: {
+      point: {
+          valueDescriptionFormat: '{index}. {point.name}, Renta per cápita: {point.x} Mil $, Emisiones de CO2 per cápita: {point.y} Tons, Uso coches eléctricos: {point.z}%.'
+      }
+  },
+  
+  xAxis: {
+      gridLineWidth: 1,
+      title: {
+          text: 'Renta per cápita'
+      },
+      labels: {
+          format: '{value} Mil $'
+      },
+      /*
+      plotLines: [{
+          color: 'black',
+          dashStyle: 'dot',
+          width: 2,
+          value: 65,
+          label: {
+              rotation: 0,
+              y: 15,
+              style: {
+                  fontStyle: 'italic'
+              },
+              text: 'Safe fat intake 65g/day'
+          },
+          zIndex: 3
+      }],
+      */
+      accessibility: {
+          rangeDescription: ''
+      }
+  },
+  
+  yAxis: {
+      startOnTick: false,
+      endOnTick: false,
+      title: {
+          text: 'Emisiones de CO2 per cápita'
+      },
+      labels: {
+          format: '{value} Tons'
+      },
+      maxPadding: 0.2,
+      /*
+      plotLines: [{
+          color: 'black',
+          dashStyle: 'dot',
+          width: 2,
+          value: 50,
+          label: {
+              align: 'right',
+              style: {
+                  fontStyle: 'italic'
+              },
+              text: 'Safe sugar intake 50g/day',
+              x: -10
+          },
+          zIndex: 3
+      }],
+      */
+      accessibility: {
+          rangeDescription: ''
+      }
+  },
+  
+  tooltip: {
+      useHTML: true,
+      headerFormat: '<table>',
+      pointFormat: '<tr><th colspan="2"><h3>{point.country}</h3></th></tr>' +
+          '<tr><th>Renta per cápita:</th><td>{point.x} Mil $ </td></tr>' +
+          '<tr><th>Emisiones de CO2 per cápita:</th><td>{point.y} Tons </td></tr>' +
+          '<tr><th>Uso de coches eléctricos:</th><td>{point.z}%</td></tr>',
+      footerFormat: '</table>',
+      followPointer: true
+  },
+  
+  plotOptions: {
+      series: {
+          dataLabels: {
+              enabled: true,
+              format: '{point.name}'
+          }
+      }
+  },
+  
+  series: [{
+      data: MyData3
+  }]
+  
+  });
+  
+  }
+  </script>
+  
+  <svelte:head>
+      <script src="https://code.highcharts.com/highcharts.js"></script>
+      <script src="https://code.highcharts.com/highcharts-more.js"></script>
+      <script src="https://code.highcharts.com/modules/exporting.js"></script>
+      <script src="https://code.highcharts.com/modules/export-data.js"></script>
+      <script src="https://code.highcharts.com/modules/accessibility.js" on:load="{loadGraph}"></script>
+  </svelte:head>
+  
+  <main>
+      <h2>Uso de coches eléctricos vs Población vs Renta per capita</h2>
+      <figure class="highcharts-figure">
+          <div id="container"></div>
+          <p class="highcharts-description">
+              Nube de puntos mostrando la correlación entre el numero de habitantes de un país y su renta per cápita.
+               El tamaño del punto se corresponde con el uso de coches electricos (%).
+          </p>
+      </figure>
+      <form method="get" action="/#/integrations">
+          <button type="submit">Atrás</button>
+      </form>
+  </main>

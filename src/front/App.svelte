@@ -25,7 +25,7 @@
 		"/ec-stat/:ECStatCountry/:ECStatYear": EditECStat,
 		"/graph": MyGraph,
 		"/graph2": MyGraph2,
-		"/graph3": MyGraph3,
+		"/analytics": MyGraph3,
 		"/integration": Integration,
 		"/integration2": Integration2,
 		"/extintegration": ExtIntegration,
@@ -34,6 +34,7 @@
 		"/about": About,
 		"*": NotFound
 	}
+	
 </script>
 
 <main>

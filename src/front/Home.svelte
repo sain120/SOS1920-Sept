@@ -6,8 +6,10 @@
         Visualización 1</button>
     <button type="button" class="btn btn-light" onclick="window.location.href='#/graph2'">
         Visualización 2</button>
+    <button type="button" class="btn btn-light" onclick="window.location.href='#/analytics'">
+        Visualización 3</button>
     <button type="button" class="btn btn-light" onclick="window.location.href='#/integrations'">
-        Integraciones</button>
+         Integraciones</button>
     </div>
 </main>
 
