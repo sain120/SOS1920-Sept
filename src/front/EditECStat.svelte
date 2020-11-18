@@ -34,7 +34,7 @@ async function getECStat(){
 		console.log("Received ECStat"); 
 	} else {
 		if(res.status == 404){
-			errorMessageFromCode = "There is no data with country " +  params.ECStatCountry + " and year " + params.ECStatYear;
+			errorMessageFromCode = "No hay datos con país " +  params.ECStatCountry + " y año " + params.ECStatYear;
 		}
 		errorMessage = "Error " + res.status + " (" + res.statusText + "): " + errorMessageFromCode;
 		console.log("ERROR");
@@ -60,7 +60,7 @@ async function updateECStat(){
 				}
 		}).then(function(res) {
 			//window.location.replace("/");
-			statusMessage = "Data updated succesfully"
+			statusMessage = "Datos actualizados con éxito"
 		});
 	}
 

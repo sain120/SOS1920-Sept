@@ -1,0 +1,332 @@
+{
+	"info": {
+		"_postman_id": "f4e82b7d-346e-4f9f-98ce-7cd425333bb1",
+		"name": "SOS1920-Sept",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "loadInitialData",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2a256b81-6a9d-46a9-abad-3d21a4211389",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://sos1920-sept.herokuapp.com/api/v1/ec-stats/loadInitialData"
+			},
+			"response": []
+		},
+		{
+			"name": "getECStats",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9bac9bfc-d33d-4516-a1e0-02dae2084c61",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							"\r",
+							"pm.test(\"There are more than 1 data\", function() {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.have.lengthOf.above(1);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://sos1920-sept.herokuapp.com/api/v1/ec-stats"
+			},
+			"response": []
+		},
+		{
+			"name": "postECStats bad request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f0ce5c9d-de76-4025-9e1c-b58dcbd47937",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    { \r\n\t\t\"countri\": \"Russia\",\r\n\t\t\"year\": \"2015\",\r\n\t\t\"ecu\": \"0.40\",\r\n\t\t\"rpc\": \"13.532\",\r\n\t\t\"cdepc\": \"10.34\"\r\n\t}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://sos1920-sept.herokuapp.com/api/v1/ec-stats"
+			},
+			"response": []
+		},
+		{
+			"name": "postECStats",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f092b574-e961-4386-aa60-f05f1ad88a01",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    { \r\n\t\t\"country\": \"Russia\",\r\n\t\t\"year\": \"2015\",\r\n\t\t\"ecu\": \"0.40\",\r\n\t\t\"rpc\": \"13.532\",\r\n\t\t\"cdepc\": \"10.34\"\r\n\t}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://sos1920-sept.herokuapp.com/api/v1/ec-stats"
+			},
+			"response": []
+		},
+		{
+			"name": "putECStats",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b0df2242-948b-4de5-898b-d631182fd213",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {\r",
+							"    pm.response.to.have.status(200);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    { \r\n\t\t\"country\": \"Russia\",\r\n\t\t\"year\": \"2015\",\r\n\t\t\"ecu\": \"0.40\",\r\n\t\t\"rpc\": \"17.532\",\r\n\t\t\"cdepc\": \"10.34\"\r\n\t}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://sos1920-sept.herokuapp.com/api/v1/ec-stats/Russia/2015"
+			},
+			"response": []
+		},
+		{
+			"name": "putECStats bad request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b3c82dbb-7e7f-47cd-95a0-54892bc86d24",
+						"exec": [
+							"pm.test(\"Status code is 400\", function() {\r",
+							"    pm.response.to.have.status(400);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    { \r\n\t\t\"country\": \"Russia\",\r\n\t\t\"yar\": \"2015\",\r\n\t\t\"ecu\": \"0.40\",\r\n\t\t\"rpc\": \"17.532\",\r\n\t\t\"cdepc\": \"10.34\"\r\n\t}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://sos1920-sept.herokuapp.com/api/v1/ec-stats/Russia/2015"
+			},
+			"response": []
+		},
+		{
+			"name": "getECstats one stat",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "81df803f-5c43-496e-847d-7c5399b9bc12",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							"\r",
+							"pm.test(\"It returns a row\", function() {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.have.property(\"country\");\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://sos1920-sept.herokuapp.com/api/v1/ec-stats/Russia/2015"
+			},
+			"response": []
+		},
+		{
+			"name": "deleteECStat",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "745f1bae-95d8-4311-b188-f57a0a7ec42f",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {\r",
+							"    pm.response.to.have.status(200);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "https://sos1920-sept.herokuapp.com/api/v1/ec-stats/Russia/2015"
+			},
+			"response": []
+		},
+		{
+			"name": "getECStats limit offset",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6bf3e746-665e-4b94-a834-e065dccff060",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							"\r",
+							"pm.test(\"There are 2 elements\", function() {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.have.lengthOf(2);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sos1920-sept.herokuapp.com/api/v1/ec-stats?limit=2&offset=3",
+					"host": [
+						"https://sos1920-sept.herokuapp.com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"ec-stats"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "2"
+						},
+						{
+							"key": "offset",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getECStats search",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6c4041b0-bc08-4f0a-8f0f-f279e81612cd",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							"\r",
+							"pm.test(\"There is 1 element\", function() {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.have.lengthOf(1);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sos1920-sept.herokuapp.com/api/v1/ec-stats?country=China",
+					"host": [
+						"https://sos1920-sept.herokuapp.com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"ec-stats"
+					],
+					"query": [
+						{
+							"key": "country",
+							"value": "China"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

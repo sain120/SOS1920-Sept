@@ -6,6 +6,7 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
+    "test": "npx newman run tests/Tests.json",
     "start": "node index"
   },
   "devDependencies": {
@@ -29,6 +30,7 @@
     "express": "^4.17.1",
     "highcharts": "^8.2.0",
     "nedb": "^1.8.0",
+    "newman": "^5.2.1",
     "request": "^2.88.2",
     "svelte-spa-router": "^2.1.0",
     "sveltestrap": "^3.3.3"

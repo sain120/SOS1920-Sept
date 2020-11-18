@@ -3015,14 +3015,14 @@ var app = (function () {
     			create_component(button.$$.fragment);
     			t10 = space();
     			attr_dev(a, "href", a_href_value = "#/ec-stat/" + /*ecstat*/ ctx[24].country + "/" + /*ecstat*/ ctx[24].year);
-    			add_location(a, file$4, 171, 7, 4164);
-    			add_location(td0, file$4, 171, 3, 4160);
-    			add_location(td1, file$4, 172, 3, 4244);
-    			add_location(td2, file$4, 173, 3, 4270);
-    			add_location(td3, file$4, 174, 3, 4295);
-    			add_location(td4, file$4, 175, 3, 4320);
-    			add_location(td5, file$4, 176, 3, 4347);
-    			add_location(tr, file$4, 169, 2, 4117);
+    			add_location(a, file$4, 171, 7, 4158);
+    			add_location(td0, file$4, 171, 3, 4154);
+    			add_location(td1, file$4, 172, 3, 4238);
+    			add_location(td2, file$4, 173, 3, 4264);
+    			add_location(td3, file$4, 174, 3, 4289);
+    			add_location(td4, file$4, 175, 3, 4314);
+    			add_location(td5, file$4, 176, 3, 4341);
+    			add_location(tr, file$4, 169, 2, 4111);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -3340,39 +3340,39 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(th0, file$4, 138, 4, 3089);
-    			add_location(th1, file$4, 139, 4, 3107);
-    			add_location(th2, file$4, 140, 4, 3124);
-    			add_location(th3, file$4, 141, 4, 3163);
-    			add_location(th4, file$4, 142, 4, 3193);
-    			add_location(th5, file$4, 143, 4, 3231);
-    			add_location(tr0, file$4, 136, 3, 3055);
-    			add_location(thead, file$4, 135, 2, 3044);
-    			add_location(input0, file$4, 149, 7, 3327);
-    			add_location(td0, file$4, 149, 3, 3323);
-    			add_location(input1, file$4, 150, 7, 3383);
-    			add_location(td1, file$4, 150, 3, 3379);
-    			add_location(input2, file$4, 151, 7, 3436);
-    			add_location(td2, file$4, 151, 3, 3432);
-    			add_location(input3, file$4, 152, 7, 3488);
-    			add_location(td3, file$4, 152, 3, 3484);
-    			add_location(input4, file$4, 153, 7, 3540);
-    			add_location(td4, file$4, 153, 3, 3536);
-    			add_location(td5, file$4, 154, 3, 3590);
-    			add_location(tr1, file$4, 147, 2, 3280);
-    			add_location(input5, file$4, 159, 7, 3724);
-    			add_location(td6, file$4, 159, 3, 3720);
-    			add_location(input6, file$4, 160, 7, 3777);
-    			add_location(td7, file$4, 160, 3, 3773);
-    			add_location(input7, file$4, 161, 7, 3827);
-    			add_location(td8, file$4, 161, 3, 3823);
-    			add_location(input8, file$4, 162, 7, 3876);
-    			add_location(td9, file$4, 162, 3, 3872);
-    			add_location(input9, file$4, 163, 7, 3925);
-    			add_location(td10, file$4, 163, 3, 3921);
-    			add_location(td11, file$4, 164, 3, 3972);
-    			add_location(tr2, file$4, 157, 2, 3677);
-    			add_location(tbody, file$4, 146, 1, 3270);
+    			add_location(th0, file$4, 138, 4, 3083);
+    			add_location(th1, file$4, 139, 4, 3101);
+    			add_location(th2, file$4, 140, 4, 3118);
+    			add_location(th3, file$4, 141, 4, 3157);
+    			add_location(th4, file$4, 142, 4, 3187);
+    			add_location(th5, file$4, 143, 4, 3225);
+    			add_location(tr0, file$4, 136, 3, 3049);
+    			add_location(thead, file$4, 135, 2, 3038);
+    			add_location(input0, file$4, 149, 7, 3321);
+    			add_location(td0, file$4, 149, 3, 3317);
+    			add_location(input1, file$4, 150, 7, 3377);
+    			add_location(td1, file$4, 150, 3, 3373);
+    			add_location(input2, file$4, 151, 7, 3430);
+    			add_location(td2, file$4, 151, 3, 3426);
+    			add_location(input3, file$4, 152, 7, 3482);
+    			add_location(td3, file$4, 152, 3, 3478);
+    			add_location(input4, file$4, 153, 7, 3534);
+    			add_location(td4, file$4, 153, 3, 3530);
+    			add_location(td5, file$4, 154, 3, 3584);
+    			add_location(tr1, file$4, 147, 2, 3274);
+    			add_location(input5, file$4, 159, 7, 3718);
+    			add_location(td6, file$4, 159, 3, 3714);
+    			add_location(input6, file$4, 160, 7, 3771);
+    			add_location(td7, file$4, 160, 3, 3767);
+    			add_location(input7, file$4, 161, 7, 3821);
+    			add_location(td8, file$4, 161, 3, 3817);
+    			add_location(input8, file$4, 162, 7, 3870);
+    			add_location(td9, file$4, 162, 3, 3866);
+    			add_location(input9, file$4, 163, 7, 3919);
+    			add_location(td10, file$4, 163, 3, 3915);
+    			add_location(td11, file$4, 164, 3, 3966);
+    			add_location(tr2, file$4, 157, 2, 3671);
+    			add_location(tbody, file$4, 146, 1, 3264);
     		},
     		m: function mount(target, anchor, remount) {
     			insert_dev(target, thead, anchor);
@@ -3890,20 +3890,20 @@ var app = (function () {
     			form = element("form");
     			button2 = element("button");
     			button2.textContent = "Atrás";
-    			add_location(strong, file$4, 133, 25, 2987);
+    			add_location(strong, file$4, 133, 25, 2981);
     			set_style(p0, "color", "green");
-    			add_location(p0, file$4, 133, 1, 2963);
+    			add_location(p0, file$4, 133, 1, 2957);
     			attr_dev(div, "class", "botonesTabla svelte-ccz9at");
-    			add_location(div, file$4, 182, 1, 4507);
+    			add_location(div, file$4, 182, 1, 4501);
     			attr_dev(p1, "class", "numpag svelte-ccz9at");
-    			add_location(p1, file$4, 192, 1, 4919);
+    			add_location(p1, file$4, 192, 1, 4913);
     			attr_dev(button2, "type", "submit");
-    			add_location(button2, file$4, 194, 8, 5019);
+    			add_location(button2, file$4, 194, 8, 5013);
     			attr_dev(form, "class", "botonAtrasTabla svelte-ccz9at");
     			attr_dev(form, "method", "get");
     			attr_dev(form, "action", "/");
-    			add_location(form, file$4, 193, 1, 4956);
-    			add_location(main, file$4, 132, 0, 2955);
+    			add_location(form, file$4, 193, 1, 4950);
+    			add_location(main, file$4, 132, 0, 2949);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -4104,7 +4104,7 @@ var app = (function () {
     			headers: { "Content-Type": "application/json" }
     		}).then(function (res) {
     			getECStats();
-    			$$invalidate(5, statusMessage = "New data inserted: Country " + newECStat.country + " and year " + newECStat.year);
+    			$$invalidate(5, statusMessage = "Nuevo dato insertado: País " + newECStat.country + " y año " + newECStat.year);
     		});
     	}
 
@@ -4116,7 +4116,7 @@ var app = (function () {
     		console.log("Deleting ECStat...");
 
     		const res = await fetch("/api/v1/ec-stats/" + country + "/" + year, { method: "DELETE" }).then(function (res) {
-    			$$invalidate(5, statusMessage = "Data of country " + country + " and year " + year + " deleted succesfully");
+    			$$invalidate(5, statusMessage = "Datos del país " + country + " y año " + year + " borrados con éxito");
     			getECStats();
     		});
     	}
@@ -4125,7 +4125,7 @@ var app = (function () {
     		console.log("Deleting All ECStats...");
 
     		const res = await fetch("/api/v1/ec-stats/", { method: "DELETE" }).then(function (res) {
-    			$$invalidate(5, statusMessage = "All data deleted succesfully");
+    			$$invalidate(5, statusMessage = "Todos los datos borrados con éxito");
     			getECStats();
     		});
     	}
@@ -4134,7 +4134,7 @@ var app = (function () {
     		console.log("Loading Initial Data...");
 
     		const res = await fetch("/api/v1/ec-stats/loadInitialData", { method: "GET" }).then(function (res) {
-    			$$invalidate(5, statusMessage = "Initial data of EC-Stats loaded succesfully");
+    			$$invalidate(5, statusMessage = "Datos inicialies cargados correctamente");
     			getECStats();
     		});
     	}
@@ -4431,10 +4431,10 @@ var app = (function () {
     			t6 = text(/*statusMessage*/ ctx[7]);
     			t7 = space();
     			create_component(table.$$.fragment);
-    			add_location(strong0, file$5, 80, 14, 1953);
-    			add_location(strong1, file$5, 81, 26, 2052);
+    			add_location(strong0, file$5, 80, 14, 1946);
+    			add_location(strong1, file$5, 81, 26, 2045);
     			set_style(p, "color", "green");
-    			add_location(p, file$5, 81, 2, 2028);
+    			add_location(p, file$5, 81, 2, 2021);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -4504,9 +4504,9 @@ var app = (function () {
     			p = element("p");
     			strong = element("strong");
     			t = text(/*errorMessage*/ ctx[6]);
-    			add_location(strong, file$5, 78, 24, 1891);
+    			add_location(strong, file$5, 78, 24, 1884);
     			set_style(p, "color", "red");
-    			add_location(p, file$5, 78, 2, 1869);
+    			add_location(p, file$5, 78, 2, 1862);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -4651,27 +4651,27 @@ var app = (function () {
     			t16 = space();
     			td5 = element("td");
     			create_component(button.$$.fragment);
-    			add_location(th0, file$5, 86, 5, 2164);
-    			add_location(th1, file$5, 87, 5, 2184);
-    			add_location(th2, file$5, 88, 5, 2203);
-    			add_location(th3, file$5, 89, 5, 2243);
-    			add_location(th4, file$5, 90, 5, 2275);
-    			add_location(th5, file$5, 91, 5, 2315);
-    			add_location(tr0, file$5, 84, 4, 2126);
-    			add_location(thead, file$5, 83, 3, 2113);
-    			add_location(input0, file$5, 97, 9, 2427);
-    			add_location(td0, file$5, 97, 5, 2423);
-    			add_location(input1, file$5, 98, 9, 2480);
-    			add_location(td1, file$5, 98, 5, 2476);
-    			add_location(input2, file$5, 99, 9, 2530);
-    			add_location(td2, file$5, 99, 5, 2526);
-    			add_location(input3, file$5, 100, 9, 2579);
-    			add_location(td3, file$5, 100, 5, 2575);
-    			add_location(input4, file$5, 101, 9, 2628);
-    			add_location(td4, file$5, 101, 5, 2624);
-    			add_location(td5, file$5, 102, 5, 2675);
-    			add_location(tr1, file$5, 95, 4, 2374);
-    			add_location(tbody, file$5, 94, 3, 2361);
+    			add_location(th0, file$5, 86, 5, 2157);
+    			add_location(th1, file$5, 87, 5, 2177);
+    			add_location(th2, file$5, 88, 5, 2196);
+    			add_location(th3, file$5, 89, 5, 2236);
+    			add_location(th4, file$5, 90, 5, 2268);
+    			add_location(th5, file$5, 91, 5, 2308);
+    			add_location(tr0, file$5, 84, 4, 2119);
+    			add_location(thead, file$5, 83, 3, 2106);
+    			add_location(input0, file$5, 97, 9, 2420);
+    			add_location(td0, file$5, 97, 5, 2416);
+    			add_location(input1, file$5, 98, 9, 2473);
+    			add_location(td1, file$5, 98, 5, 2469);
+    			add_location(input2, file$5, 99, 9, 2523);
+    			add_location(td2, file$5, 99, 5, 2519);
+    			add_location(input3, file$5, 100, 9, 2572);
+    			add_location(td3, file$5, 100, 5, 2568);
+    			add_location(input4, file$5, 101, 9, 2621);
+    			add_location(td4, file$5, 101, 5, 2617);
+    			add_location(td5, file$5, 102, 5, 2668);
+    			add_location(tr1, file$5, 95, 4, 2367);
+    			add_location(tbody, file$5, 94, 3, 2354);
     		},
     		m: function mount(target, anchor, remount) {
     			insert_dev(target, thead, anchor);
@@ -4841,11 +4841,11 @@ var app = (function () {
     			button = element("button");
     			button.textContent = "Atrás";
     			attr_dev(button, "type", "submit");
-    			add_location(button, file$5, 110, 3, 2864);
+    			add_location(button, file$5, 110, 3, 2857);
     			attr_dev(form, "method", "get");
     			attr_dev(form, "action", "/#/table");
-    			add_location(form, file$5, 109, 2, 2822);
-    			add_location(main, file$5, 72, 0, 1770);
+    			add_location(form, file$5, 109, 2, 2815);
+    			add_location(main, file$5, 72, 0, 1763);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -4930,7 +4930,7 @@ var app = (function () {
     			console.log("Received ECStat");
     		} else {
     			if (res.status == 404) {
-    				errorMessageFromCode = "There is no data with country " + params.ECStatCountry + " and year " + params.ECStatYear;
+    				errorMessageFromCode = "No hay datos con país " + params.ECStatCountry + " y año " + params.ECStatYear;
     			}
 
     			$$invalidate(6, errorMessage = "Error " + res.status + " (" + res.statusText + "): " + errorMessageFromCode);
@@ -4954,7 +4954,7 @@ var app = (function () {
     			headers: { "Content-Type": "application/json" }
     		}).then(function (res) {
     			//window.location.replace("/");
-    			$$invalidate(7, statusMessage = "Data updated succesfully");
+    			$$invalidate(7, statusMessage = "Datos actualizados con éxito");
     		});
     	}
 

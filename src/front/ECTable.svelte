@@ -77,7 +77,7 @@
 				}
 		}).then(function(res) {
 			getECStats();
-			statusMessage = "New data inserted: Country " + newECStat.country + " and year " + newECStat.year;
+			statusMessage = "Nuevo dato insertado: País " + newECStat.country + " y año " + newECStat.year;
 		});
 
 	}
@@ -91,7 +91,7 @@
 		const res = await fetch("/api/v1/ec-stats/" + country + "/" + year, {
 			method: "DELETE"
 		}).then(function(res) {
-			statusMessage = "Data of country " + country + " and year " + year + " deleted succesfully";
+			statusMessage = "Datos del país " + country + " y año " + year + " borrados con éxito";
 			getECStats();
 		});
 	}
@@ -101,7 +101,7 @@
 		const res = await fetch("/api/v1/ec-stats/", {
 			method: "DELETE"
 		}).then(function(res) {
-			statusMessage = "All data deleted succesfully";
+			statusMessage = "Todos los datos borrados con éxito";
 			getECStats();
 		});
 	}
@@ -111,7 +111,7 @@
 		const res = await fetch("/api/v1/ec-stats/loadInitialData", {
 			method: "GET"
 		}).then(function(res) {
-			statusMessage = "Initial data of EC-Stats loaded succesfully";
+			statusMessage = "Datos inicialies cargados correctamente";
 			getECStats();
 		});
 	}
