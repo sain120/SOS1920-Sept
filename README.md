@@ -1,17 +1,9 @@
-# Postman Tests
-https://documenter.getpostman.com/view/10637488/TVKHTF9S
-
-# Travis
-
-
-
-
 # SOS1920
 
 ## Trabajo de Diciembre
 
 
-[![Build Status](https://travis-ci.org/sain120/SOS1920-Sept.svg?branch=master)](https://travis-ci.org/sain120/SOS1920-Sept)
+[![Build Status](https://travis-ci.org/sain120/sos1920-dic-aca.svg?branch=master)](https://travis-ci.org/sain120/sos1920-dic-aca)
 
 
 - **Hecho por**
@@ -23,4 +15,4 @@ https://documenter.getpostman.com/view/10637488/TVKHTF9S
 
 -  **HEROKU**: [sos1920-sep-aca](https://sos1920-dic-aca.herokuapp.com/)
 
--  **POSTMAN**: [documenter](https://documenter.getpostman.com/view/10637473/TVCb3Vkw)
+-  **POSTMAN**: [documenter](https://documenter.getpostman.com/view/10637488/TVKHTF9S)

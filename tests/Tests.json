@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "f4e82b7d-346e-4f9f-98ce-7cd425333bb1",
-		"name": "SOS1920-Sept",
+		"name": "sos1920-dic-aca",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
@@ -24,7 +24,7 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": "https://sos1920-sept.herokuapp.com/api/v1/ec-stats/loadInitialData"
+				"url": "https://sos1920-dic-aca.herokuapp.com/api/v1/ec-stats/loadInitialData"
 			},
 			"response": []
 		},
@@ -52,7 +52,7 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": "https://sos1920-sept.herokuapp.com/api/v1/ec-stats"
+				"url": "https://sos1920-dic-aca.herokuapp.com/api/v1/ec-stats"
 			},
 			"response": []
 		},
@@ -84,7 +84,7 @@
 						}
 					}
 				},
-				"url": "https://sos1920-sept.herokuapp.com/api/v1/ec-stats"
+				"url": "https://sos1920-dic-aca.herokuapp.com/api/v1/ec-stats"
 			},
 			"response": []
 		},
@@ -116,7 +116,7 @@
 						}
 					}
 				},
-				"url": "https://sos1920-sept.herokuapp.com/api/v1/ec-stats"
+				"url": "https://sos1920-dic-aca.herokuapp.com/api/v1/ec-stats"
 			},
 			"response": []
 		},
@@ -148,7 +148,7 @@
 						}
 					}
 				},
-				"url": "https://sos1920-sept.herokuapp.com/api/v1/ec-stats/Russia/2015"
+				"url": "https://sos1920-dic-aca.herokuapp.com/api/v1/ec-stats/Russia/2015"
 			},
 			"response": []
 		},
@@ -180,7 +180,7 @@
 						}
 					}
 				},
-				"url": "https://sos1920-sept.herokuapp.com/api/v1/ec-stats/Russia/2015"
+				"url": "https://sos1920-dic-aca.herokuapp.com/api/v1/ec-stats/Russia/2015"
 			},
 			"response": []
 		},
@@ -208,7 +208,7 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": "https://sos1920-sept.herokuapp.com/api/v1/ec-stats/Russia/2015"
+				"url": "https://sos1920-dic-aca.herokuapp.com/api/v1/ec-stats/Russia/2015"
 			},
 			"response": []
 		},
@@ -231,7 +231,7 @@
 			"request": {
 				"method": "DELETE",
 				"header": [],
-				"url": "https://sos1920-sept.herokuapp.com/api/v1/ec-stats/Russia/2015"
+				"url": "https://sos1920-dic-aca.herokuapp.com/api/v1/ec-stats/Russia/2015"
 			},
 			"response": []
 		},
@@ -260,9 +260,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://sos1920-sept.herokuapp.com/api/v1/ec-stats?limit=2&offset=3",
+					"raw": "https://sos1920-dic-aca.herokuapp.com/api/v1/ec-stats?limit=2&offset=3",
+					"protocol": "https",
 					"host": [
-						"https://sos1920-sept.herokuapp.com"
+						"sos1920-dic-aca",
+						"herokuapp",
+						"com"
 					],
 					"path": [
 						"api",
@@ -308,9 +311,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://sos1920-sept.herokuapp.com/api/v1/ec-stats?country=China",
+					"raw": "https://sos1920-dic-aca.herokuapp.com/api/v1/ec-stats?country=China",
+					"protocol": "https",
 					"host": [
-						"https://sos1920-sept.herokuapp.com"
+						"sos1920-dic-aca",
+						"herokuapp",
+						"com"
 					],
 					"path": [
 						"api",
