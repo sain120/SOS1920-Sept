@@ -24,6 +24,7 @@
 	let lastPage = false;
 
 	let statusMessage = "";
+	let errorMessage = "";
 
 	//onMount(getContacts);
 
@@ -77,7 +78,11 @@
 				}
 		}).then(function(res) {
 			getECStats();
-			statusMessage = "Nuevo dato insertado: País " + newECStat.country + " y año " + newECStat.year;
+			if(res.status == 201){
+				statusMessage = "Nuevo dato insertado: País " + newECStat.country + " y año " + newECStat.year;
+			}else if(res.status == 400){
+				statusMessage = "No se puede insertar el dato, el país y año ya existen";
+			}
 		});
 
 	}
@@ -131,7 +136,11 @@
 </script>
 
 <main>
-	<p style="color: green"><strong>{statusMessage}</strong></p>
+	{#if statusMessage.startsWith("No se puede")}
+		<p style="color: green"><strong>{statusMessage}</strong></p>
+	{:else}
+		<p style="color: green"><strong>{statusMessage}</strong></p>
+	{/if}	
 	<Table bordered>
 		<thead>
 			<tr>

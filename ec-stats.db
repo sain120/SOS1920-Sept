@@ -1,34 +1,8 @@
-{"country":"Canada","year":2015,"ecu":0.35,"rpc":46.26,"cdepc":14.91,"_id":"9FfESqa7cOU04Jwl"}
-{"country":"United_States","year":2015,"ecu":0.66,"rpc":59.532,"cdepc":14.65,"_id":"CuFnEEfMo4sCT0eb"}
-{"country":"China","year":2015,"ecu":0.84,"rpc":9.608,"cdepc":6.51,"_id":"jvOXIej4veAWVrDN"}
-{"country":"Germany","year":2015,"ecu":0.3,"rpc":55.306,"cdepc":8.7,"_id":"mbz2LyQ5tIG1HACi"}
-{"country":"France","year":2015,"ecu":1.2,"rpc":48.64,"cdepc":4.72,"_id":"tCvXoo9eTSu5nBLj"}
-{"year":"2015","ecu":"0.2","rpc":"45.4","cdepc":"112","country":"Canada ","_id":"LscymS5otjCOw1hC"}
-{"year":"2015","ecu":"0.2","rpc":"45.4","cdepc":"112","country":"Canada ","_id":"yiitOeZ3g1NS3Bel"}
-{"year":"2014","ecu":"0.2","rpc":"45.4","cdepc":"112","country":"Canada ","_id":"35cYsQCJ9IYnG3Jq"}
-{"$$deleted":true,"_id":"35cYsQCJ9IYnG3Jq"}
-{"country":"Canada","year":"2014","ecu":"0.2","rpc":"45.4","cdepc":"112","_id":"18JqH75HfYwk6D8T"}
-{"$$deleted":true,"_id":"18JqH75HfYwk6D8T"}
-{"$$deleted":true,"_id":"9FfESqa7cOU04Jwl"}
-{"$$deleted":true,"_id":"CuFnEEfMo4sCT0eb"}
-{"$$deleted":true,"_id":"LscymS5otjCOw1hC"}
-{"$$deleted":true,"_id":"jvOXIej4veAWVrDN"}
-{"$$deleted":true,"_id":"mbz2LyQ5tIG1HACi"}
-{"$$deleted":true,"_id":"tCvXoo9eTSu5nBLj"}
-{"$$deleted":true,"_id":"yiitOeZ3g1NS3Bel"}
-{"country":"United_States","year":2015,"ecu":0.66,"rpc":59.532,"cdepc":14.65,"_id":"RhH3x1XC6HfW9Beo"}
-{"country":"China","year":2015,"ecu":0.84,"rpc":9.608,"cdepc":6.51,"_id":"Oo3pZlkUrgpEOj3l"}
-{"country":"France","year":2015,"ecu":1.2,"rpc":48.64,"cdepc":4.72,"_id":"gbgAn6cFSVvresod"}
-{"country":"Germany","year":2015,"ecu":0.3,"rpc":55.306,"cdepc":8.7,"_id":"3fJMngdIHjgyWRu8"}
-{"country":"Canada","year":2015,"ecu":0.35,"rpc":46.26,"cdepc":14.91,"_id":"mgfCbawHbqqe0VKs"}
-{"$$deleted":true,"_id":"3fJMngdIHjgyWRu8"}
-{"$$deleted":true,"_id":"Oo3pZlkUrgpEOj3l"}
-{"$$deleted":true,"_id":"RhH3x1XC6HfW9Beo"}
-{"$$deleted":true,"_id":"gbgAn6cFSVvresod"}
-{"$$deleted":true,"_id":"mgfCbawHbqqe0VKs"}
-{"country":"United_States","year":2015,"ecu":0.66,"rpc":59.532,"cdepc":14.65,"_id":"l9OmOKgvQ3GhOIg6"}
-{"country":"China","year":2015,"ecu":0.84,"rpc":9.608,"cdepc":6.51,"_id":"ndSHhf9qKwgiV2m1"}
-{"country":"France","year":2015,"ecu":1.2,"rpc":48.64,"cdepc":4.72,"_id":"0UThueSZokrrvHZw"}
-{"country":"Germany","year":2015,"ecu":0.3,"rpc":55.306,"cdepc":8.7,"_id":"H0z8R7Kzt15L9yA8"}
-{"country":"Canada","year":2015,"ecu":0.35,"rpc":46.26,"cdepc":14.91,"_id":"lLm0EnK0tJNbdYQo"}
-{"year":"","ecu":"1.2","rpc":"","cdepc":"","country":"TEtea","_id":"sGVHkmCmet3EE3aw"}
+{"country":"United_States","year":"2015","ecu":"0.40","rpc":"13.532","cdepc":"10.34","_id":"8LJmvEAJQVfaEsCy"}
+{"country":"United_States","year":"2015","ecu":"0.40","rpc":"13.532","cdepc":"10.34","_id":"L3XmM1oarl6eYOaZ"}
+{"country":"China","year":2015,"ecu":0.84,"rpc":9.608,"cdepc":6.51,"_id":"LyUfQHobcm9NIyVx"}
+{"country":"Germany","year":2015,"ecu":0.3,"rpc":55.306,"cdepc":8.7,"_id":"Qzgy7uFV1MOr2n1E"}
+{"country":"France","year":2015,"ecu":1.2,"rpc":48.64,"cdepc":4.72,"_id":"XGWGEWLcWWFwigkT"}
+{"country":"United_States","year":2015,"ecu":0.66,"rpc":59.532,"cdepc":14.65,"_id":"gx915Go73t4rOBEH"}
+{"country":"Canada","year":2015,"ecu":0.35,"rpc":46.26,"cdepc":14.91,"_id":"pamfRALEL3sJEAiV"}
+{"country":"United_Sta","year":"2015","ecu":"0.40","rpc":"13.532","cdepc":"10.34","_id":"sehqbkhnov4qA1zB"}

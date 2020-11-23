@@ -100,13 +100,29 @@ module.exports = function(app, db2) {
 	}
 
 	app.post(BASE_API_URL + '/ec-stats', (req, res) => {
+		console.log("Llamando a post");
 		console.log(req.body);
-		if (checkJSON(req.body)) {
-			db2.insert(req.body);
-			res.sendStatus(201, 'CREATED');
-		} else {
-			res.sendStatus(400, 'BAD REQUEST');
-		}
+
+		var country = req.body.country;
+		var year = req.body.year;
+
+		db2.find({}, (err, rows) => {
+			var frows = rows.filter(r => {
+				return r.country == country && r.year == year;
+			});
+
+			if (frows.length >= 1) {
+				res.sendStatus(400, 'BAD REQUEST: Already exists');
+			} else {
+				if (checkJSON(req.body)) {
+					db2.insert(req.body);
+					res.sendStatus(201, 'CREATED');
+				} else {
+					res.sendStatus(400, 'BAD REQUEST: Format not allowed');
+				}
+			}
+		});
+
 	});
 
 	app.get(BASE_API_URL + '/ec-stats', (req, res) => {
