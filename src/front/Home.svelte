@@ -10,6 +10,8 @@
         Visualización 3</button>
     <button type="button" class="btn btn-light" onclick="window.location.href='#/integrations'">
          Integraciones</button>
+    <button type="button" class="btn btn-light" onclick="window.location.href='#/about'">
+         Sobre mi</button>
     </div>
 </main>
 
