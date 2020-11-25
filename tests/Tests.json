@@ -1,17 +1,40 @@
 {
 	"info": {
-		"_postman_id": "f4e82b7d-346e-4f9f-98ce-7cd425333bb1",
+		"_postman_id": "88eb4325-e127-4176-a015-50715e21e3d9",
 		"name": "sos1920-dic-aca",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
+		{
+			"name": "deleteECStats all removed",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d06d14e2-670d-429f-9cce-f23479fbe6db",
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {\r",
+							"    pm.response.to.have.status(200);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "https://sos1920-dic-aca.herokuapp.com/api/v1/ec-stats/"
+			},
+			"response": []
+		},
 		{
 			"name": "loadInitialData",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
-						"id": "2a256b81-6a9d-46a9-abad-3d21a4211389",
+						"id": "98ccba48-f6e6-44da-9a27-960bf5914c23",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
@@ -34,7 +57,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "9bac9bfc-d33d-4516-a1e0-02dae2084c61",
+						"id": "cc4868f3-3cad-46a0-8365-bfbfba05664f",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
@@ -62,7 +85,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "f0ce5c9d-de76-4025-9e1c-b58dcbd47937",
+						"id": "efa0bf21-ae6a-4650-8faa-61bad4b52053",
 						"exec": [
 							"pm.test(\"Status code is 400\", function () {\r",
 							"    pm.response.to.have.status(400);\r",
@@ -89,12 +112,44 @@
 			"response": []
 		},
 		{
+			"name": "postECStats bad request 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "cfe32e41-f992-4c0f-955b-eba0238db5ef",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    { \r\n\t\t\"country\": \"United_States\",\r\n\t\t\"year\": \"2015\",\r\n\t\t\"ecu\": \"0.40\",\r\n\t\t\"rpc\": \"13.532\",\r\n\t\t\"cdepc\": \"10.34\"\r\n\t}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://sos1920-dic-aca.herokuapp.com/api/v1/ec-stats"
+			},
+			"response": []
+		},
+		{
 			"name": "postECStats",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
-						"id": "f092b574-e961-4386-aa60-f05f1ad88a01",
+						"id": "eaa42850-f452-494c-96d7-84c1e2393b2e",
 						"exec": [
 							"pm.test(\"Status code is 201\", function () {\r",
 							"    pm.response.to.have.status(201);\r",
@@ -126,7 +181,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "b0df2242-948b-4de5-898b-d631182fd213",
+						"id": "e88e537e-2f2e-4315-9314-f469ffe9811d",
 						"exec": [
 							"pm.test(\"Status code is 200\", function() {\r",
 							"    pm.response.to.have.status(200);\r",
@@ -158,7 +213,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "b3c82dbb-7e7f-47cd-95a0-54892bc86d24",
+						"id": "c49cf55d-874c-4865-999e-44e1fcb3fbc7",
 						"exec": [
 							"pm.test(\"Status code is 400\", function() {\r",
 							"    pm.response.to.have.status(400);\r",
@@ -185,12 +240,44 @@
 			"response": []
 		},
 		{
+			"name": "putECStats not found",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "28b8385a-c144-4197-b259-bab2150fa9c4",
+						"exec": [
+							"pm.test(\"Status code is 404\", function() {\r",
+							"    pm.response.to.have.status(404);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    { \r\n\t\t\"country\": \"Russia\",\r\n\t\t\"year\": \"2017\",\r\n\t\t\"ecu\": \"0.40\",\r\n\t\t\"rpc\": \"17.532\",\r\n\t\t\"cdepc\": \"10.34\"\r\n\t}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://sos1920-dic-aca.herokuapp.com/api/v1/ec-stats/Russia/2013"
+			},
+			"response": []
+		},
+		{
 			"name": "getECstats one stat",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
-						"id": "81df803f-5c43-496e-847d-7c5399b9bc12",
+						"id": "6b0c3c0a-9cf9-4887-9fa3-ceaa3d7e4e38",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
@@ -213,12 +300,35 @@
 			"response": []
 		},
 		{
+			"name": "getECstats one stat not found",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "aa10ea94-08b0-4e88-bd8b-f96b323286ed",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://sos1920-dic-aca.herokuapp.com/api/v1/ec-stats/Portugal/2012"
+			},
+			"response": []
+		},
+		{
 			"name": "deleteECStat",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
-						"id": "745f1bae-95d8-4311-b188-f57a0a7ec42f",
+						"id": "6144e60e-8026-49f9-8074-9e0d9298e53d",
 						"exec": [
 							"pm.test(\"Status code is 200\", function() {\r",
 							"    pm.response.to.have.status(200);\r",
@@ -236,12 +346,35 @@
 			"response": []
 		},
 		{
+			"name": "deleteECStat not found",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a91ffd2e-33d8-49c8-b2c4-8c2df07abdd1",
+						"exec": [
+							"pm.test(\"Status code is 404\", function() {\r",
+							"    pm.response.to.have.status(404);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "https://sos1920-dic-aca.herokuapp.com/api/v1/ec-stats/Russia/2014"
+			},
+			"response": []
+		},
+		{
 			"name": "getECStats limit offset",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
-						"id": "6bf3e746-665e-4b94-a834-e065dccff060",
+						"id": "fdffaef6-a8af-465d-82c8-469cce1623bd",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
@@ -292,7 +425,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "6c4041b0-bc08-4f0a-8f0f-f279e81612cd",
+						"id": "d7e30680-809d-445b-b04a-c82dcd121842",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
@@ -327,6 +460,53 @@
 						{
 							"key": "country",
 							"value": "China"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getECStats search2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "53ea5881-8c23-4067-a4c4-5a888bb955da",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							"\r",
+							"pm.test(\"There are 5 elements\", function() {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.have.lengthOf(5);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sos1920-dic-aca.herokuapp.com/api/v1/ec-stats?year=2015",
+					"protocol": "https",
+					"host": [
+						"sos1920-dic-aca",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"ec-stats"
+					],
+					"query": [
+						{
+							"key": "year",
+							"value": "2015"
 						}
 					]
 				}

@@ -137,7 +137,7 @@
 
 <main>
 	{#if statusMessage.startsWith("No se puede")}
-		<p style="color: green"><strong>{statusMessage}</strong></p>
+		<p style="color: red"><strong>{statusMessage}</strong></p>
 	{:else}
 		<p style="color: green"><strong>{statusMessage}</strong></p>
 	{/if}	
