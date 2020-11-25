@@ -15,4 +15,4 @@
 
 -  **HEROKU**: [sos1920-sep-aca](https://sos1920-dic-aca.herokuapp.com/)
 
--  **POSTMAN**: [documenter](https://documenter.getpostman.com/view/10637488/TVKHTF9S)
+-  **POSTMAN**: [documenter](https://documenter.getpostman.com/view/10637488/TVmFk11a)
