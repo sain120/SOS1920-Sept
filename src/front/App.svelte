@@ -12,6 +12,8 @@
 	import MyGraph3 from './MyGraph3.svelte'
 	import Integration from './Integration.svelte';
 	import Integration2 from './Integration2.svelte';
+	import Integration3 from './Integration3.svelte';
+	import Integration4 from './Integration4.svelte';
 	import ExtIntegration from './ExtIntegration.svelte';
 	import ExtIntegration2 from './ExtIntegration2.svelte';
 	import MenuIntegration from './MenuIntegration.svelte';
@@ -28,6 +30,8 @@
 		"/analytics": MyGraph3,
 		"/integration": Integration,
 		"/integration2": Integration2,
+		"/integration3": Integration3,
+		"/integration4": Integration4,
 		"/extintegration": ExtIntegration,
 		"/extintegration2": ExtIntegration2,
 		"/integrations": MenuIntegration,

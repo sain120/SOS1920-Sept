@@ -5,6 +5,10 @@
         Integración API Fernando</button>
     <button type="button" class="btn btn-light" onclick="window.location.href='#/integration2'">
         Integración API Ruben</button>
+    <button type="button" class="btn btn-light" onclick="window.location.href='#/integration3'">
+        Integración Grupo 9</button>
+    <button type="button" class="btn btn-light" onclick="window.location.href='#/integration4'">
+        Integración Grupo 26</button>
     </div>
     <h3>Integraciones Externas</h3>
     <div class="botones">

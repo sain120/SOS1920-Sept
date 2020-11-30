@@ -147,7 +147,7 @@
 				<!-- <td>ID</td> -->
 				<th>País</th>
 				<th>Año</th>
-				<th>Uso de cocohes eléctricos</th>
+				<th>Uso de coches eléctricos</th>
 				<th>Renta per cápita</th>
 				<th>Emisiones CO2 per cápita</th>
 				<th>Acciones</th>

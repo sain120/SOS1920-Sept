@@ -3104,14 +3104,14 @@ var app = (function () {
     			create_component(button.$$.fragment);
     			t10 = space();
     			attr_dev(a, "href", a_href_value = "#/ec-stat/" + /*ecstat*/ ctx[25].country + "/" + /*ecstat*/ ctx[25].year);
-    			add_location(a, file$4, 180, 7, 4450);
-    			add_location(td0, file$4, 180, 3, 4446);
-    			add_location(td1, file$4, 181, 3, 4530);
-    			add_location(td2, file$4, 182, 3, 4556);
-    			add_location(td3, file$4, 183, 3, 4581);
-    			add_location(td4, file$4, 184, 3, 4606);
-    			add_location(td5, file$4, 185, 3, 4633);
-    			add_location(tr, file$4, 178, 2, 4403);
+    			add_location(a, file$4, 180, 7, 4449);
+    			add_location(td0, file$4, 180, 3, 4445);
+    			add_location(td1, file$4, 181, 3, 4529);
+    			add_location(td2, file$4, 182, 3, 4555);
+    			add_location(td3, file$4, 183, 3, 4580);
+    			add_location(td4, file$4, 184, 3, 4605);
+    			add_location(td5, file$4, 185, 3, 4632);
+    			add_location(tr, file$4, 178, 2, 4402);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -3374,7 +3374,7 @@ var app = (function () {
     			th1.textContent = "Año";
     			t3 = space();
     			th2 = element("th");
-    			th2.textContent = "Uso de cocohes eléctricos";
+    			th2.textContent = "Uso de coches eléctricos";
     			t5 = space();
     			th3 = element("th");
     			th3.textContent = "Renta per cápita";
@@ -3432,36 +3432,36 @@ var app = (function () {
     			add_location(th0, file$4, 147, 4, 3375);
     			add_location(th1, file$4, 148, 4, 3393);
     			add_location(th2, file$4, 149, 4, 3410);
-    			add_location(th3, file$4, 150, 4, 3449);
-    			add_location(th4, file$4, 151, 4, 3479);
-    			add_location(th5, file$4, 152, 4, 3517);
+    			add_location(th3, file$4, 150, 4, 3448);
+    			add_location(th4, file$4, 151, 4, 3478);
+    			add_location(th5, file$4, 152, 4, 3516);
     			add_location(tr0, file$4, 145, 3, 3341);
     			add_location(thead, file$4, 144, 2, 3330);
-    			add_location(input0, file$4, 158, 7, 3613);
-    			add_location(td0, file$4, 158, 3, 3609);
-    			add_location(input1, file$4, 159, 7, 3669);
-    			add_location(td1, file$4, 159, 3, 3665);
-    			add_location(input2, file$4, 160, 7, 3722);
-    			add_location(td2, file$4, 160, 3, 3718);
-    			add_location(input3, file$4, 161, 7, 3774);
-    			add_location(td3, file$4, 161, 3, 3770);
-    			add_location(input4, file$4, 162, 7, 3826);
-    			add_location(td4, file$4, 162, 3, 3822);
-    			add_location(td5, file$4, 163, 3, 3876);
-    			add_location(tr1, file$4, 156, 2, 3566);
-    			add_location(input5, file$4, 168, 7, 4010);
-    			add_location(td6, file$4, 168, 3, 4006);
-    			add_location(input6, file$4, 169, 7, 4063);
-    			add_location(td7, file$4, 169, 3, 4059);
-    			add_location(input7, file$4, 170, 7, 4113);
-    			add_location(td8, file$4, 170, 3, 4109);
-    			add_location(input8, file$4, 171, 7, 4162);
-    			add_location(td9, file$4, 171, 3, 4158);
-    			add_location(input9, file$4, 172, 7, 4211);
-    			add_location(td10, file$4, 172, 3, 4207);
-    			add_location(td11, file$4, 173, 3, 4258);
-    			add_location(tr2, file$4, 166, 2, 3963);
-    			add_location(tbody, file$4, 155, 1, 3556);
+    			add_location(input0, file$4, 158, 7, 3612);
+    			add_location(td0, file$4, 158, 3, 3608);
+    			add_location(input1, file$4, 159, 7, 3668);
+    			add_location(td1, file$4, 159, 3, 3664);
+    			add_location(input2, file$4, 160, 7, 3721);
+    			add_location(td2, file$4, 160, 3, 3717);
+    			add_location(input3, file$4, 161, 7, 3773);
+    			add_location(td3, file$4, 161, 3, 3769);
+    			add_location(input4, file$4, 162, 7, 3825);
+    			add_location(td4, file$4, 162, 3, 3821);
+    			add_location(td5, file$4, 163, 3, 3875);
+    			add_location(tr1, file$4, 156, 2, 3565);
+    			add_location(input5, file$4, 168, 7, 4009);
+    			add_location(td6, file$4, 168, 3, 4005);
+    			add_location(input6, file$4, 169, 7, 4062);
+    			add_location(td7, file$4, 169, 3, 4058);
+    			add_location(input7, file$4, 170, 7, 4112);
+    			add_location(td8, file$4, 170, 3, 4108);
+    			add_location(input8, file$4, 171, 7, 4161);
+    			add_location(td9, file$4, 171, 3, 4157);
+    			add_location(input9, file$4, 172, 7, 4210);
+    			add_location(td10, file$4, 172, 3, 4206);
+    			add_location(td11, file$4, 173, 3, 4257);
+    			add_location(tr2, file$4, 166, 2, 3962);
+    			add_location(tbody, file$4, 155, 1, 3555);
     		},
     		m: function mount(target, anchor, remount) {
     			insert_dev(target, thead, anchor);
@@ -3985,15 +3985,15 @@ var app = (function () {
     			button2 = element("button");
     			button2.textContent = "Atrás";
     			attr_dev(div, "class", "botonesTabla svelte-ccz9at");
-    			add_location(div, file$4, 191, 1, 4793);
+    			add_location(div, file$4, 191, 1, 4792);
     			attr_dev(p, "class", "numpag svelte-ccz9at");
-    			add_location(p, file$4, 201, 1, 5205);
+    			add_location(p, file$4, 201, 1, 5204);
     			attr_dev(button2, "type", "submit");
-    			add_location(button2, file$4, 203, 8, 5305);
+    			add_location(button2, file$4, 203, 8, 5304);
     			attr_dev(form, "class", "botonAtrasTabla svelte-ccz9at");
     			attr_dev(form, "method", "get");
     			attr_dev(form, "action", "/");
-    			add_location(form, file$4, 202, 1, 5242);
+    			add_location(form, file$4, 202, 1, 5241);
     			add_location(main, file$4, 137, 0, 3115);
     		},
     		l: function claim(nodes) {
@@ -43434,10 +43434,395 @@ var app = (function () {
     	}
     }
 
-    /* src\front\ExtIntegration.svelte generated by Svelte v3.20.1 */
-    const file$b = "src\\front\\ExtIntegration.svelte";
+    /* src\front\Integration3.svelte generated by Svelte v3.20.1 */
+
+    const file$b = "src\\front\\Integration3.svelte";
 
     function create_fragment$c(ctx) {
+    	let script0;
+    	let script0_src_value;
+    	let script1;
+    	let script1_src_value;
+    	let script2;
+    	let script2_src_value;
+    	let script3;
+    	let script3_src_value;
+    	let t0;
+    	let main;
+    	let h2;
+    	let t2;
+    	let figure;
+    	let div;
+    	let t3;
+    	let p;
+    	let t5;
+    	let form;
+    	let button;
+    	let dispose;
+
+    	const block = {
+    		c: function create() {
+    			script0 = element("script");
+    			script1 = element("script");
+    			script2 = element("script");
+    			script3 = element("script");
+    			t0 = space();
+    			main = element("main");
+    			h2 = element("h2");
+    			h2.textContent = "Integración 3: API de Grupo 9";
+    			t2 = space();
+    			figure = element("figure");
+    			div = element("div");
+    			t3 = space();
+    			p = element("p");
+    			p.textContent = "Grafico de barras con el porcentaje de coches eléctricos por países y su consumo de petróleo.";
+    			t5 = space();
+    			form = element("form");
+    			button = element("button");
+    			button.textContent = "Atrás";
+    			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
+    			add_location(script0, file$b, 78, 4, 1442);
+    			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script1, "src", script1_src_value);
+    			add_location(script1, file$b, 79, 4, 1513);
+    			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script2, "src", script2_src_value);
+    			add_location(script2, file$b, 80, 4, 1591);
+    			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script3, "src", script3_src_value);
+    			add_location(script3, file$b, 81, 4, 1671);
+    			add_location(h2, file$b, 85, 4, 1801);
+    			attr_dev(div, "id", "container");
+    			add_location(div, file$b, 87, 8, 1889);
+    			attr_dev(p, "class", "highcharts-description");
+    			add_location(p, file$b, 88, 8, 1925);
+    			attr_dev(figure, "class", "highcharts-figure");
+    			add_location(figure, file$b, 86, 4, 1845);
+    			attr_dev(button, "type", "submit");
+    			add_location(button, file$b, 94, 8, 2157);
+    			attr_dev(form, "method", "get");
+    			attr_dev(form, "action", "/#/integrations");
+    			add_location(form, file$b, 93, 4, 2103);
+    			add_location(main, file$b, 84, 0, 1789);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor, remount) {
+    			append_dev(document.head, script0);
+    			append_dev(document.head, script1);
+    			append_dev(document.head, script2);
+    			append_dev(document.head, script3);
+    			insert_dev(target, t0, anchor);
+    			insert_dev(target, main, anchor);
+    			append_dev(main, h2);
+    			append_dev(main, t2);
+    			append_dev(main, figure);
+    			append_dev(figure, div);
+    			append_dev(figure, t3);
+    			append_dev(figure, p);
+    			append_dev(main, t5);
+    			append_dev(main, form);
+    			append_dev(form, button);
+    			if (remount) dispose();
+    			dispose = listen_dev(script3, "load", /*loadGraph*/ ctx[0], false, false, false);
+    		},
+    		p: noop,
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			detach_dev(script0);
+    			detach_dev(script1);
+    			detach_dev(script2);
+    			detach_dev(script3);
+    			if (detaching) detach_dev(t0);
+    			if (detaching) detach_dev(main);
+    			dispose();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$c.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance$c($$self, $$props, $$invalidate) {
+    	let ecstats = [];
+    	let rsstats = [];
+
+    	async function loadGraph() {
+    		const resECStats = await fetch("/api/v1/ec-stats");
+    		const resRSSstats = await fetch("http://sos1920-09.herokuapp.com/api/v3/oil-coal-nuclear-energy-consumption-stats");
+    		ecstats = await resECStats.json();
+    		rsstats = await resRSSstats.json();
+    		var MyData1 = [];
+    		var MyData2 = [];
+    		var Countries = [];
+
+    		ecstats.forEach(ecstat => {
+    			rsstats.forEach(rsstat => {
+    				if (ecstat.country == rsstat.country) {
+    					MyData1.push(ecstat.ecu);
+    					MyData2.push(rsstat["oil-consumption"]);
+    					Countries.push(ecstat.country);
+    				}
+    			});
+    		});
+
+    		Highcharts.chart("container", {
+    			chart: { type: "column" },
+    			title: {
+    				text: "Uso de coches eléctricos y consumo de petróleo"
+    			},
+    			xAxis: [{ categories: Countries, crosshair: true }],
+    			yAxis: [
+    				{
+    					className: "highcharts-color-0",
+    					title: { text: "Uso de coches eléctricos (%)" }
+    				},
+    				{
+    					className: "highcharts-color-1",
+    					opposite: true,
+    					title: { text: "Consumo de petróleo" }
+    				}
+    			],
+    			plotOptions: { column: { borderRadius: 5 } },
+    			series: [
+    				{
+    					name: "Uso de cocohes eléctricos",
+    					data: MyData1
+    				},
+    				{
+    					name: "Consumo de petróleo",
+    					data: MyData2,
+    					yAxis: 1
+    				}
+    			]
+    		});
+    	}
+
+    	const writable_props = [];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<Integration3> was created with unknown prop '${key}'`);
+    	});
+
+    	let { $$slots = {}, $$scope } = $$props;
+    	validate_slots("Integration3", $$slots, []);
+    	$$self.$capture_state = () => ({ ecstats, rsstats, loadGraph });
+
+    	$$self.$inject_state = $$props => {
+    		if ("ecstats" in $$props) ecstats = $$props.ecstats;
+    		if ("rsstats" in $$props) rsstats = $$props.rsstats;
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	return [loadGraph];
+    }
+
+    class Integration3 extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$c, create_fragment$c, safe_not_equal, {});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "Integration3",
+    			options,
+    			id: create_fragment$c.name
+    		});
+    	}
+    }
+
+    /* src\front\Integration4.svelte generated by Svelte v3.20.1 */
+    const file$c = "src\\front\\Integration4.svelte";
+
+    function create_fragment$d(ctx) {
+    	let head;
+    	let script0;
+    	let script0_src_value;
+    	let t0;
+    	let script1;
+    	let script1_src_value;
+    	let t1;
+    	let link;
+    	let t2;
+    	let main;
+    	let h2;
+    	let t4;
+    	let div;
+    	let t5;
+    	let p;
+    	let t7;
+    	let form;
+    	let button;
+
+    	const block = {
+    		c: function create() {
+    			head = element("head");
+    			script0 = element("script");
+    			t0 = space();
+    			script1 = element("script");
+    			t1 = space();
+    			link = element("link");
+    			t2 = space();
+    			main = element("main");
+    			h2 = element("h2");
+    			h2.textContent = "Puntos UEFA por equipo y la renta per cápita de su país";
+    			t4 = space();
+    			div = element("div");
+    			t5 = space();
+    			p = element("p");
+    			p.textContent = "Integración con el grupo 26. Comparación entre la renta per cápita de los países y el coeficiente en la UEFA de sus equipos de fútbol.";
+    			t7 = space();
+    			form = element("form");
+    			button = element("button");
+    			button.textContent = "Atrás";
+    			if (script0.src !== (script0_src_value = "https://d3js.org/d3.v5.min.js")) attr_dev(script0, "src", script0_src_value);
+    			add_location(script0, file$c, 60, 2, 1130);
+    			if (script1.src !== (script1_src_value = "libraries/billboard.js")) attr_dev(script1, "src", script1_src_value);
+    			add_location(script1, file$c, 61, 2, 1186);
+    			attr_dev(link, "rel", "stylesheet");
+    			attr_dev(link, "href", "css/billboard.css");
+    			add_location(link, file$c, 62, 2, 1235);
+    			add_location(head, file$c, 58, 0, 1120);
+    			add_location(h2, file$c, 67, 2, 1305);
+    			attr_dev(div, "id", "barChart");
+    			add_location(div, file$c, 68, 6, 1376);
+    			add_location(p, file$c, 69, 6, 1408);
+    			attr_dev(button, "type", "submit");
+    			add_location(button, file$c, 73, 8, 1625);
+    			attr_dev(form, "method", "get");
+    			attr_dev(form, "action", "/#/integrations");
+    			add_location(form, file$c, 72, 6, 1572);
+    			add_location(main, file$c, 66, 0, 1296);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, head, anchor);
+    			append_dev(head, script0);
+    			append_dev(head, t0);
+    			append_dev(head, script1);
+    			append_dev(head, t1);
+    			append_dev(head, link);
+    			insert_dev(target, t2, anchor);
+    			insert_dev(target, main, anchor);
+    			append_dev(main, h2);
+    			append_dev(main, t4);
+    			append_dev(main, div);
+    			append_dev(main, t5);
+    			append_dev(main, p);
+    			append_dev(main, t7);
+    			append_dev(main, form);
+    			append_dev(form, button);
+    		},
+    		p: noop,
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(head);
+    			if (detaching) detach_dev(t2);
+    			if (detaching) detach_dev(main);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$d.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance$d($$self, $$props, $$invalidate) {
+    	let ecstats = [];
+    	let gcstats = [];
+
+    	async function loadGraph() {
+    		const resECStats = await fetch("/api/v1/ec-stats");
+    		const resGCFStats = await fetch("http://sos1920-26.herokuapp.com/api/v3/global-coef");
+    		ecstats = await resECStats.json();
+    		gcstats = await resGCFStats.json();
+    		var MyData1 = ["Renta per cápita de su país"];
+    		var MyData2 = ["Puntación UEFA"];
+    		var Countries = [];
+
+    		ecstats.forEach(ecstat => {
+    			gcstats.forEach(gcstat => {
+    				if (ecstat.country.toLowerCase() == gcstat.country) {
+    					MyData1.push(ecstat.rpc);
+    					MyData2.push(gcstat.coefficient);
+    					Countries.push(gcstat.team + " (" + gcstat.country + ")");
+    				}
+    			});
+    		});
+
+    		var chart = bb.generate({
+    			data: {
+    				columns: [MyData1, MyData2],
+    				type: "bar",
+    				axes: { Electric_Cars_Use: "y", Area: "y2" }
+    			},
+    			axis: {
+    				x: { type: "category", categories: Countries },
+    				y2: { show: true }
+    			},
+    			bindto: "#barChart"
+    		});
+    	}
+
+    	loadGraph();
+    	const writable_props = [];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<Integration4> was created with unknown prop '${key}'`);
+    	});
+
+    	let { $$slots = {}, $$scope } = $$props;
+    	validate_slots("Integration4", $$slots, []);
+    	$$self.$capture_state = () => ({ bb, ecstats, gcstats, loadGraph });
+
+    	$$self.$inject_state = $$props => {
+    		if ("ecstats" in $$props) ecstats = $$props.ecstats;
+    		if ("gcstats" in $$props) gcstats = $$props.gcstats;
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	return [];
+    }
+
+    class Integration4 extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$d, create_fragment$d, safe_not_equal, {});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "Integration4",
+    			options,
+    			id: create_fragment$d.name
+    		});
+    	}
+    }
+
+    /* src\front\ExtIntegration.svelte generated by Svelte v3.20.1 */
+    const file$d = "src\\front\\ExtIntegration.svelte";
+
+    function create_fragment$e(ctx) {
     	let head;
     	let script0;
     	let script0_src_value;
@@ -43479,23 +43864,23 @@ var app = (function () {
     			button = element("button");
     			button.textContent = "Atrás";
     			if (script0.src !== (script0_src_value = "https://d3js.org/d3.v5.min.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$b, 60, 2, 1103);
+    			add_location(script0, file$d, 60, 2, 1103);
     			if (script1.src !== (script1_src_value = "libraries/billboard.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$b, 61, 2, 1159);
+    			add_location(script1, file$d, 61, 2, 1159);
     			attr_dev(link, "rel", "stylesheet");
     			attr_dev(link, "href", "css/billboard.css");
-    			add_location(link, file$b, 62, 2, 1208);
-    			add_location(head, file$b, 58, 0, 1093);
-    			add_location(h2, file$b, 67, 2, 1278);
+    			add_location(link, file$d, 62, 2, 1208);
+    			add_location(head, file$d, 58, 0, 1093);
+    			add_location(h2, file$d, 67, 2, 1278);
     			attr_dev(div, "id", "barChart");
-    			add_location(div, file$b, 68, 6, 1341);
-    			add_location(p, file$b, 69, 6, 1373);
+    			add_location(div, file$d, 68, 6, 1341);
+    			add_location(p, file$d, 69, 6, 1373);
     			attr_dev(button, "type", "submit");
-    			add_location(button, file$b, 73, 8, 1569);
+    			add_location(button, file$d, 73, 8, 1569);
     			attr_dev(form, "method", "get");
     			attr_dev(form, "action", "/#/integrations");
-    			add_location(form, file$b, 72, 6, 1516);
-    			add_location(main, file$b, 66, 0, 1269);
+    			add_location(form, file$d, 72, 6, 1516);
+    			add_location(main, file$d, 66, 0, 1269);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -43530,7 +43915,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$c.name,
+    		id: create_fragment$e.name,
     		type: "component",
     		source: "",
     		ctx
@@ -43539,7 +43924,7 @@ var app = (function () {
     	return block;
     }
 
-    function instance$c($$self, $$props, $$invalidate) {
+    function instance$e($$self, $$props, $$invalidate) {
     	let ecstats = [];
     	let costats = [];
 
@@ -43602,22 +43987,22 @@ var app = (function () {
     class ExtIntegration extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$c, create_fragment$c, safe_not_equal, {});
+    		init(this, options, instance$e, create_fragment$e, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "ExtIntegration",
     			options,
-    			id: create_fragment$c.name
+    			id: create_fragment$e.name
     		});
     	}
     }
 
     /* src\front\ExtIntegration2.svelte generated by Svelte v3.20.1 */
 
-    const file$c = "src\\front\\ExtIntegration2.svelte";
+    const file$e = "src\\front\\ExtIntegration2.svelte";
 
-    function create_fragment$d(ctx) {
+    function create_fragment$f(ctx) {
     	let script0;
     	let script0_src_value;
     	let script1;
@@ -43663,28 +44048,28 @@ var app = (function () {
     			button = element("button");
     			button.textContent = "Atrás";
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$c, 100, 4, 2541);
+    			add_location(script0, file$e, 100, 4, 2541);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/series-label.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$c, 101, 1, 2609);
+    			add_location(script1, file$e, 101, 1, 2609);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$c, 102, 1, 2687);
+    			add_location(script2, file$e, 102, 1, 2687);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$c, 103, 1, 2762);
+    			add_location(script3, file$e, 103, 1, 2762);
     			if (script4.src !== (script4_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script4, "src", script4_src_value);
-    			add_location(script4, file$c, 104, 1, 2839);
-    			add_location(h2, file$c, 108, 4, 2969);
+    			add_location(script4, file$e, 104, 1, 2839);
+    			add_location(h2, file$e, 108, 4, 2969);
     			attr_dev(div, "id", "container");
-    			add_location(div, file$c, 110, 8, 3090);
+    			add_location(div, file$e, 110, 8, 3090);
     			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$c, 111, 8, 3126);
+    			add_location(p, file$e, 111, 8, 3126);
     			attr_dev(button, "type", "submit");
-    			add_location(button, file$c, 115, 12, 3357);
+    			add_location(button, file$e, 115, 12, 3357);
     			attr_dev(form, "method", "get");
     			attr_dev(form, "action", "/#/integrations");
-    			add_location(form, file$c, 114, 8, 3299);
+    			add_location(form, file$e, 114, 8, 3299);
     			attr_dev(figure, "class", "highcharts-figure");
-    			add_location(figure, file$c, 109, 4, 3046);
-    			add_location(main, file$c, 107, 0, 2957);
+    			add_location(figure, file$e, 109, 4, 3046);
+    			add_location(main, file$e, 107, 0, 2957);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -43726,7 +44111,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$d.name,
+    		id: create_fragment$f.name,
     		type: "component",
     		source: "",
     		ctx
@@ -43735,7 +44120,7 @@ var app = (function () {
     	return block;
     }
 
-    function instance$d($$self, $$props, $$invalidate) {
+    function instance$f($$self, $$props, $$invalidate) {
     	let ecstats = [];
     	let clnstats = [];
 
@@ -43846,22 +44231,22 @@ var app = (function () {
     class ExtIntegration2 extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$d, create_fragment$d, safe_not_equal, {});
+    		init(this, options, instance$f, create_fragment$f, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "ExtIntegration2",
     			options,
-    			id: create_fragment$d.name
+    			id: create_fragment$f.name
     		});
     	}
     }
 
     /* src\front\MenuIntegration.svelte generated by Svelte v3.20.1 */
 
-    const file$d = "src\\front\\MenuIntegration.svelte";
+    const file$f = "src\\front\\MenuIntegration.svelte";
 
-    function create_fragment$e(ctx) {
+    function create_fragment$g(ctx) {
     	let main;
     	let h30;
     	let t1;
@@ -43870,15 +44255,19 @@ var app = (function () {
     	let t3;
     	let button1;
     	let t5;
-    	let h31;
-    	let t7;
-    	let div1;
     	let button2;
-    	let t9;
+    	let t7;
     	let button3;
+    	let t9;
+    	let h31;
     	let t11;
-    	let form;
+    	let div1;
     	let button4;
+    	let t13;
+    	let button5;
+    	let t15;
+    	let form;
+    	let button6;
 
     	const block = {
     		c: function create() {
@@ -43893,49 +44282,63 @@ var app = (function () {
     			button1 = element("button");
     			button1.textContent = "Integración API Ruben";
     			t5 = space();
+    			button2 = element("button");
+    			button2.textContent = "Integración Grupo 9";
+    			t7 = space();
+    			button3 = element("button");
+    			button3.textContent = "Integración Grupo 26";
+    			t9 = space();
     			h31 = element("h3");
     			h31.textContent = "Integraciones Externas";
-    			t7 = space();
-    			div1 = element("div");
-    			button2 = element("button");
-    			button2.textContent = "Integración API Externa 1";
-    			t9 = space();
-    			button3 = element("button");
-    			button3.textContent = "Integración API Externa 2";
     			t11 = space();
-    			form = element("form");
+    			div1 = element("div");
     			button4 = element("button");
-    			button4.textContent = "Atrás";
+    			button4.textContent = "Integración API Externa 1";
+    			t13 = space();
+    			button5 = element("button");
+    			button5.textContent = "Integración API Externa 2";
+    			t15 = space();
+    			form = element("form");
+    			button6 = element("button");
+    			button6.textContent = "Atrás";
     			attr_dev(h30, "class", "svelte-6nb46n");
-    			add_location(h30, file$d, 1, 4, 12);
+    			add_location(h30, file$f, 1, 4, 12);
     			attr_dev(button0, "type", "button");
     			attr_dev(button0, "class", "btn btn-light svelte-6nb46n");
     			attr_dev(button0, "onclick", "window.location.href='#/integration'");
-    			add_location(button0, file$d, 3, 4, 76);
+    			add_location(button0, file$f, 3, 4, 76);
     			attr_dev(button1, "type", "button");
     			attr_dev(button1, "class", "btn btn-light svelte-6nb46n");
     			attr_dev(button1, "onclick", "window.location.href='#/integration2'");
-    			add_location(button1, file$d, 5, 4, 216);
-    			attr_dev(div0, "class", "botones svelte-6nb46n");
-    			add_location(div0, file$d, 2, 4, 49);
-    			attr_dev(h31, "class", "svelte-6nb46n");
-    			add_location(h31, file$d, 8, 4, 366);
+    			add_location(button1, file$f, 5, 4, 216);
     			attr_dev(button2, "type", "button");
     			attr_dev(button2, "class", "btn btn-light svelte-6nb46n");
-    			attr_dev(button2, "onclick", "window.location.href='#/extintegration'");
-    			add_location(button2, file$d, 10, 4, 430);
+    			attr_dev(button2, "onclick", "window.location.href='#/integration3'");
+    			add_location(button2, file$f, 7, 4, 354);
     			attr_dev(button3, "type", "button");
     			attr_dev(button3, "class", "btn btn-light svelte-6nb46n");
-    			attr_dev(button3, "onclick", "window.location.href='#/extintegration2'");
-    			add_location(button3, file$d, 12, 4, 574);
+    			attr_dev(button3, "onclick", "window.location.href='#/integration4'");
+    			add_location(button3, file$f, 9, 4, 490);
+    			attr_dev(div0, "class", "botones svelte-6nb46n");
+    			add_location(div0, file$f, 2, 4, 49);
+    			attr_dev(h31, "class", "svelte-6nb46n");
+    			add_location(h31, file$f, 12, 4, 639);
+    			attr_dev(button4, "type", "button");
+    			attr_dev(button4, "class", "btn btn-light svelte-6nb46n");
+    			attr_dev(button4, "onclick", "window.location.href='#/extintegration'");
+    			add_location(button4, file$f, 14, 4, 703);
+    			attr_dev(button5, "type", "button");
+    			attr_dev(button5, "class", "btn btn-light svelte-6nb46n");
+    			attr_dev(button5, "onclick", "window.location.href='#/extintegration2'");
+    			add_location(button5, file$f, 16, 4, 847);
     			attr_dev(div1, "class", "botones svelte-6nb46n");
-    			add_location(div1, file$d, 9, 4, 403);
-    			attr_dev(button4, "type", "submit");
-    			add_location(button4, file$d, 16, 8, 771);
+    			add_location(div1, file$f, 13, 4, 676);
+    			attr_dev(button6, "type", "submit");
+    			add_location(button6, file$f, 20, 8, 1044);
     			attr_dev(form, "method", "get");
     			attr_dev(form, "action", "/");
-    			add_location(form, file$d, 15, 4, 731);
-    			add_location(main, file$d, 0, 0, 0);
+    			add_location(form, file$f, 19, 4, 1004);
+    			add_location(main, file$f, 0, 0, 0);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -43948,16 +44351,20 @@ var app = (function () {
     			append_dev(div0, button0);
     			append_dev(div0, t3);
     			append_dev(div0, button1);
-    			append_dev(main, t5);
+    			append_dev(div0, t5);
+    			append_dev(div0, button2);
+    			append_dev(div0, t7);
+    			append_dev(div0, button3);
+    			append_dev(main, t9);
     			append_dev(main, h31);
-    			append_dev(main, t7);
-    			append_dev(main, div1);
-    			append_dev(div1, button2);
-    			append_dev(div1, t9);
-    			append_dev(div1, button3);
     			append_dev(main, t11);
+    			append_dev(main, div1);
+    			append_dev(div1, button4);
+    			append_dev(div1, t13);
+    			append_dev(div1, button5);
+    			append_dev(main, t15);
     			append_dev(main, form);
-    			append_dev(form, button4);
+    			append_dev(form, button6);
     		},
     		p: noop,
     		i: noop,
@@ -43969,7 +44376,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$e.name,
+    		id: create_fragment$g.name,
     		type: "component",
     		source: "",
     		ctx
@@ -43978,7 +44385,7 @@ var app = (function () {
     	return block;
     }
 
-    function instance$e($$self, $$props) {
+    function instance$g($$self, $$props) {
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
@@ -43993,22 +44400,22 @@ var app = (function () {
     class MenuIntegration extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$e, create_fragment$e, safe_not_equal, {});
+    		init(this, options, instance$g, create_fragment$g, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "MenuIntegration",
     			options,
-    			id: create_fragment$e.name
+    			id: create_fragment$g.name
     		});
     	}
     }
 
     /* src\front\About.svelte generated by Svelte v3.20.1 */
 
-    const file$e = "src\\front\\About.svelte";
+    const file$g = "src\\front\\About.svelte";
 
-    function create_fragment$f(ctx) {
+    function create_fragment$h(ctx) {
     	let main;
     	let div;
     	let h2;
@@ -44045,22 +44452,22 @@ var app = (function () {
     			form = element("form");
     			button = element("button");
     			button.textContent = "Atrás";
-    			add_location(h2, file$e, 2, 4, 35);
-    			add_location(p0, file$e, 3, 4, 76);
+    			add_location(h2, file$g, 2, 4, 35);
+    			add_location(p0, file$g, 3, 4, 76);
     			attr_dev(a0, "href", "");
-    			add_location(a0, file$e, 5, 7, 232);
-    			add_location(p1, file$e, 5, 4, 229);
+    			add_location(a0, file$g, 5, 7, 232);
+    			add_location(p1, file$g, 5, 4, 229);
     			attr_dev(a1, "href", "https://github.com/sain120/sos1920-dic-aca");
-    			add_location(a1, file$e, 6, 7, 281);
-    			add_location(p2, file$e, 6, 4, 278);
+    			add_location(a1, file$g, 6, 7, 281);
+    			add_location(p2, file$g, 6, 4, 278);
     			attr_dev(div, "class", "abt svelte-1ly42r9");
-    			add_location(div, file$e, 1, 4, 12);
+    			add_location(div, file$g, 1, 4, 12);
     			attr_dev(button, "type", "submit");
-    			add_location(button, file$e, 9, 8, 421);
+    			add_location(button, file$g, 9, 8, 421);
     			attr_dev(form, "method", "get");
     			attr_dev(form, "action", "/");
-    			add_location(form, file$e, 8, 4, 381);
-    			add_location(main, file$e, 0, 0, 0);
+    			add_location(form, file$g, 8, 4, 381);
+    			add_location(main, file$g, 0, 0, 0);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -44091,7 +44498,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$f.name,
+    		id: create_fragment$h.name,
     		type: "component",
     		source: "",
     		ctx
@@ -44100,7 +44507,7 @@ var app = (function () {
     	return block;
     }
 
-    function instance$f($$self, $$props) {
+    function instance$h($$self, $$props) {
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
@@ -44115,21 +44522,21 @@ var app = (function () {
     class About extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$f, create_fragment$f, safe_not_equal, {});
+    		init(this, options, instance$h, create_fragment$h, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "About",
     			options,
-    			id: create_fragment$f.name
+    			id: create_fragment$h.name
     		});
     	}
     }
 
     /* src\front\App.svelte generated by Svelte v3.20.1 */
-    const file$f = "src\\front\\App.svelte";
+    const file$h = "src\\front\\App.svelte";
 
-    function create_fragment$g(ctx) {
+    function create_fragment$i(ctx) {
     	let main;
     	let h1;
     	let a;
@@ -44151,10 +44558,10 @@ var app = (function () {
     			create_component(router.$$.fragment);
     			attr_dev(a, "href", "/");
     			attr_dev(a, "class", "svelte-2wsmzp");
-    			add_location(a, file$f, 40, 21, 1086);
+    			add_location(a, file$h, 44, 21, 1254);
     			attr_dev(h1, "class", "titulo2 svelte-2wsmzp");
-    			add_location(h1, file$f, 40, 1, 1066);
-    			add_location(main, file$f, 39, 0, 1058);
+    			add_location(h1, file$h, 44, 1, 1234);
+    			add_location(main, file$h, 43, 0, 1226);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -44185,7 +44592,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$g.name,
+    		id: create_fragment$i.name,
     		type: "component",
     		source: "",
     		ctx
@@ -44194,7 +44601,7 @@ var app = (function () {
     	return block;
     }
 
-    function instance$g($$self, $$props, $$invalidate) {
+    function instance$i($$self, $$props, $$invalidate) {
     	const routes = {
     		"/": Home,
     		"/table": ECTable,
@@ -44204,6 +44611,8 @@ var app = (function () {
     		"/analytics": MyGraph3,
     		"/integration": Integration,
     		"/integration2": Integration2,
+    		"/integration3": Integration3,
+    		"/integration4": Integration4,
     		"/extintegration": ExtIntegration,
     		"/extintegration2": ExtIntegration2,
     		"/integrations": MenuIntegration,
@@ -44231,6 +44640,8 @@ var app = (function () {
     		MyGraph3,
     		Integration,
     		Integration2,
+    		Integration3,
+    		Integration4,
     		ExtIntegration,
     		ExtIntegration2,
     		MenuIntegration,
@@ -44244,13 +44655,13 @@ var app = (function () {
     class App extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$g, create_fragment$g, safe_not_equal, {});
+    		init(this, options, instance$i, create_fragment$i, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "App",
     			options,
-    			id: create_fragment$g.name
+    			id: create_fragment$i.name
     		});
     	}
     }

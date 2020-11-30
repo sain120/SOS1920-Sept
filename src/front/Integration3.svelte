@@ -1,26 +1,27 @@
 <script>
 
 let ecstats = [];
-let rstats = [];
+let rsstats = [];
 
 async function loadGraph(){
 
 const resECStats = await fetch("/api/v1/ec-stats");
-const resRLNStats = await fetch("https://sos1920-sep-rnl.herokuapp.com/api/v1/mercados"); 
-ecstats = await resECStats.json();
-rstats = await resRLNStats.json();
+const resRSSstats = await fetch("http://sos1920-09.herokuapp.com/api/v3/oil-coal-nuclear-energy-consumption-stats");
 
-var MyData3 = [];
+
+ecstats = await resECStats.json();
+rsstats = await resRSSstats.json();
+
+var MyData1 = [];
+var MyData2 = [];
+var Countries = [];
 
     ecstats.forEach(ecstat => {
-        rstats.forEach(rstat => {
-            if(ecstat.country == rstat.Country){
-                MyData3.push({
-                x: rstat.Population,
-                y: ecstat.rpc,
-                z: ecstat.ecu, 
-                country: ecstat.country
-            })
+        rsstats.forEach(rsstat => {
+            if(ecstat.country == rsstat.country){
+                MyData1.push(ecstat.ecu);
+                MyData2.push(rsstat["oil-consumption"]);
+                Countries.push(ecstat.country);
             }
         });
     });
@@ -28,113 +29,45 @@ var MyData3 = [];
     Highcharts.chart('container', {
 
 chart: {
-    type: 'bubble',
-    plotBorderWidth: 1,
-    zoomType: 'xy'
-},
-
-legend: {
-    enabled: false
+    type: 'column'
 },
 
 title: {
-    text: 'Población, renta per cápita y uso de coches eléctricos por país'
+    text: 'Uso de coches eléctricos y consumo de petróleo'
 },
 
-subtitle: {
-    text: 'Fuente: <a href="http://www.wikipedia.com/">Wikipedia</a>'
-},
+xAxis: [{
+        categories: Countries,
+        crosshair: true
+}],
 
-accessibility: {
-    point: {
-        valueDescriptionFormat: '{index}. {point.name}, Poblacion: {point.x}M, Renta per cápita: {point.y}m$, Uso coches eléctricos: {point.z}%.'
-    }
-},
-
-xAxis: {
-    gridLineWidth: 1,
+yAxis: [{
+    className: 'highcharts-color-0',
     title: {
-        text: 'Población'
+        text: 'Uso de coches eléctricos (%)'
     },
-    labels: {
-        format: '{value} Millones'
-    },
-    /*
-    plotLines: [{
-        color: 'black',
-        dashStyle: 'dot',
-        width: 2,
-        value: 65,
-        label: {
-            rotation: 0,
-            y: 15,
-            style: {
-                fontStyle: 'italic'
-            },
-            text: 'Safe fat intake 65g/day'
-        },
-        zIndex: 3
-    }],
-    */
-    accessibility: {
-        rangeDescription: ''
-    }
-},
-
-yAxis: {
-    startOnTick: false,
-    endOnTick: false,
+}, {
+    className: 'highcharts-color-1',
+    opposite: true,
     title: {
-        text: 'Renta per cápita'
-    },
-    labels: {
-        format: '{value} Mil $'
-    },
-    maxPadding: 0.2,
-    /*
-    plotLines: [{
-        color: 'black',
-        dashStyle: 'dot',
-        width: 2,
-        value: 50,
-        label: {
-            align: 'right',
-            style: {
-                fontStyle: 'italic'
-            },
-            text: 'Safe sugar intake 50g/day',
-            x: -10
-        },
-        zIndex: 3
-    }],
-    */
-    accessibility: {
-        rangeDescription: ''
+        text: 'Consumo de petróleo'
     }
-},
+}],
 
-tooltip: {
-    useHTML: true,
-    headerFormat: '<table>',
-    pointFormat: '<tr><th colspan="2"><h3>{point.country}</h3></th></tr>' +
-        '<tr><th>Población:</th><td>{point.x} Millones </td></tr>' +
-        '<tr><th>Renta per cápita:</th><td>{point.y} Mil $</td></tr>' +
-        '<tr><th>Uso de coches eléctricos:</th><td>{point.z}%</td></tr>',
-    footerFormat: '</table>',
-    followPointer: true
-},
 
 plotOptions: {
-    series: {
-        dataLabels: {
-            enabled: true,
-            format: '{point.name}'
-        }
+    column: {
+        borderRadius: 5
     }
 },
 
 series: [{
-    data: MyData3
+    name: 'Uso de cocohes eléctricos',
+    data: MyData1,
+}, {
+    name: 'Consumo de petróleo',
+    data: MyData2,
+    yAxis: 1
 }]
 
 });
@@ -144,24 +77,21 @@ series: [{
 
 <svelte:head>
     <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/highcharts-more.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
     <script src="https://code.highcharts.com/modules/accessibility.js" on:load="{loadGraph}"></script>
 </svelte:head>
 
 <main>
-    <h2>Uso de coches eléctricos vs Población vs Renta per capita</h2>
+    <h2>Integración 3: API de Grupo 9</h2>
     <figure class="highcharts-figure">
         <div id="container"></div>
         <p class="highcharts-description">
-            Nube de puntos mostrando la correlación entre el numero de habitantes de un país y su renta per cápita.
-             El tamaño del punto se corresponde con el uso de coches electricos (%).
+            Grafico de barras con el porcentaje de coches eléctricos por países y su consumo de petróleo.
         </p>
-        {#each rstats as rstat}
-            <p>
-                {rstat.Country}
-            </p>
-        {/each}
     </figure>
+
+    <form method="get" action="/#/integrations">
+        <button type="submit">Atrás</button>
+    </form>
 </main>
