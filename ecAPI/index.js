@@ -62,9 +62,19 @@ module.exports = function(app, db2) {
 		req.pipe(request(url)).pipe(res);
 	});
 
-			//API de Ruben: Integracion2
-	app.use("/api/v1/mercados", function (req, res) {
-		var url = "https://sos1920-sep-rnl.herokuapp.com" + req.baseUrl + req.url;
+			//API G9: Integracion3
+	app.use("/api/v3/oil-coal-nuclear-energy-consumption-stats", function (req, res) {
+		var url = "http://sos1920-09.herokuapp.com" + req.baseUrl + req.url;
+		console.log("Get Api Externa");
+		console.log("URL Api Externa: " + url);
+		console.log('piped: ' + req.baseUrl + req.url);
+		req.pipe(request(url)).pipe(res);
+	});
+
+
+		//API G26: Integracion4
+	app.use("/api/v3/global-coef", function (req, res) {
+		var url = "http://sos1920-26.herokuapp.com" + req.baseUrl + req.url;
 		console.log("Get Api Externa");
 		console.log("URL Api Externa: " + url);
 		console.log('piped: ' + req.baseUrl + req.url);

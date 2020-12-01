@@ -43481,26 +43481,26 @@ var app = (function () {
     			button = element("button");
     			button.textContent = "Atrás";
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$b, 78, 4, 1442);
+    			add_location(script0, file$b, 78, 4, 1407);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$b, 79, 4, 1513);
+    			add_location(script1, file$b, 79, 4, 1478);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$b, 80, 4, 1591);
+    			add_location(script2, file$b, 80, 4, 1556);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$b, 81, 4, 1671);
-    			add_location(h2, file$b, 85, 4, 1801);
+    			add_location(script3, file$b, 81, 4, 1636);
+    			add_location(h2, file$b, 85, 4, 1766);
     			attr_dev(div, "id", "container");
-    			add_location(div, file$b, 87, 8, 1889);
+    			add_location(div, file$b, 87, 8, 1854);
     			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$b, 88, 8, 1925);
+    			add_location(p, file$b, 88, 8, 1890);
     			attr_dev(figure, "class", "highcharts-figure");
-    			add_location(figure, file$b, 86, 4, 1845);
+    			add_location(figure, file$b, 86, 4, 1810);
     			attr_dev(button, "type", "submit");
-    			add_location(button, file$b, 94, 8, 2157);
+    			add_location(button, file$b, 94, 8, 2122);
     			attr_dev(form, "method", "get");
     			attr_dev(form, "action", "/#/integrations");
-    			add_location(form, file$b, 93, 4, 2103);
-    			add_location(main, file$b, 84, 0, 1789);
+    			add_location(form, file$b, 93, 4, 2068);
+    			add_location(main, file$b, 84, 0, 1754);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -43555,7 +43555,7 @@ var app = (function () {
 
     	async function loadGraph() {
     		const resECStats = await fetch("/api/v1/ec-stats");
-    		const resRSSstats = await fetch("http://sos1920-09.herokuapp.com/api/v3/oil-coal-nuclear-energy-consumption-stats");
+    		const resRSSstats = await fetch("/v3/oil-coal-nuclear-energy-consumption-stats");
     		ecstats = await resECStats.json();
     		rsstats = await resRSSstats.json();
     		var MyData1 = [];
@@ -43685,23 +43685,23 @@ var app = (function () {
     			button = element("button");
     			button.textContent = "Atrás";
     			if (script0.src !== (script0_src_value = "https://d3js.org/d3.v5.min.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$c, 60, 2, 1130);
+    			add_location(script0, file$c, 60, 2, 1099);
     			if (script1.src !== (script1_src_value = "libraries/billboard.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$c, 61, 2, 1186);
+    			add_location(script1, file$c, 61, 2, 1155);
     			attr_dev(link, "rel", "stylesheet");
     			attr_dev(link, "href", "css/billboard.css");
-    			add_location(link, file$c, 62, 2, 1235);
-    			add_location(head, file$c, 58, 0, 1120);
-    			add_location(h2, file$c, 67, 2, 1305);
+    			add_location(link, file$c, 62, 2, 1204);
+    			add_location(head, file$c, 58, 0, 1089);
+    			add_location(h2, file$c, 67, 2, 1274);
     			attr_dev(div, "id", "barChart");
-    			add_location(div, file$c, 68, 6, 1376);
-    			add_location(p, file$c, 69, 6, 1408);
+    			add_location(div, file$c, 68, 6, 1345);
+    			add_location(p, file$c, 69, 6, 1377);
     			attr_dev(button, "type", "submit");
-    			add_location(button, file$c, 73, 8, 1625);
+    			add_location(button, file$c, 73, 8, 1594);
     			attr_dev(form, "method", "get");
     			attr_dev(form, "action", "/#/integrations");
-    			add_location(form, file$c, 72, 6, 1572);
-    			add_location(main, file$c, 66, 0, 1296);
+    			add_location(form, file$c, 72, 6, 1541);
+    			add_location(main, file$c, 66, 0, 1265);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -43751,7 +43751,7 @@ var app = (function () {
 
     	async function loadGraph() {
     		const resECStats = await fetch("/api/v1/ec-stats");
-    		const resGCFStats = await fetch("http://sos1920-26.herokuapp.com/api/v3/global-coef");
+    		const resGCFStats = await fetch("/api/v3/global-coef");
     		ecstats = await resECStats.json();
     		gcstats = await resGCFStats.json();
     		var MyData1 = ["Renta per cápita de su país"];

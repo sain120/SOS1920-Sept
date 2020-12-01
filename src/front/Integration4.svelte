@@ -7,7 +7,7 @@
   async function loadGraph(){
 
 const resECStats = await fetch("/api/v1/ec-stats");
-const resGCFStats = await fetch("http://sos1920-26.herokuapp.com/api/v3/global-coef");
+const resGCFStats = await fetch("/api/v3/global-coef");
 
 ecstats = await resECStats.json();
 gcstats = await resGCFStats.json();
