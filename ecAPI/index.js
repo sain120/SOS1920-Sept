@@ -46,7 +46,7 @@ module.exports = function(app, db2) {
 	//INTEGRACIONES
 		//API de Fernando: Integracion1
 	app.use("/api/v1/cbp", function (req, res) {
-		var url = "http://sos1920-sep-fco.herokuapp.com" + req.baseUrl + req.url;
+		var url = "http://sos1920-dic-fco.herokuapp.com" + req.baseUrl + req.url;
 		console.log("Get Api Externa");
 		console.log("URL Api Externa: " + url);
 		console.log('piped: ' + req.baseUrl + req.url);
