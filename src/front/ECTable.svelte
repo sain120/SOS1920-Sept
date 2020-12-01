@@ -116,7 +116,7 @@
 		const res = await fetch("/api/v1/ec-stats/loadInitialData", {
 			method: "GET"
 		}).then(function(res) {
-			statusMessage = "Datos inicialies cargados correctamente";
+			statusMessage = "Datos iniciales cargados correctamente";
 			getECStats();
 		});
 	}

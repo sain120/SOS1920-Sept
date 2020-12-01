@@ -2917,9 +2917,9 @@ var app = (function () {
     			p = element("p");
     			strong = element("strong");
     			t = text(/*statusMessage*/ ctx[5]);
-    			add_location(strong, file$4, 141, 26, 3265);
+    			add_location(strong, file$4, 141, 26, 3264);
     			set_style(p, "color", "green");
-    			add_location(p, file$4, 141, 2, 3241);
+    			add_location(p, file$4, 141, 2, 3240);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -2956,9 +2956,9 @@ var app = (function () {
     			p = element("p");
     			strong = element("strong");
     			t = text(/*statusMessage*/ ctx[5]);
-    			add_location(strong, file$4, 139, 24, 3193);
+    			add_location(strong, file$4, 139, 24, 3192);
     			set_style(p, "color", "red");
-    			add_location(p, file$4, 139, 2, 3171);
+    			add_location(p, file$4, 139, 2, 3170);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -3104,14 +3104,14 @@ var app = (function () {
     			create_component(button.$$.fragment);
     			t10 = space();
     			attr_dev(a, "href", a_href_value = "#/ec-stat/" + /*ecstat*/ ctx[25].country + "/" + /*ecstat*/ ctx[25].year);
-    			add_location(a, file$4, 180, 7, 4449);
-    			add_location(td0, file$4, 180, 3, 4445);
-    			add_location(td1, file$4, 181, 3, 4529);
-    			add_location(td2, file$4, 182, 3, 4555);
-    			add_location(td3, file$4, 183, 3, 4580);
-    			add_location(td4, file$4, 184, 3, 4605);
-    			add_location(td5, file$4, 185, 3, 4632);
-    			add_location(tr, file$4, 178, 2, 4402);
+    			add_location(a, file$4, 180, 7, 4448);
+    			add_location(td0, file$4, 180, 3, 4444);
+    			add_location(td1, file$4, 181, 3, 4528);
+    			add_location(td2, file$4, 182, 3, 4554);
+    			add_location(td3, file$4, 183, 3, 4579);
+    			add_location(td4, file$4, 184, 3, 4604);
+    			add_location(td5, file$4, 185, 3, 4631);
+    			add_location(tr, file$4, 178, 2, 4401);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -3429,39 +3429,39 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(th0, file$4, 147, 4, 3375);
-    			add_location(th1, file$4, 148, 4, 3393);
-    			add_location(th2, file$4, 149, 4, 3410);
-    			add_location(th3, file$4, 150, 4, 3448);
-    			add_location(th4, file$4, 151, 4, 3478);
-    			add_location(th5, file$4, 152, 4, 3516);
-    			add_location(tr0, file$4, 145, 3, 3341);
-    			add_location(thead, file$4, 144, 2, 3330);
-    			add_location(input0, file$4, 158, 7, 3612);
-    			add_location(td0, file$4, 158, 3, 3608);
-    			add_location(input1, file$4, 159, 7, 3668);
-    			add_location(td1, file$4, 159, 3, 3664);
-    			add_location(input2, file$4, 160, 7, 3721);
-    			add_location(td2, file$4, 160, 3, 3717);
-    			add_location(input3, file$4, 161, 7, 3773);
-    			add_location(td3, file$4, 161, 3, 3769);
-    			add_location(input4, file$4, 162, 7, 3825);
-    			add_location(td4, file$4, 162, 3, 3821);
-    			add_location(td5, file$4, 163, 3, 3875);
-    			add_location(tr1, file$4, 156, 2, 3565);
-    			add_location(input5, file$4, 168, 7, 4009);
-    			add_location(td6, file$4, 168, 3, 4005);
-    			add_location(input6, file$4, 169, 7, 4062);
-    			add_location(td7, file$4, 169, 3, 4058);
-    			add_location(input7, file$4, 170, 7, 4112);
-    			add_location(td8, file$4, 170, 3, 4108);
-    			add_location(input8, file$4, 171, 7, 4161);
-    			add_location(td9, file$4, 171, 3, 4157);
-    			add_location(input9, file$4, 172, 7, 4210);
-    			add_location(td10, file$4, 172, 3, 4206);
-    			add_location(td11, file$4, 173, 3, 4257);
-    			add_location(tr2, file$4, 166, 2, 3962);
-    			add_location(tbody, file$4, 155, 1, 3555);
+    			add_location(th0, file$4, 147, 4, 3374);
+    			add_location(th1, file$4, 148, 4, 3392);
+    			add_location(th2, file$4, 149, 4, 3409);
+    			add_location(th3, file$4, 150, 4, 3447);
+    			add_location(th4, file$4, 151, 4, 3477);
+    			add_location(th5, file$4, 152, 4, 3515);
+    			add_location(tr0, file$4, 145, 3, 3340);
+    			add_location(thead, file$4, 144, 2, 3329);
+    			add_location(input0, file$4, 158, 7, 3611);
+    			add_location(td0, file$4, 158, 3, 3607);
+    			add_location(input1, file$4, 159, 7, 3667);
+    			add_location(td1, file$4, 159, 3, 3663);
+    			add_location(input2, file$4, 160, 7, 3720);
+    			add_location(td2, file$4, 160, 3, 3716);
+    			add_location(input3, file$4, 161, 7, 3772);
+    			add_location(td3, file$4, 161, 3, 3768);
+    			add_location(input4, file$4, 162, 7, 3824);
+    			add_location(td4, file$4, 162, 3, 3820);
+    			add_location(td5, file$4, 163, 3, 3874);
+    			add_location(tr1, file$4, 156, 2, 3564);
+    			add_location(input5, file$4, 168, 7, 4008);
+    			add_location(td6, file$4, 168, 3, 4004);
+    			add_location(input6, file$4, 169, 7, 4061);
+    			add_location(td7, file$4, 169, 3, 4057);
+    			add_location(input7, file$4, 170, 7, 4111);
+    			add_location(td8, file$4, 170, 3, 4107);
+    			add_location(input8, file$4, 171, 7, 4160);
+    			add_location(td9, file$4, 171, 3, 4156);
+    			add_location(input9, file$4, 172, 7, 4209);
+    			add_location(td10, file$4, 172, 3, 4205);
+    			add_location(td11, file$4, 173, 3, 4256);
+    			add_location(tr2, file$4, 166, 2, 3961);
+    			add_location(tbody, file$4, 155, 1, 3554);
     		},
     		m: function mount(target, anchor, remount) {
     			insert_dev(target, thead, anchor);
@@ -3985,16 +3985,16 @@ var app = (function () {
     			button2 = element("button");
     			button2.textContent = "Atrás";
     			attr_dev(div, "class", "botonesTabla svelte-ccz9at");
-    			add_location(div, file$4, 191, 1, 4792);
+    			add_location(div, file$4, 191, 1, 4791);
     			attr_dev(p, "class", "numpag svelte-ccz9at");
-    			add_location(p, file$4, 201, 1, 5204);
+    			add_location(p, file$4, 201, 1, 5203);
     			attr_dev(button2, "type", "submit");
-    			add_location(button2, file$4, 203, 8, 5304);
+    			add_location(button2, file$4, 203, 8, 5303);
     			attr_dev(form, "class", "botonAtrasTabla svelte-ccz9at");
     			attr_dev(form, "method", "get");
     			attr_dev(form, "action", "/");
-    			add_location(form, file$4, 202, 1, 5241);
-    			add_location(main, file$4, 137, 0, 3115);
+    			add_location(form, file$4, 202, 1, 5240);
+    			add_location(main, file$4, 137, 0, 3114);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -4241,7 +4241,7 @@ var app = (function () {
     		console.log("Loading Initial Data...");
 
     		const res = await fetch("/api/v1/ec-stats/loadInitialData", { method: "GET" }).then(function (res) {
-    			$$invalidate(5, statusMessage = "Datos inicialies cargados correctamente");
+    			$$invalidate(5, statusMessage = "Datos iniciales cargados correctamente");
     			getECStats();
     		});
     	}
