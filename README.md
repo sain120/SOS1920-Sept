@@ -11,8 +11,8 @@
   
 - **Descripción**: Estadísticas de coches eléctricos y datos relacionados por país.
 
-- **Repositorio**: [sos1920-sep-aca](https://github.com/sain120/sos1920-dic-aca)
+- **Repositorio**: [sos1920-dic-aca](https://github.com/sain120/sos1920-dic-aca)
 
--  **HEROKU**: [sos1920-sep-aca](https://sos1920-dic-aca.herokuapp.com/)
+-  **HEROKU**: [sos1920-dic-aca](https://sos1920-dic-aca.herokuapp.com/)
 
--  **POSTMAN**: [documenter](https://documenter.getpostman.com/view/10637488/TVmFk11a)
+-  **POSTMAN**: [postman](https://documenter.getpostman.com/view/10637488/TVmFk11a)
