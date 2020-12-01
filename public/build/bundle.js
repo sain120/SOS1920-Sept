@@ -44454,19 +44454,19 @@ var app = (function () {
     			button.textContent = "Atrás";
     			add_location(h2, file$g, 2, 4, 35);
     			add_location(p0, file$g, 3, 4, 76);
-    			attr_dev(a0, "href", "");
+    			attr_dev(a0, "href", "https://youtu.be/LNOl4CLXzdI");
     			add_location(a0, file$g, 5, 7, 232);
     			add_location(p1, file$g, 5, 4, 229);
     			attr_dev(a1, "href", "https://github.com/sain120/sos1920-dic-aca");
-    			add_location(a1, file$g, 6, 7, 281);
-    			add_location(p2, file$g, 6, 4, 278);
+    			add_location(a1, file$g, 6, 7, 309);
+    			add_location(p2, file$g, 6, 4, 306);
     			attr_dev(div, "class", "abt svelte-1ly42r9");
     			add_location(div, file$g, 1, 4, 12);
     			attr_dev(button, "type", "submit");
-    			add_location(button, file$g, 9, 8, 421);
+    			add_location(button, file$g, 9, 8, 449);
     			attr_dev(form, "method", "get");
     			attr_dev(form, "action", "/");
-    			add_location(form, file$g, 8, 4, 381);
+    			add_location(form, file$g, 8, 4, 409);
     			add_location(main, file$g, 0, 0, 0);
     		},
     		l: function claim(nodes) {

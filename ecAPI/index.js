@@ -55,7 +55,7 @@ module.exports = function(app, db2) {
 
 		//API de Ruben: Integracion2
 	app.use("/api/v1/mercados", function (req, res) {
-		var url = "https://sos1920-sep-rnl.herokuapp.com" + req.baseUrl + req.url;
+		var url = "https://sos1920-dic-rnl.herokuapp.com" + req.baseUrl + req.url;
 		console.log("Get Api Externa");
 		console.log("URL Api Externa: " + url);
 		console.log('piped: ' + req.baseUrl + req.url);
