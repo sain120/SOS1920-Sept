@@ -6,7 +6,7 @@ let rsstats = [];
 async function loadGraph(){
 
 const resECStats = await fetch("/api/v1/ec-stats");
-const resRSSstats = await fetch("/v3/oil-coal-nuclear-energy-consumption-stats");
+const resRSSstats = await fetch("/api/v3/oil-coal-nuclear-energy-consumption-stats");
 
 
 ecstats = await resECStats.json();

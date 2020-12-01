@@ -43481,26 +43481,26 @@ var app = (function () {
     			button = element("button");
     			button.textContent = "Atrás";
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$b, 78, 4, 1407);
+    			add_location(script0, file$b, 78, 4, 1411);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$b, 79, 4, 1478);
+    			add_location(script1, file$b, 79, 4, 1482);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$b, 80, 4, 1556);
+    			add_location(script2, file$b, 80, 4, 1560);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$b, 81, 4, 1636);
-    			add_location(h2, file$b, 85, 4, 1766);
+    			add_location(script3, file$b, 81, 4, 1640);
+    			add_location(h2, file$b, 85, 4, 1770);
     			attr_dev(div, "id", "container");
-    			add_location(div, file$b, 87, 8, 1854);
+    			add_location(div, file$b, 87, 8, 1858);
     			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$b, 88, 8, 1890);
+    			add_location(p, file$b, 88, 8, 1894);
     			attr_dev(figure, "class", "highcharts-figure");
-    			add_location(figure, file$b, 86, 4, 1810);
+    			add_location(figure, file$b, 86, 4, 1814);
     			attr_dev(button, "type", "submit");
-    			add_location(button, file$b, 94, 8, 2122);
+    			add_location(button, file$b, 94, 8, 2126);
     			attr_dev(form, "method", "get");
     			attr_dev(form, "action", "/#/integrations");
-    			add_location(form, file$b, 93, 4, 2068);
-    			add_location(main, file$b, 84, 0, 1754);
+    			add_location(form, file$b, 93, 4, 2072);
+    			add_location(main, file$b, 84, 0, 1758);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -43555,7 +43555,7 @@ var app = (function () {
 
     	async function loadGraph() {
     		const resECStats = await fetch("/api/v1/ec-stats");
-    		const resRSSstats = await fetch("/v3/oil-coal-nuclear-energy-consumption-stats");
+    		const resRSSstats = await fetch("/api/v3/oil-coal-nuclear-energy-consumption-stats");
     		ecstats = await resECStats.json();
     		rsstats = await resRSSstats.json();
     		var MyData1 = [];
